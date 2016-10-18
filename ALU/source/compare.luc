@@ -1,0 +1,36 @@
+module compare (
+    input clk,  // clock
+    input rst,  // reset
+    output io_led [3][8],
+    input io_dip [3][8]
+  ) {
+  sig result[9];
+  sig result2[8];
+  sig z;
+  sig v;
+  sig n;
+  
+  always {
+   if(io_dip[2][0] == 0){
+      result = io_dip[1] +io_dip[0];
+    }else{
+      result = io_dip[1] - io_dip[0];  
+    }
+    z =!(&result[7-:8]);
+    v = io_dip[0][7] * io_dip[1][7] * !result[7] +??io_dip[0][7] * ?io_dip[1][7] * result[7];
+    n = result[7];
+    
+    result2 = 8h00;
+    case(io_dip[2][2-:2]){
+      1:result2 = c{7h00,z};
+      2:result2 = c{7h00,v^n};
+      3:result2 = c{7h00,z+v^n};
+      0:result2 = 8h00;
+      }
+    
+
+    io_led[2] = result2[7-:8];
+    io_led[0] = io_dip[0];
+    io_led[1] = io_dip[1];
+  }
+}

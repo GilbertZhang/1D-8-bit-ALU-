@@ -2,17 +2,27 @@ module add (
     input clk,  // clock
     input rst,  // reset
     output io_led [3][8],
-    input io_dip [3][8] 
+    input io_dip [3][8],
+    output z,
+    output v,
+    output n    
   ) {
     
   sig result[9];
   
   always {
-    result = io_dip[1] +io_dip[0];
+    if(io_dip[2][0] == 0){
+      result = io_dip[1] +io_dip[0];
+    }else{
+      result = io_dip[1] - io_dip[0];  
+    }
+      io_led[2] = result[7-:8];
+      io_led[0] = io_dip[0];
+      io_led[1] = io_dip[1];
     
-    io_led[2] = result[7-:8];
-    io_led[0] = io_dip[0];
-    io_led[1] = io_dip[1];
-    
+    z =!(&result[7-:8]);
+    v = io_dip[0][7] * io_dip[1][7] * !result[7] +??io_dip[0][7] * ?io_dip[1][7] * result[7];
+    n = result[7];
+
   }
 }
