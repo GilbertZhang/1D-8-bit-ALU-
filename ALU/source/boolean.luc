@@ -1,0 +1,21 @@
+module boolean (
+    input clk,  // clock
+    input rst,  // reset
+    output io_led [3][8],
+    input io_dip [3][8]
+  ) {
+  sig result3[8];
+
+  always {
+    result3=8h00;
+    case(io_dip[2][4-:2]){
+      1:result3 = io_dip[0]&io_dip[1]; //AND
+      2:result3 = io_dip[0]|io_dip[1]; //OR
+      3:result3 = io_dip[0]^io_dip[1]; //XOR
+      0:result3 = io_dip[0];           //A
+      }
+    io_led[2] = result3[7-:8];
+    io_led[0] = io_dip[0];
+    io_led[1] = io_dip[1];
+}
+}
