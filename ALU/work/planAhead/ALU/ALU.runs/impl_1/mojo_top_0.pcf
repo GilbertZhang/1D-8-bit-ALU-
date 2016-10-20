@@ -1,10 +1,9 @@
 //! **************************************************************************
-// Written by: Map P.20131013 on Thu Oct 20 22:30:36 2016
+// Written by: Map P.20131013 on Fri Oct 21 01:51:52 2016
 //! **************************************************************************
 
 SCHEMATIC START;
 CONFIG VCCAUX = "3.3";
-COMP "io_dip(19)" LOCATE = SITE "P74" LEVEL 1;
 COMP "io_seg[0]" LOCATE = SITE "P5" LEVEL 1;
 COMP "spi_sck" LOCATE = SITE "P43" LEVEL 1;
 COMP "io_seg[1]" LOCATE = SITE "P8" LEVEL 1;
@@ -51,6 +50,7 @@ COMP "io_sel[3]" LOCATE = SITE "P12" LEVEL 1;
 COMP "io_dip[16]" LOCATE = SITE "P79" LEVEL 1;
 COMP "io_dip[17]" LOCATE = SITE "P78" LEVEL 1;
 COMP "io_dip[18]" LOCATE = SITE "P75" LEVEL 1;
+COMP "io_dip[19]" LOCATE = SITE "P74" LEVEL 1;
 COMP "led[0]" LOCATE = SITE "P134" LEVEL 1;
 COMP "io_led[0]" LOCATE = SITE "P97" LEVEL 1;
 COMP "led[1]" LOCATE = SITE "P133" LEVEL 1;

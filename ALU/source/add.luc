@@ -1,6 +1,4 @@
 module add (
-    input clk,  // clock
-    input rst,  // reset
     output io_led2[8],
     input io_dip [3][8],
     output z,
@@ -18,9 +16,9 @@ module add (
     }
       io_led2 = result[7-:8];
 
-    
-    z =!(&result[7-:8]);
-    v = io_dip[0][7] * io_dip[1][7] * !result[7] || !io_dip[0][7] * !io_dip[1][7] * result[7];
+    if(result == 0) z = 1;
+    else z = 0;
+    v = (io_dip[0][7] && io_dip[1][7] && (~result[7])) || ((~io_dip[0][7]) && (~io_dip[1][7]) && result[7]);
     n = result[7];
 
   }

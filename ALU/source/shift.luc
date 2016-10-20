@@ -1,19 +1,16 @@
 module shift (
-    input clk,  // clock
-    input rst,  // reset
-    output io_led [3][8],
+    output io_led2[8],
     input io_dip [3][8]
   ) {
   sig result4[8];
   always {
     result4=8h00;
-    case(io_dip[2][6-:2]){
+    case(io_dip[2][1-:2]){
       1:result4 = io_dip[0]>>io_dip[1][2:0]; //SHR
       3:result4 = $signed(io_dip[0])>>>io_dip[1][2:0]; //SRA
       0:result4 = io_dip[0]<<io_dip[1][2:0];        //SHL
       }
-    io_led[2] = result4[7-:8];
-    io_led[0] = io_dip[0];
-    io_led[1] = io_dip[1];
+    io_led2 = result4[7-:8];
+
 }
 }

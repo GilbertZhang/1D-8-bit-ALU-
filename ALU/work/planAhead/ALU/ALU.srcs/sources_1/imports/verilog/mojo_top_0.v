@@ -35,25 +35,14 @@ module mojo_top_0 (
     .in(M_reset_cond_in),
     .out(M_reset_cond_out)
   );
-  wire [8-1:0] M_adder_io_led2;
-  wire [1-1:0] M_adder_z;
-  wire [1-1:0] M_adder_v;
-  wire [1-1:0] M_adder_n;
-  add_2 adder (
+  wire [24-1:0] M_alu_io_led;
+  wire [8-1:0] M_alu_led;
+  alu_2 alu (
     .clk(clk),
     .rst(rst),
     .io_dip(io_dip),
-    .io_led2(M_adder_io_led2),
-    .z(M_adder_z),
-    .v(M_adder_v),
-    .n(M_adder_n)
-  );
-  wire [8-1:0] M_compare_io_led2;
-  compare_3 compare (
-    .clk(clk),
-    .rst(rst),
-    .io_dip(io_dip),
-    .io_led2(M_compare_io_led2)
+    .io_led(M_alu_io_led),
+    .led(M_alu_led)
   );
   
   always @* begin
@@ -66,17 +55,7 @@ module mojo_top_0 (
     io_led = 24'h000000;
     io_seg = 8'hff;
     io_sel = 4'hf;
-    
-    case (io_dip[16+4+1-:2])
-      1'h0: begin
-        io_led[16+7-:8] = M_adder_io_led2;
-        led[0+0-:1] = M_adder_z;
-        led[1+0-:1] = M_adder_v;
-        led[2+0-:1] = M_adder_n;
-      end
-      2'h3: begin
-        io_led[16+7-:8] = M_compare_io_led2;
-      end
-    endcase
+    io_led = M_alu_io_led;
+    led = M_alu_led;
   end
 endmodule
