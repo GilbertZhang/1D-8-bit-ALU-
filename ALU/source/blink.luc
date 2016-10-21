@@ -1,10 +1,16 @@
 module blink (
     input clk,  // clock
     input rst,  // reset
-    output out
+    output blink,
+    output hold[27]
   ) {
 
+  dff counter[26](.clk(clk), .rst(rst));
+  dff holder[27](.clk(clk),.rst(rst));
   always {
-    out = 0;
+    blink = counter.q[24];
+    counter.d = counter.q + 1;
+    hold = holder.q[26:0];
+    holder.d = holder.q + 1;
   }
 }

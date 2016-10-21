@@ -9,6 +9,7 @@ module shift (
       1:result4 = io_dip[0]>>io_dip[1][2:0]; //SHR
       3:result4 = $signed(io_dip[0])>>>io_dip[1][2:0]; //SRA
       0:result4 = io_dip[0]<<io_dip[1][2:0];        //SHL
+        
       }
     io_led2 = result4[7-:8];
 

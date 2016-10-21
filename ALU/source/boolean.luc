@@ -3,6 +3,8 @@ module boolean (
     input io_dip [3][8]
   ) {
   sig result3[8];
+  
+  reverse reverse(.io_dip(io_dip));
 
   always {
     result3=8h00;
@@ -11,6 +13,7 @@ module boolean (
       14:result3 = io_dip[0]|io_dip[1]; //OR
       6:result3 = io_dip[0]^io_dip[1]; //XOR
       10:result3 = io_dip[0];           //A
+      5:result3 = reverse.io_led2;
       }
     io_led2 = result3[7-:8];
 

@@ -15,7 +15,6 @@ Environment Variable      Effect
 NONE                      No environment variables were set
 --------------------------------------------------------------------------------
 
-INFO:Timing:2698 - No timing constraints found, doing default enumeration.
 INFO:Timing:3412 - To improve timing, see the Timing Closure User Guide (UG612).
 INFO:Timing:2752 - To get complete path coverage, use the unconstrained paths 
    option. All paths that are not constrained will be reported in the 
@@ -25,272 +24,1895 @@ INFO:Timing:3339 - The clock-to-out numbers in this timing report are based on
    and for more information on accounting for different loading conditions, 
    please see the device datasheet.
 
+================================================================================
+Timing constraint: TS_clk = PERIOD TIMEGRP "clk" 50 MHz HIGH 50%;
+For more information, see Period Analysis in the Timing Closure User Guide (UG612).
+
+ 36442 paths analyzed, 173 endpoints analyzed, 0 failing endpoints
+ 0 timing errors detected. (0 setup errors, 0 hold errors, 0 component switching limit errors)
+ Minimum period is   9.635ns.
+--------------------------------------------------------------------------------
+Slack:                  10.365ns (requirement - (data path - clock path skew + uncertainty))
+  Source:               testcase/M_state_q_FSM_FFd3_1 (FF)
+  Destination:          testcase/M_state_q_FSM_FFd4_3 (FF)
+  Requirement:          20.000ns
+  Data Path Delay:      9.589ns (Levels of Logic = 8)
+  Clock Path Skew:      -0.011ns (0.324 - 0.335)
+  Source Clock:         clk_BUFGP rising at 0.000ns
+  Destination Clock:    clk_BUFGP rising at 20.000ns
+  Clock Uncertainty:    0.035ns
+
+  Clock Uncertainty:          0.035ns  ((TSJ^2 + TIJ^2)^1/2 + DJ) / 2 + PE
+    Total System Jitter (TSJ):  0.070ns
+    Total Input Jitter (TIJ):   0.000ns
+    Discrete Jitter (DJ):       0.000ns
+    Phase Error (PE):           0.000ns
+
+  Maximum Data Path at Slow Process Corner: testcase/M_state_q_FSM_FFd3_1 to testcase/M_state_q_FSM_FFd4_3
+    Location             Delay type         Delay(ns)  Physical Resource
+                                                       Logical Resource(s)
+    -------------------------------------------------  -------------------
+    SLICE_X11Y20.AQ      Tcko                  0.430   testcase/M_state_q_FSM_FFd3_3
+                                                       testcase/M_state_q_FSM_FFd3_1
+    SLICE_X9Y21.D2       net (fanout=1)        0.919   testcase/M_state_q_FSM_FFd3_1
+    SLICE_X9Y21.D        Tilo                  0.259   testcase/io_dip[16]
+                                                       testcase/M_state_q_io_dip<16>1
+    SLICE_X6Y25.AX       net (fanout=11)       1.229   testcase/io_dip[16]
+    SLICE_X6Y25.COUT     Taxcy                 0.259   testcase/alu/compare/add/Maddsub_result_cy[3]
+                                                       testcase/alu/compare/add/Maddsub_result_cy<3>
+    SLICE_X6Y26.CIN      net (fanout=1)        0.003   testcase/alu/compare/add/Maddsub_result_cy[3]
+    SLICE_X6Y26.DMUX     Tcind                 0.289   testcase/alu/compare/add/Maddsub_result_cy[7]
+                                                       testcase/alu/compare/add/Maddsub_result_cy<7>
+    SLICE_X4Y27.D2       net (fanout=3)        1.044   testcase/alu/M_add_n
+    SLICE_X4Y27.CMUX     Topdc                 0.456   testcase/M_state_q_FSM_FFd4-In5
+                                                       testcase/alu/Mmux_io_led<16>2263_SW1_F
+                                                       testcase/alu/Mmux_io_led<16>2263_SW1
+    SLICE_X4Y27.A2       net (fanout=1)        0.741   testcase/alu/N61
+    SLICE_X4Y27.A        Tilo                  0.254   testcase/M_state_q_FSM_FFd4-In5
+                                                       testcase/alu/Mmux_io_led<16>2265
+    SLICE_X7Y26.C3       net (fanout=7)        0.608   testcase/M_alu_io_led[16]
+    SLICE_X7Y26.C        Tilo                  0.259   testcase/M_state_q_FSM_FFd4-In13
+                                                       testcase/M_state_q_FSM_FFd4-In14
+    SLICE_X4Y25.D6       net (fanout=1)        0.378   testcase/M_state_q_FSM_FFd4-In15
+    SLICE_X4Y25.D        Tilo                  0.254   testcase/M_state_q_FSM_FFd4-In17
+                                                       testcase/M_state_q_FSM_FFd4-In16
+    SLICE_X5Y23.C1       net (fanout=1)        0.785   testcase/M_state_q_FSM_FFd4-In17
+    SLICE_X5Y23.C        Tilo                  0.259   M_state_q_FSM_FFd4
+                                                       testcase/M_state_q_FSM_FFd4-In17
+    SLICE_X7Y21.CX       net (fanout=4)        1.049   testcase/M_state_q_FSM_FFd4-In
+    SLICE_X7Y21.CLK      Tdick                 0.114   testcase/M_state_q_FSM_FFd4_4
+                                                       testcase/M_state_q_FSM_FFd4_3
+    -------------------------------------------------  ---------------------------
+    Total                                      9.589ns (2.833ns logic, 6.756ns route)
+                                                       (29.5% logic, 70.5% route)
+
+--------------------------------------------------------------------------------
+Slack:                  10.449ns (requirement - (data path - clock path skew + uncertainty))
+  Source:               testcase/M_state_q_FSM_FFd4_1 (FF)
+  Destination:          testcase/M_state_q_FSM_FFd4_3 (FF)
+  Requirement:          20.000ns
+  Data Path Delay:      9.516ns (Levels of Logic = 8)
+  Clock Path Skew:      0.000ns
+  Source Clock:         clk_BUFGP rising at 0.000ns
+  Destination Clock:    clk_BUFGP rising at 20.000ns
+  Clock Uncertainty:    0.035ns
+
+  Clock Uncertainty:          0.035ns  ((TSJ^2 + TIJ^2)^1/2 + DJ) / 2 + PE
+    Total System Jitter (TSJ):  0.070ns
+    Total Input Jitter (TIJ):   0.000ns
+    Discrete Jitter (DJ):       0.000ns
+    Phase Error (PE):           0.000ns
+
+  Maximum Data Path at Slow Process Corner: testcase/M_state_q_FSM_FFd4_1 to testcase/M_state_q_FSM_FFd4_3
+    Location             Delay type         Delay(ns)  Physical Resource
+                                                       Logical Resource(s)
+    -------------------------------------------------  -------------------
+    SLICE_X7Y21.AQ       Tcko                  0.430   testcase/M_state_q_FSM_FFd4_4
+                                                       testcase/M_state_q_FSM_FFd4_1
+    SLICE_X9Y21.D3       net (fanout=1)        0.846   testcase/M_state_q_FSM_FFd4_1
+    SLICE_X9Y21.D        Tilo                  0.259   testcase/io_dip[16]
+                                                       testcase/M_state_q_io_dip<16>1
+    SLICE_X6Y25.AX       net (fanout=11)       1.229   testcase/io_dip[16]
+    SLICE_X6Y25.COUT     Taxcy                 0.259   testcase/alu/compare/add/Maddsub_result_cy[3]
+                                                       testcase/alu/compare/add/Maddsub_result_cy<3>
+    SLICE_X6Y26.CIN      net (fanout=1)        0.003   testcase/alu/compare/add/Maddsub_result_cy[3]
+    SLICE_X6Y26.DMUX     Tcind                 0.289   testcase/alu/compare/add/Maddsub_result_cy[7]
+                                                       testcase/alu/compare/add/Maddsub_result_cy<7>
+    SLICE_X4Y27.D2       net (fanout=3)        1.044   testcase/alu/M_add_n
+    SLICE_X4Y27.CMUX     Topdc                 0.456   testcase/M_state_q_FSM_FFd4-In5
+                                                       testcase/alu/Mmux_io_led<16>2263_SW1_F
+                                                       testcase/alu/Mmux_io_led<16>2263_SW1
+    SLICE_X4Y27.A2       net (fanout=1)        0.741   testcase/alu/N61
+    SLICE_X4Y27.A        Tilo                  0.254   testcase/M_state_q_FSM_FFd4-In5
+                                                       testcase/alu/Mmux_io_led<16>2265
+    SLICE_X7Y26.C3       net (fanout=7)        0.608   testcase/M_alu_io_led[16]
+    SLICE_X7Y26.C        Tilo                  0.259   testcase/M_state_q_FSM_FFd4-In13
+                                                       testcase/M_state_q_FSM_FFd4-In14
+    SLICE_X4Y25.D6       net (fanout=1)        0.378   testcase/M_state_q_FSM_FFd4-In15
+    SLICE_X4Y25.D        Tilo                  0.254   testcase/M_state_q_FSM_FFd4-In17
+                                                       testcase/M_state_q_FSM_FFd4-In16
+    SLICE_X5Y23.C1       net (fanout=1)        0.785   testcase/M_state_q_FSM_FFd4-In17
+    SLICE_X5Y23.C        Tilo                  0.259   M_state_q_FSM_FFd4
+                                                       testcase/M_state_q_FSM_FFd4-In17
+    SLICE_X7Y21.CX       net (fanout=4)        1.049   testcase/M_state_q_FSM_FFd4-In
+    SLICE_X7Y21.CLK      Tdick                 0.114   testcase/M_state_q_FSM_FFd4_4
+                                                       testcase/M_state_q_FSM_FFd4_3
+    -------------------------------------------------  ---------------------------
+    Total                                      9.516ns (2.833ns logic, 6.683ns route)
+                                                       (29.8% logic, 70.2% route)
+
+--------------------------------------------------------------------------------
+Slack:                  10.521ns (requirement - (data path - clock path skew + uncertainty))
+  Source:               testcase/M_state_q_FSM_FFd3_1 (FF)
+  Destination:          testcase/M_state_q_FSM_FFd4_4 (FF)
+  Requirement:          20.000ns
+  Data Path Delay:      9.433ns (Levels of Logic = 8)
+  Clock Path Skew:      -0.011ns (0.324 - 0.335)
+  Source Clock:         clk_BUFGP rising at 0.000ns
+  Destination Clock:    clk_BUFGP rising at 20.000ns
+  Clock Uncertainty:    0.035ns
+
+  Clock Uncertainty:          0.035ns  ((TSJ^2 + TIJ^2)^1/2 + DJ) / 2 + PE
+    Total System Jitter (TSJ):  0.070ns
+    Total Input Jitter (TIJ):   0.000ns
+    Discrete Jitter (DJ):       0.000ns
+    Phase Error (PE):           0.000ns
+
+  Maximum Data Path at Slow Process Corner: testcase/M_state_q_FSM_FFd3_1 to testcase/M_state_q_FSM_FFd4_4
+    Location             Delay type         Delay(ns)  Physical Resource
+                                                       Logical Resource(s)
+    -------------------------------------------------  -------------------
+    SLICE_X11Y20.AQ      Tcko                  0.430   testcase/M_state_q_FSM_FFd3_3
+                                                       testcase/M_state_q_FSM_FFd3_1
+    SLICE_X9Y21.D2       net (fanout=1)        0.919   testcase/M_state_q_FSM_FFd3_1
+    SLICE_X9Y21.D        Tilo                  0.259   testcase/io_dip[16]
+                                                       testcase/M_state_q_io_dip<16>1
+    SLICE_X6Y25.AX       net (fanout=11)       1.229   testcase/io_dip[16]
+    SLICE_X6Y25.COUT     Taxcy                 0.259   testcase/alu/compare/add/Maddsub_result_cy[3]
+                                                       testcase/alu/compare/add/Maddsub_result_cy<3>
+    SLICE_X6Y26.CIN      net (fanout=1)        0.003   testcase/alu/compare/add/Maddsub_result_cy[3]
+    SLICE_X6Y26.DMUX     Tcind                 0.289   testcase/alu/compare/add/Maddsub_result_cy[7]
+                                                       testcase/alu/compare/add/Maddsub_result_cy<7>
+    SLICE_X4Y27.D2       net (fanout=3)        1.044   testcase/alu/M_add_n
+    SLICE_X4Y27.CMUX     Topdc                 0.456   testcase/M_state_q_FSM_FFd4-In5
+                                                       testcase/alu/Mmux_io_led<16>2263_SW1_F
+                                                       testcase/alu/Mmux_io_led<16>2263_SW1
+    SLICE_X4Y27.A2       net (fanout=1)        0.741   testcase/alu/N61
+    SLICE_X4Y27.A        Tilo                  0.254   testcase/M_state_q_FSM_FFd4-In5
+                                                       testcase/alu/Mmux_io_led<16>2265
+    SLICE_X7Y26.C3       net (fanout=7)        0.608   testcase/M_alu_io_led[16]
+    SLICE_X7Y26.C        Tilo                  0.259   testcase/M_state_q_FSM_FFd4-In13
+                                                       testcase/M_state_q_FSM_FFd4-In14
+    SLICE_X4Y25.D6       net (fanout=1)        0.378   testcase/M_state_q_FSM_FFd4-In15
+    SLICE_X4Y25.D        Tilo                  0.254   testcase/M_state_q_FSM_FFd4-In17
+                                                       testcase/M_state_q_FSM_FFd4-In16
+    SLICE_X5Y23.C1       net (fanout=1)        0.785   testcase/M_state_q_FSM_FFd4-In17
+    SLICE_X5Y23.C        Tilo                  0.259   M_state_q_FSM_FFd4
+                                                       testcase/M_state_q_FSM_FFd4-In17
+    SLICE_X7Y21.DX       net (fanout=4)        0.893   testcase/M_state_q_FSM_FFd4-In
+    SLICE_X7Y21.CLK      Tdick                 0.114   testcase/M_state_q_FSM_FFd4_4
+                                                       testcase/M_state_q_FSM_FFd4_4
+    -------------------------------------------------  ---------------------------
+    Total                                      9.433ns (2.833ns logic, 6.600ns route)
+                                                       (30.0% logic, 70.0% route)
+
+--------------------------------------------------------------------------------
+Slack:                  10.562ns (requirement - (data path - clock path skew + uncertainty))
+  Source:               testcase/M_state_q_FSM_FFd2_1 (FF)
+  Destination:          testcase/M_state_q_FSM_FFd4_3 (FF)
+  Requirement:          20.000ns
+  Data Path Delay:      9.391ns (Levels of Logic = 8)
+  Clock Path Skew:      -0.012ns (0.324 - 0.336)
+  Source Clock:         clk_BUFGP rising at 0.000ns
+  Destination Clock:    clk_BUFGP rising at 20.000ns
+  Clock Uncertainty:    0.035ns
+
+  Clock Uncertainty:          0.035ns  ((TSJ^2 + TIJ^2)^1/2 + DJ) / 2 + PE
+    Total System Jitter (TSJ):  0.070ns
+    Total Input Jitter (TIJ):   0.000ns
+    Discrete Jitter (DJ):       0.000ns
+    Phase Error (PE):           0.000ns
+
+  Maximum Data Path at Slow Process Corner: testcase/M_state_q_FSM_FFd2_1 to testcase/M_state_q_FSM_FFd4_3
+    Location             Delay type         Delay(ns)  Physical Resource
+                                                       Logical Resource(s)
+    -------------------------------------------------  -------------------
+    SLICE_X8Y20.AQ       Tcko                  0.525   testcase/M_state_q_FSM_FFd2_4
+                                                       testcase/M_state_q_FSM_FFd2_1
+    SLICE_X9Y21.D5       net (fanout=1)        0.626   testcase/M_state_q_FSM_FFd2_1
+    SLICE_X9Y21.D        Tilo                  0.259   testcase/io_dip[16]
+                                                       testcase/M_state_q_io_dip<16>1
+    SLICE_X6Y25.AX       net (fanout=11)       1.229   testcase/io_dip[16]
+    SLICE_X6Y25.COUT     Taxcy                 0.259   testcase/alu/compare/add/Maddsub_result_cy[3]
+                                                       testcase/alu/compare/add/Maddsub_result_cy<3>
+    SLICE_X6Y26.CIN      net (fanout=1)        0.003   testcase/alu/compare/add/Maddsub_result_cy[3]
+    SLICE_X6Y26.DMUX     Tcind                 0.289   testcase/alu/compare/add/Maddsub_result_cy[7]
+                                                       testcase/alu/compare/add/Maddsub_result_cy<7>
+    SLICE_X4Y27.D2       net (fanout=3)        1.044   testcase/alu/M_add_n
+    SLICE_X4Y27.CMUX     Topdc                 0.456   testcase/M_state_q_FSM_FFd4-In5
+                                                       testcase/alu/Mmux_io_led<16>2263_SW1_F
+                                                       testcase/alu/Mmux_io_led<16>2263_SW1
+    SLICE_X4Y27.A2       net (fanout=1)        0.741   testcase/alu/N61
+    SLICE_X4Y27.A        Tilo                  0.254   testcase/M_state_q_FSM_FFd4-In5
+                                                       testcase/alu/Mmux_io_led<16>2265
+    SLICE_X7Y26.C3       net (fanout=7)        0.608   testcase/M_alu_io_led[16]
+    SLICE_X7Y26.C        Tilo                  0.259   testcase/M_state_q_FSM_FFd4-In13
+                                                       testcase/M_state_q_FSM_FFd4-In14
+    SLICE_X4Y25.D6       net (fanout=1)        0.378   testcase/M_state_q_FSM_FFd4-In15
+    SLICE_X4Y25.D        Tilo                  0.254   testcase/M_state_q_FSM_FFd4-In17
+                                                       testcase/M_state_q_FSM_FFd4-In16
+    SLICE_X5Y23.C1       net (fanout=1)        0.785   testcase/M_state_q_FSM_FFd4-In17
+    SLICE_X5Y23.C        Tilo                  0.259   M_state_q_FSM_FFd4
+                                                       testcase/M_state_q_FSM_FFd4-In17
+    SLICE_X7Y21.CX       net (fanout=4)        1.049   testcase/M_state_q_FSM_FFd4-In
+    SLICE_X7Y21.CLK      Tdick                 0.114   testcase/M_state_q_FSM_FFd4_4
+                                                       testcase/M_state_q_FSM_FFd4_3
+    -------------------------------------------------  ---------------------------
+    Total                                      9.391ns (2.928ns logic, 6.463ns route)
+                                                       (31.2% logic, 68.8% route)
+
+--------------------------------------------------------------------------------
+Slack:                  10.574ns (requirement - (data path - clock path skew + uncertainty))
+  Source:               testcase/M_state_q_FSM_FFd3_1 (FF)
+  Destination:          testcase/M_state_q_FSM_FFd4_1 (FF)
+  Requirement:          20.000ns
+  Data Path Delay:      9.380ns (Levels of Logic = 8)
+  Clock Path Skew:      -0.011ns (0.324 - 0.335)
+  Source Clock:         clk_BUFGP rising at 0.000ns
+  Destination Clock:    clk_BUFGP rising at 20.000ns
+  Clock Uncertainty:    0.035ns
+
+  Clock Uncertainty:          0.035ns  ((TSJ^2 + TIJ^2)^1/2 + DJ) / 2 + PE
+    Total System Jitter (TSJ):  0.070ns
+    Total Input Jitter (TIJ):   0.000ns
+    Discrete Jitter (DJ):       0.000ns
+    Phase Error (PE):           0.000ns
+
+  Maximum Data Path at Slow Process Corner: testcase/M_state_q_FSM_FFd3_1 to testcase/M_state_q_FSM_FFd4_1
+    Location             Delay type         Delay(ns)  Physical Resource
+                                                       Logical Resource(s)
+    -------------------------------------------------  -------------------
+    SLICE_X11Y20.AQ      Tcko                  0.430   testcase/M_state_q_FSM_FFd3_3
+                                                       testcase/M_state_q_FSM_FFd3_1
+    SLICE_X9Y21.D2       net (fanout=1)        0.919   testcase/M_state_q_FSM_FFd3_1
+    SLICE_X9Y21.D        Tilo                  0.259   testcase/io_dip[16]
+                                                       testcase/M_state_q_io_dip<16>1
+    SLICE_X6Y25.AX       net (fanout=11)       1.229   testcase/io_dip[16]
+    SLICE_X6Y25.COUT     Taxcy                 0.259   testcase/alu/compare/add/Maddsub_result_cy[3]
+                                                       testcase/alu/compare/add/Maddsub_result_cy<3>
+    SLICE_X6Y26.CIN      net (fanout=1)        0.003   testcase/alu/compare/add/Maddsub_result_cy[3]
+    SLICE_X6Y26.DMUX     Tcind                 0.289   testcase/alu/compare/add/Maddsub_result_cy[7]
+                                                       testcase/alu/compare/add/Maddsub_result_cy<7>
+    SLICE_X4Y27.D2       net (fanout=3)        1.044   testcase/alu/M_add_n
+    SLICE_X4Y27.CMUX     Topdc                 0.456   testcase/M_state_q_FSM_FFd4-In5
+                                                       testcase/alu/Mmux_io_led<16>2263_SW1_F
+                                                       testcase/alu/Mmux_io_led<16>2263_SW1
+    SLICE_X4Y27.A2       net (fanout=1)        0.741   testcase/alu/N61
+    SLICE_X4Y27.A        Tilo                  0.254   testcase/M_state_q_FSM_FFd4-In5
+                                                       testcase/alu/Mmux_io_led<16>2265
+    SLICE_X7Y26.C3       net (fanout=7)        0.608   testcase/M_alu_io_led[16]
+    SLICE_X7Y26.C        Tilo                  0.259   testcase/M_state_q_FSM_FFd4-In13
+                                                       testcase/M_state_q_FSM_FFd4-In14
+    SLICE_X4Y25.D6       net (fanout=1)        0.378   testcase/M_state_q_FSM_FFd4-In15
+    SLICE_X4Y25.D        Tilo                  0.254   testcase/M_state_q_FSM_FFd4-In17
+                                                       testcase/M_state_q_FSM_FFd4-In16
+    SLICE_X5Y23.C1       net (fanout=1)        0.785   testcase/M_state_q_FSM_FFd4-In17
+    SLICE_X5Y23.C        Tilo                  0.259   M_state_q_FSM_FFd4
+                                                       testcase/M_state_q_FSM_FFd4-In17
+    SLICE_X7Y21.AX       net (fanout=4)        0.840   testcase/M_state_q_FSM_FFd4-In
+    SLICE_X7Y21.CLK      Tdick                 0.114   testcase/M_state_q_FSM_FFd4_4
+                                                       testcase/M_state_q_FSM_FFd4_1
+    -------------------------------------------------  ---------------------------
+    Total                                      9.380ns (2.833ns logic, 6.547ns route)
+                                                       (30.2% logic, 69.8% route)
+
+--------------------------------------------------------------------------------
+Slack:                  10.605ns (requirement - (data path - clock path skew + uncertainty))
+  Source:               testcase/M_state_q_FSM_FFd4_1 (FF)
+  Destination:          testcase/M_state_q_FSM_FFd4_4 (FF)
+  Requirement:          20.000ns
+  Data Path Delay:      9.360ns (Levels of Logic = 8)
+  Clock Path Skew:      0.000ns
+  Source Clock:         clk_BUFGP rising at 0.000ns
+  Destination Clock:    clk_BUFGP rising at 20.000ns
+  Clock Uncertainty:    0.035ns
+
+  Clock Uncertainty:          0.035ns  ((TSJ^2 + TIJ^2)^1/2 + DJ) / 2 + PE
+    Total System Jitter (TSJ):  0.070ns
+    Total Input Jitter (TIJ):   0.000ns
+    Discrete Jitter (DJ):       0.000ns
+    Phase Error (PE):           0.000ns
+
+  Maximum Data Path at Slow Process Corner: testcase/M_state_q_FSM_FFd4_1 to testcase/M_state_q_FSM_FFd4_4
+    Location             Delay type         Delay(ns)  Physical Resource
+                                                       Logical Resource(s)
+    -------------------------------------------------  -------------------
+    SLICE_X7Y21.AQ       Tcko                  0.430   testcase/M_state_q_FSM_FFd4_4
+                                                       testcase/M_state_q_FSM_FFd4_1
+    SLICE_X9Y21.D3       net (fanout=1)        0.846   testcase/M_state_q_FSM_FFd4_1
+    SLICE_X9Y21.D        Tilo                  0.259   testcase/io_dip[16]
+                                                       testcase/M_state_q_io_dip<16>1
+    SLICE_X6Y25.AX       net (fanout=11)       1.229   testcase/io_dip[16]
+    SLICE_X6Y25.COUT     Taxcy                 0.259   testcase/alu/compare/add/Maddsub_result_cy[3]
+                                                       testcase/alu/compare/add/Maddsub_result_cy<3>
+    SLICE_X6Y26.CIN      net (fanout=1)        0.003   testcase/alu/compare/add/Maddsub_result_cy[3]
+    SLICE_X6Y26.DMUX     Tcind                 0.289   testcase/alu/compare/add/Maddsub_result_cy[7]
+                                                       testcase/alu/compare/add/Maddsub_result_cy<7>
+    SLICE_X4Y27.D2       net (fanout=3)        1.044   testcase/alu/M_add_n
+    SLICE_X4Y27.CMUX     Topdc                 0.456   testcase/M_state_q_FSM_FFd4-In5
+                                                       testcase/alu/Mmux_io_led<16>2263_SW1_F
+                                                       testcase/alu/Mmux_io_led<16>2263_SW1
+    SLICE_X4Y27.A2       net (fanout=1)        0.741   testcase/alu/N61
+    SLICE_X4Y27.A        Tilo                  0.254   testcase/M_state_q_FSM_FFd4-In5
+                                                       testcase/alu/Mmux_io_led<16>2265
+    SLICE_X7Y26.C3       net (fanout=7)        0.608   testcase/M_alu_io_led[16]
+    SLICE_X7Y26.C        Tilo                  0.259   testcase/M_state_q_FSM_FFd4-In13
+                                                       testcase/M_state_q_FSM_FFd4-In14
+    SLICE_X4Y25.D6       net (fanout=1)        0.378   testcase/M_state_q_FSM_FFd4-In15
+    SLICE_X4Y25.D        Tilo                  0.254   testcase/M_state_q_FSM_FFd4-In17
+                                                       testcase/M_state_q_FSM_FFd4-In16
+    SLICE_X5Y23.C1       net (fanout=1)        0.785   testcase/M_state_q_FSM_FFd4-In17
+    SLICE_X5Y23.C        Tilo                  0.259   M_state_q_FSM_FFd4
+                                                       testcase/M_state_q_FSM_FFd4-In17
+    SLICE_X7Y21.DX       net (fanout=4)        0.893   testcase/M_state_q_FSM_FFd4-In
+    SLICE_X7Y21.CLK      Tdick                 0.114   testcase/M_state_q_FSM_FFd4_4
+                                                       testcase/M_state_q_FSM_FFd4_4
+    -------------------------------------------------  ---------------------------
+    Total                                      9.360ns (2.833ns logic, 6.527ns route)
+                                                       (30.3% logic, 69.7% route)
+
+--------------------------------------------------------------------------------
+Slack:                  10.630ns (requirement - (data path - clock path skew + uncertainty))
+  Source:               testcase/M_state_q_FSM_FFd3_1 (FF)
+  Destination:          testcase/M_state_q_FSM_FFd4_3 (FF)
+  Requirement:          20.000ns
+  Data Path Delay:      9.324ns (Levels of Logic = 8)
+  Clock Path Skew:      -0.011ns (0.324 - 0.335)
+  Source Clock:         clk_BUFGP rising at 0.000ns
+  Destination Clock:    clk_BUFGP rising at 20.000ns
+  Clock Uncertainty:    0.035ns
+
+  Clock Uncertainty:          0.035ns  ((TSJ^2 + TIJ^2)^1/2 + DJ) / 2 + PE
+    Total System Jitter (TSJ):  0.070ns
+    Total Input Jitter (TIJ):   0.000ns
+    Discrete Jitter (DJ):       0.000ns
+    Phase Error (PE):           0.000ns
+
+  Maximum Data Path at Slow Process Corner: testcase/M_state_q_FSM_FFd3_1 to testcase/M_state_q_FSM_FFd4_3
+    Location             Delay type         Delay(ns)  Physical Resource
+                                                       Logical Resource(s)
+    -------------------------------------------------  -------------------
+    SLICE_X11Y20.AQ      Tcko                  0.430   testcase/M_state_q_FSM_FFd3_3
+                                                       testcase/M_state_q_FSM_FFd3_1
+    SLICE_X9Y21.D2       net (fanout=1)        0.919   testcase/M_state_q_FSM_FFd3_1
+    SLICE_X9Y21.D        Tilo                  0.259   testcase/io_dip[16]
+                                                       testcase/M_state_q_io_dip<16>1
+    SLICE_X6Y25.AX       net (fanout=11)       1.229   testcase/io_dip[16]
+    SLICE_X6Y25.COUT     Taxcy                 0.259   testcase/alu/compare/add/Maddsub_result_cy[3]
+                                                       testcase/alu/compare/add/Maddsub_result_cy<3>
+    SLICE_X6Y26.CIN      net (fanout=1)        0.003   testcase/alu/compare/add/Maddsub_result_cy[3]
+    SLICE_X6Y26.CMUX     Tcinc                 0.289   testcase/alu/compare/add/Maddsub_result_cy[7]
+                                                       testcase/alu/compare/add/Maddsub_result_cy<7>
+    SLICE_X4Y27.D3       net (fanout=2)        0.779   testcase/alu/result[6]
+    SLICE_X4Y27.CMUX     Topdc                 0.456   testcase/M_state_q_FSM_FFd4-In5
+                                                       testcase/alu/Mmux_io_led<16>2263_SW1_F
+                                                       testcase/alu/Mmux_io_led<16>2263_SW1
+    SLICE_X4Y27.A2       net (fanout=1)        0.741   testcase/alu/N61
+    SLICE_X4Y27.A        Tilo                  0.254   testcase/M_state_q_FSM_FFd4-In5
+                                                       testcase/alu/Mmux_io_led<16>2265
+    SLICE_X7Y26.C3       net (fanout=7)        0.608   testcase/M_alu_io_led[16]
+    SLICE_X7Y26.C        Tilo                  0.259   testcase/M_state_q_FSM_FFd4-In13
+                                                       testcase/M_state_q_FSM_FFd4-In14
+    SLICE_X4Y25.D6       net (fanout=1)        0.378   testcase/M_state_q_FSM_FFd4-In15
+    SLICE_X4Y25.D        Tilo                  0.254   testcase/M_state_q_FSM_FFd4-In17
+                                                       testcase/M_state_q_FSM_FFd4-In16
+    SLICE_X5Y23.C1       net (fanout=1)        0.785   testcase/M_state_q_FSM_FFd4-In17
+    SLICE_X5Y23.C        Tilo                  0.259   M_state_q_FSM_FFd4
+                                                       testcase/M_state_q_FSM_FFd4-In17
+    SLICE_X7Y21.CX       net (fanout=4)        1.049   testcase/M_state_q_FSM_FFd4-In
+    SLICE_X7Y21.CLK      Tdick                 0.114   testcase/M_state_q_FSM_FFd4_4
+                                                       testcase/M_state_q_FSM_FFd4_3
+    -------------------------------------------------  ---------------------------
+    Total                                      9.324ns (2.833ns logic, 6.491ns route)
+                                                       (30.4% logic, 69.6% route)
+
+--------------------------------------------------------------------------------
+Slack:                  10.658ns (requirement - (data path - clock path skew + uncertainty))
+  Source:               testcase/M_state_q_FSM_FFd4_1 (FF)
+  Destination:          testcase/M_state_q_FSM_FFd4_1 (FF)
+  Requirement:          20.000ns
+  Data Path Delay:      9.307ns (Levels of Logic = 8)
+  Clock Path Skew:      0.000ns
+  Source Clock:         clk_BUFGP rising at 0.000ns
+  Destination Clock:    clk_BUFGP rising at 20.000ns
+  Clock Uncertainty:    0.035ns
+
+  Clock Uncertainty:          0.035ns  ((TSJ^2 + TIJ^2)^1/2 + DJ) / 2 + PE
+    Total System Jitter (TSJ):  0.070ns
+    Total Input Jitter (TIJ):   0.000ns
+    Discrete Jitter (DJ):       0.000ns
+    Phase Error (PE):           0.000ns
+
+  Maximum Data Path at Slow Process Corner: testcase/M_state_q_FSM_FFd4_1 to testcase/M_state_q_FSM_FFd4_1
+    Location             Delay type         Delay(ns)  Physical Resource
+                                                       Logical Resource(s)
+    -------------------------------------------------  -------------------
+    SLICE_X7Y21.AQ       Tcko                  0.430   testcase/M_state_q_FSM_FFd4_4
+                                                       testcase/M_state_q_FSM_FFd4_1
+    SLICE_X9Y21.D3       net (fanout=1)        0.846   testcase/M_state_q_FSM_FFd4_1
+    SLICE_X9Y21.D        Tilo                  0.259   testcase/io_dip[16]
+                                                       testcase/M_state_q_io_dip<16>1
+    SLICE_X6Y25.AX       net (fanout=11)       1.229   testcase/io_dip[16]
+    SLICE_X6Y25.COUT     Taxcy                 0.259   testcase/alu/compare/add/Maddsub_result_cy[3]
+                                                       testcase/alu/compare/add/Maddsub_result_cy<3>
+    SLICE_X6Y26.CIN      net (fanout=1)        0.003   testcase/alu/compare/add/Maddsub_result_cy[3]
+    SLICE_X6Y26.DMUX     Tcind                 0.289   testcase/alu/compare/add/Maddsub_result_cy[7]
+                                                       testcase/alu/compare/add/Maddsub_result_cy<7>
+    SLICE_X4Y27.D2       net (fanout=3)        1.044   testcase/alu/M_add_n
+    SLICE_X4Y27.CMUX     Topdc                 0.456   testcase/M_state_q_FSM_FFd4-In5
+                                                       testcase/alu/Mmux_io_led<16>2263_SW1_F
+                                                       testcase/alu/Mmux_io_led<16>2263_SW1
+    SLICE_X4Y27.A2       net (fanout=1)        0.741   testcase/alu/N61
+    SLICE_X4Y27.A        Tilo                  0.254   testcase/M_state_q_FSM_FFd4-In5
+                                                       testcase/alu/Mmux_io_led<16>2265
+    SLICE_X7Y26.C3       net (fanout=7)        0.608   testcase/M_alu_io_led[16]
+    SLICE_X7Y26.C        Tilo                  0.259   testcase/M_state_q_FSM_FFd4-In13
+                                                       testcase/M_state_q_FSM_FFd4-In14
+    SLICE_X4Y25.D6       net (fanout=1)        0.378   testcase/M_state_q_FSM_FFd4-In15
+    SLICE_X4Y25.D        Tilo                  0.254   testcase/M_state_q_FSM_FFd4-In17
+                                                       testcase/M_state_q_FSM_FFd4-In16
+    SLICE_X5Y23.C1       net (fanout=1)        0.785   testcase/M_state_q_FSM_FFd4-In17
+    SLICE_X5Y23.C        Tilo                  0.259   M_state_q_FSM_FFd4
+                                                       testcase/M_state_q_FSM_FFd4-In17
+    SLICE_X7Y21.AX       net (fanout=4)        0.840   testcase/M_state_q_FSM_FFd4-In
+    SLICE_X7Y21.CLK      Tdick                 0.114   testcase/M_state_q_FSM_FFd4_4
+                                                       testcase/M_state_q_FSM_FFd4_1
+    -------------------------------------------------  ---------------------------
+    Total                                      9.307ns (2.833ns logic, 6.474ns route)
+                                                       (30.4% logic, 69.6% route)
+
+--------------------------------------------------------------------------------
+Slack:                  10.674ns (requirement - (data path - clock path skew + uncertainty))
+  Source:               testcase/M_state_q_FSM_FFd2_4 (FF)
+  Destination:          testcase/M_state_q_FSM_FFd4_3 (FF)
+  Requirement:          20.000ns
+  Data Path Delay:      9.279ns (Levels of Logic = 6)
+  Clock Path Skew:      -0.012ns (0.324 - 0.336)
+  Source Clock:         clk_BUFGP rising at 0.000ns
+  Destination Clock:    clk_BUFGP rising at 20.000ns
+  Clock Uncertainty:    0.035ns
+
+  Clock Uncertainty:          0.035ns  ((TSJ^2 + TIJ^2)^1/2 + DJ) / 2 + PE
+    Total System Jitter (TSJ):  0.070ns
+    Total Input Jitter (TIJ):   0.000ns
+    Discrete Jitter (DJ):       0.000ns
+    Phase Error (PE):           0.000ns
+
+  Maximum Data Path at Slow Process Corner: testcase/M_state_q_FSM_FFd2_4 to testcase/M_state_q_FSM_FFd4_3
+    Location             Delay type         Delay(ns)  Physical Resource
+                                                       Logical Resource(s)
+    -------------------------------------------------  -------------------
+    SLICE_X8Y20.DQ       Tcko                  0.525   testcase/M_state_q_FSM_FFd2_4
+                                                       testcase/M_state_q_FSM_FFd2_4
+    SLICE_X7Y25.B2       net (fanout=11)       1.671   testcase/M_state_q_FSM_FFd2_4
+    SLICE_X7Y25.B        Tilo                  0.259   testcase/N35
+                                                       testcase/alu/Mmux_led111
+    SLICE_X7Y21.A4       net (fanout=12)       1.122   testcase/Mmux_io_led<16>219
+    SLICE_X7Y21.A        Tilo                  0.259   testcase/M_state_q_FSM_FFd4_4
+                                                       testcase/M_state_q_FSM_FFd4-In4_SW0
+    SLICE_X8Y21.B3       net (fanout=1)        1.085   testcase/N78
+    SLICE_X8Y21.B        Tilo                  0.254   testcase/N86
+                                                       testcase/M_state_q_FSM_FFd4-In4
+    SLICE_X4Y27.B1       net (fanout=1)        1.282   testcase/M_state_q_FSM_FFd4-In4
+    SLICE_X4Y27.B        Tilo                  0.254   testcase/M_state_q_FSM_FFd4-In5
+                                                       testcase/M_state_q_FSM_FFd4-In5
+    SLICE_X5Y23.D4       net (fanout=1)        0.744   testcase/M_state_q_FSM_FFd4-In5
+    SLICE_X5Y23.D        Tilo                  0.259   M_state_q_FSM_FFd4
+                                                       testcase/M_state_q_FSM_FFd4-In9
+    SLICE_X5Y23.C6       net (fanout=1)        0.143   testcase/M_state_q_FSM_FFd4-In9
+    SLICE_X5Y23.C        Tilo                  0.259   M_state_q_FSM_FFd4
+                                                       testcase/M_state_q_FSM_FFd4-In17
+    SLICE_X7Y21.CX       net (fanout=4)        1.049   testcase/M_state_q_FSM_FFd4-In
+    SLICE_X7Y21.CLK      Tdick                 0.114   testcase/M_state_q_FSM_FFd4_4
+                                                       testcase/M_state_q_FSM_FFd4_3
+    -------------------------------------------------  ---------------------------
+    Total                                      9.279ns (2.183ns logic, 7.096ns route)
+                                                       (23.5% logic, 76.5% route)
+
+--------------------------------------------------------------------------------
+Slack:                  10.714ns (requirement - (data path - clock path skew + uncertainty))
+  Source:               testcase/M_state_q_FSM_FFd4_1 (FF)
+  Destination:          testcase/M_state_q_FSM_FFd4_3 (FF)
+  Requirement:          20.000ns
+  Data Path Delay:      9.251ns (Levels of Logic = 8)
+  Clock Path Skew:      0.000ns
+  Source Clock:         clk_BUFGP rising at 0.000ns
+  Destination Clock:    clk_BUFGP rising at 20.000ns
+  Clock Uncertainty:    0.035ns
+
+  Clock Uncertainty:          0.035ns  ((TSJ^2 + TIJ^2)^1/2 + DJ) / 2 + PE
+    Total System Jitter (TSJ):  0.070ns
+    Total Input Jitter (TIJ):   0.000ns
+    Discrete Jitter (DJ):       0.000ns
+    Phase Error (PE):           0.000ns
+
+  Maximum Data Path at Slow Process Corner: testcase/M_state_q_FSM_FFd4_1 to testcase/M_state_q_FSM_FFd4_3
+    Location             Delay type         Delay(ns)  Physical Resource
+                                                       Logical Resource(s)
+    -------------------------------------------------  -------------------
+    SLICE_X7Y21.AQ       Tcko                  0.430   testcase/M_state_q_FSM_FFd4_4
+                                                       testcase/M_state_q_FSM_FFd4_1
+    SLICE_X9Y21.D3       net (fanout=1)        0.846   testcase/M_state_q_FSM_FFd4_1
+    SLICE_X9Y21.D        Tilo                  0.259   testcase/io_dip[16]
+                                                       testcase/M_state_q_io_dip<16>1
+    SLICE_X6Y25.AX       net (fanout=11)       1.229   testcase/io_dip[16]
+    SLICE_X6Y25.COUT     Taxcy                 0.259   testcase/alu/compare/add/Maddsub_result_cy[3]
+                                                       testcase/alu/compare/add/Maddsub_result_cy<3>
+    SLICE_X6Y26.CIN      net (fanout=1)        0.003   testcase/alu/compare/add/Maddsub_result_cy[3]
+    SLICE_X6Y26.CMUX     Tcinc                 0.289   testcase/alu/compare/add/Maddsub_result_cy[7]
+                                                       testcase/alu/compare/add/Maddsub_result_cy<7>
+    SLICE_X4Y27.D3       net (fanout=2)        0.779   testcase/alu/result[6]
+    SLICE_X4Y27.CMUX     Topdc                 0.456   testcase/M_state_q_FSM_FFd4-In5
+                                                       testcase/alu/Mmux_io_led<16>2263_SW1_F
+                                                       testcase/alu/Mmux_io_led<16>2263_SW1
+    SLICE_X4Y27.A2       net (fanout=1)        0.741   testcase/alu/N61
+    SLICE_X4Y27.A        Tilo                  0.254   testcase/M_state_q_FSM_FFd4-In5
+                                                       testcase/alu/Mmux_io_led<16>2265
+    SLICE_X7Y26.C3       net (fanout=7)        0.608   testcase/M_alu_io_led[16]
+    SLICE_X7Y26.C        Tilo                  0.259   testcase/M_state_q_FSM_FFd4-In13
+                                                       testcase/M_state_q_FSM_FFd4-In14
+    SLICE_X4Y25.D6       net (fanout=1)        0.378   testcase/M_state_q_FSM_FFd4-In15
+    SLICE_X4Y25.D        Tilo                  0.254   testcase/M_state_q_FSM_FFd4-In17
+                                                       testcase/M_state_q_FSM_FFd4-In16
+    SLICE_X5Y23.C1       net (fanout=1)        0.785   testcase/M_state_q_FSM_FFd4-In17
+    SLICE_X5Y23.C        Tilo                  0.259   M_state_q_FSM_FFd4
+                                                       testcase/M_state_q_FSM_FFd4-In17
+    SLICE_X7Y21.CX       net (fanout=4)        1.049   testcase/M_state_q_FSM_FFd4-In
+    SLICE_X7Y21.CLK      Tdick                 0.114   testcase/M_state_q_FSM_FFd4_4
+                                                       testcase/M_state_q_FSM_FFd4_3
+    -------------------------------------------------  ---------------------------
+    Total                                      9.251ns (2.833ns logic, 6.418ns route)
+                                                       (30.6% logic, 69.4% route)
+
+--------------------------------------------------------------------------------
+Slack:                  10.718ns (requirement - (data path - clock path skew + uncertainty))
+  Source:               testcase/M_state_q_FSM_FFd2_1 (FF)
+  Destination:          testcase/M_state_q_FSM_FFd4_4 (FF)
+  Requirement:          20.000ns
+  Data Path Delay:      9.235ns (Levels of Logic = 8)
+  Clock Path Skew:      -0.012ns (0.324 - 0.336)
+  Source Clock:         clk_BUFGP rising at 0.000ns
+  Destination Clock:    clk_BUFGP rising at 20.000ns
+  Clock Uncertainty:    0.035ns
+
+  Clock Uncertainty:          0.035ns  ((TSJ^2 + TIJ^2)^1/2 + DJ) / 2 + PE
+    Total System Jitter (TSJ):  0.070ns
+    Total Input Jitter (TIJ):   0.000ns
+    Discrete Jitter (DJ):       0.000ns
+    Phase Error (PE):           0.000ns
+
+  Maximum Data Path at Slow Process Corner: testcase/M_state_q_FSM_FFd2_1 to testcase/M_state_q_FSM_FFd4_4
+    Location             Delay type         Delay(ns)  Physical Resource
+                                                       Logical Resource(s)
+    -------------------------------------------------  -------------------
+    SLICE_X8Y20.AQ       Tcko                  0.525   testcase/M_state_q_FSM_FFd2_4
+                                                       testcase/M_state_q_FSM_FFd2_1
+    SLICE_X9Y21.D5       net (fanout=1)        0.626   testcase/M_state_q_FSM_FFd2_1
+    SLICE_X9Y21.D        Tilo                  0.259   testcase/io_dip[16]
+                                                       testcase/M_state_q_io_dip<16>1
+    SLICE_X6Y25.AX       net (fanout=11)       1.229   testcase/io_dip[16]
+    SLICE_X6Y25.COUT     Taxcy                 0.259   testcase/alu/compare/add/Maddsub_result_cy[3]
+                                                       testcase/alu/compare/add/Maddsub_result_cy<3>
+    SLICE_X6Y26.CIN      net (fanout=1)        0.003   testcase/alu/compare/add/Maddsub_result_cy[3]
+    SLICE_X6Y26.DMUX     Tcind                 0.289   testcase/alu/compare/add/Maddsub_result_cy[7]
+                                                       testcase/alu/compare/add/Maddsub_result_cy<7>
+    SLICE_X4Y27.D2       net (fanout=3)        1.044   testcase/alu/M_add_n
+    SLICE_X4Y27.CMUX     Topdc                 0.456   testcase/M_state_q_FSM_FFd4-In5
+                                                       testcase/alu/Mmux_io_led<16>2263_SW1_F
+                                                       testcase/alu/Mmux_io_led<16>2263_SW1
+    SLICE_X4Y27.A2       net (fanout=1)        0.741   testcase/alu/N61
+    SLICE_X4Y27.A        Tilo                  0.254   testcase/M_state_q_FSM_FFd4-In5
+                                                       testcase/alu/Mmux_io_led<16>2265
+    SLICE_X7Y26.C3       net (fanout=7)        0.608   testcase/M_alu_io_led[16]
+    SLICE_X7Y26.C        Tilo                  0.259   testcase/M_state_q_FSM_FFd4-In13
+                                                       testcase/M_state_q_FSM_FFd4-In14
+    SLICE_X4Y25.D6       net (fanout=1)        0.378   testcase/M_state_q_FSM_FFd4-In15
+    SLICE_X4Y25.D        Tilo                  0.254   testcase/M_state_q_FSM_FFd4-In17
+                                                       testcase/M_state_q_FSM_FFd4-In16
+    SLICE_X5Y23.C1       net (fanout=1)        0.785   testcase/M_state_q_FSM_FFd4-In17
+    SLICE_X5Y23.C        Tilo                  0.259   M_state_q_FSM_FFd4
+                                                       testcase/M_state_q_FSM_FFd4-In17
+    SLICE_X7Y21.DX       net (fanout=4)        0.893   testcase/M_state_q_FSM_FFd4-In
+    SLICE_X7Y21.CLK      Tdick                 0.114   testcase/M_state_q_FSM_FFd4_4
+                                                       testcase/M_state_q_FSM_FFd4_4
+    -------------------------------------------------  ---------------------------
+    Total                                      9.235ns (2.928ns logic, 6.307ns route)
+                                                       (31.7% logic, 68.3% route)
+
+--------------------------------------------------------------------------------
+Slack:                  10.726ns (requirement - (data path - clock path skew + uncertainty))
+  Source:               testcase/M_state_q_FSM_FFd3_1 (FF)
+  Destination:          testcase/M_state_q_FSM_FFd4_2 (FF)
+  Requirement:          20.000ns
+  Data Path Delay:      9.228ns (Levels of Logic = 8)
+  Clock Path Skew:      -0.011ns (0.324 - 0.335)
+  Source Clock:         clk_BUFGP rising at 0.000ns
+  Destination Clock:    clk_BUFGP rising at 20.000ns
+  Clock Uncertainty:    0.035ns
+
+  Clock Uncertainty:          0.035ns  ((TSJ^2 + TIJ^2)^1/2 + DJ) / 2 + PE
+    Total System Jitter (TSJ):  0.070ns
+    Total Input Jitter (TIJ):   0.000ns
+    Discrete Jitter (DJ):       0.000ns
+    Phase Error (PE):           0.000ns
+
+  Maximum Data Path at Slow Process Corner: testcase/M_state_q_FSM_FFd3_1 to testcase/M_state_q_FSM_FFd4_2
+    Location             Delay type         Delay(ns)  Physical Resource
+                                                       Logical Resource(s)
+    -------------------------------------------------  -------------------
+    SLICE_X11Y20.AQ      Tcko                  0.430   testcase/M_state_q_FSM_FFd3_3
+                                                       testcase/M_state_q_FSM_FFd3_1
+    SLICE_X9Y21.D2       net (fanout=1)        0.919   testcase/M_state_q_FSM_FFd3_1
+    SLICE_X9Y21.D        Tilo                  0.259   testcase/io_dip[16]
+                                                       testcase/M_state_q_io_dip<16>1
+    SLICE_X6Y25.AX       net (fanout=11)       1.229   testcase/io_dip[16]
+    SLICE_X6Y25.COUT     Taxcy                 0.259   testcase/alu/compare/add/Maddsub_result_cy[3]
+                                                       testcase/alu/compare/add/Maddsub_result_cy<3>
+    SLICE_X6Y26.CIN      net (fanout=1)        0.003   testcase/alu/compare/add/Maddsub_result_cy[3]
+    SLICE_X6Y26.DMUX     Tcind                 0.289   testcase/alu/compare/add/Maddsub_result_cy[7]
+                                                       testcase/alu/compare/add/Maddsub_result_cy<7>
+    SLICE_X4Y27.D2       net (fanout=3)        1.044   testcase/alu/M_add_n
+    SLICE_X4Y27.CMUX     Topdc                 0.456   testcase/M_state_q_FSM_FFd4-In5
+                                                       testcase/alu/Mmux_io_led<16>2263_SW1_F
+                                                       testcase/alu/Mmux_io_led<16>2263_SW1
+    SLICE_X4Y27.A2       net (fanout=1)        0.741   testcase/alu/N61
+    SLICE_X4Y27.A        Tilo                  0.254   testcase/M_state_q_FSM_FFd4-In5
+                                                       testcase/alu/Mmux_io_led<16>2265
+    SLICE_X7Y26.C3       net (fanout=7)        0.608   testcase/M_alu_io_led[16]
+    SLICE_X7Y26.C        Tilo                  0.259   testcase/M_state_q_FSM_FFd4-In13
+                                                       testcase/M_state_q_FSM_FFd4-In14
+    SLICE_X4Y25.D6       net (fanout=1)        0.378   testcase/M_state_q_FSM_FFd4-In15
+    SLICE_X4Y25.D        Tilo                  0.254   testcase/M_state_q_FSM_FFd4-In17
+                                                       testcase/M_state_q_FSM_FFd4-In16
+    SLICE_X5Y23.C1       net (fanout=1)        0.785   testcase/M_state_q_FSM_FFd4-In17
+    SLICE_X5Y23.C        Tilo                  0.259   M_state_q_FSM_FFd4
+                                                       testcase/M_state_q_FSM_FFd4-In17
+    SLICE_X7Y21.BX       net (fanout=4)        0.688   testcase/M_state_q_FSM_FFd4-In
+    SLICE_X7Y21.CLK      Tdick                 0.114   testcase/M_state_q_FSM_FFd4_4
+                                                       testcase/M_state_q_FSM_FFd4_2
+    -------------------------------------------------  ---------------------------
+    Total                                      9.228ns (2.833ns logic, 6.395ns route)
+                                                       (30.7% logic, 69.3% route)
+
+--------------------------------------------------------------------------------
+Slack:                  10.730ns (requirement - (data path - clock path skew + uncertainty))
+  Source:               testcase/M_state_q_FSM_FFd3_1 (FF)
+  Destination:          testcase/M_state_q_FSM_FFd4_3 (FF)
+  Requirement:          20.000ns
+  Data Path Delay:      9.224ns (Levels of Logic = 8)
+  Clock Path Skew:      -0.011ns (0.324 - 0.335)
+  Source Clock:         clk_BUFGP rising at 0.000ns
+  Destination Clock:    clk_BUFGP rising at 20.000ns
+  Clock Uncertainty:    0.035ns
+
+  Clock Uncertainty:          0.035ns  ((TSJ^2 + TIJ^2)^1/2 + DJ) / 2 + PE
+    Total System Jitter (TSJ):  0.070ns
+    Total Input Jitter (TIJ):   0.000ns
+    Discrete Jitter (DJ):       0.000ns
+    Phase Error (PE):           0.000ns
+
+  Maximum Data Path at Slow Process Corner: testcase/M_state_q_FSM_FFd3_1 to testcase/M_state_q_FSM_FFd4_3
+    Location             Delay type         Delay(ns)  Physical Resource
+                                                       Logical Resource(s)
+    -------------------------------------------------  -------------------
+    SLICE_X11Y20.AQ      Tcko                  0.430   testcase/M_state_q_FSM_FFd3_3
+                                                       testcase/M_state_q_FSM_FFd3_1
+    SLICE_X9Y21.D2       net (fanout=1)        0.919   testcase/M_state_q_FSM_FFd3_1
+    SLICE_X9Y21.D        Tilo                  0.259   testcase/io_dip[16]
+                                                       testcase/M_state_q_io_dip<16>1
+    SLICE_X6Y25.AX       net (fanout=11)       1.229   testcase/io_dip[16]
+    SLICE_X6Y25.COUT     Taxcy                 0.259   testcase/alu/compare/add/Maddsub_result_cy[3]
+                                                       testcase/alu/compare/add/Maddsub_result_cy<3>
+    SLICE_X6Y26.CIN      net (fanout=1)        0.003   testcase/alu/compare/add/Maddsub_result_cy[3]
+    SLICE_X6Y26.DMUX     Tcind                 0.289   testcase/alu/compare/add/Maddsub_result_cy[7]
+                                                       testcase/alu/compare/add/Maddsub_result_cy<7>
+    SLICE_X5Y26.B6       net (fanout=3)        0.386   testcase/alu/M_add_n
+    SLICE_X5Y26.B        Tilo                  0.259   testcase/io_dip[19]
+                                                       testcase/alu/Mmux_io_led<16>2261
+    SLICE_X6Y23.C4       net (fanout=4)        0.877   testcase/Mmux_io_led<16>226
+    SLICE_X6Y23.CMUX     Tilo                  0.403   testcase/M_state_q_FSM_FFd4-In6
+                                                       testcase/alu/Mmux_io_led<16>2265_SW5_G
+                                                       testcase/alu/Mmux_io_led<16>2265_SW5
+    SLICE_X4Y25.C2       net (fanout=1)        0.956   testcase/N54
+    SLICE_X4Y25.C        Tilo                  0.255   testcase/M_state_q_FSM_FFd4-In17
+                                                       testcase/M_state_q_FSM_FFd4-In16_SW2
+    SLICE_X4Y25.D5       net (fanout=1)        0.239   testcase/N36
+    SLICE_X4Y25.D        Tilo                  0.254   testcase/M_state_q_FSM_FFd4-In17
+                                                       testcase/M_state_q_FSM_FFd4-In16
+    SLICE_X5Y23.C1       net (fanout=1)        0.785   testcase/M_state_q_FSM_FFd4-In17
+    SLICE_X5Y23.C        Tilo                  0.259   M_state_q_FSM_FFd4
+                                                       testcase/M_state_q_FSM_FFd4-In17
+    SLICE_X7Y21.CX       net (fanout=4)        1.049   testcase/M_state_q_FSM_FFd4-In
+    SLICE_X7Y21.CLK      Tdick                 0.114   testcase/M_state_q_FSM_FFd4_4
+                                                       testcase/M_state_q_FSM_FFd4_3
+    -------------------------------------------------  ---------------------------
+    Total                                      9.224ns (2.781ns logic, 6.443ns route)
+                                                       (30.1% logic, 69.9% route)
+
+--------------------------------------------------------------------------------
+Slack:                  10.751ns (requirement - (data path - clock path skew + uncertainty))
+  Source:               testcase/blink/M_counter_q_11 (FF)
+  Destination:          testcase/M_state_q_FSM_FFd4_3 (FF)
+  Requirement:          20.000ns
+  Data Path Delay:      9.156ns (Levels of Logic = 6)
+  Clock Path Skew:      -0.058ns (0.629 - 0.687)
+  Source Clock:         clk_BUFGP rising at 0.000ns
+  Destination Clock:    clk_BUFGP rising at 20.000ns
+  Clock Uncertainty:    0.035ns
+
+  Clock Uncertainty:          0.035ns  ((TSJ^2 + TIJ^2)^1/2 + DJ) / 2 + PE
+    Total System Jitter (TSJ):  0.070ns
+    Total Input Jitter (TIJ):   0.000ns
+    Discrete Jitter (DJ):       0.000ns
+    Phase Error (PE):           0.000ns
+
+  Maximum Data Path at Slow Process Corner: testcase/blink/M_counter_q_11 to testcase/M_state_q_FSM_FFd4_3
+    Location             Delay type         Delay(ns)  Physical Resource
+                                                       Logical Resource(s)
+    -------------------------------------------------  -------------------
+    SLICE_X18Y13.DQ      Tcko                  0.476   testcase/M_blink_hold[11]
+                                                       testcase/blink/M_counter_q_11
+    SLICE_X17Y12.A1      net (fanout=3)        0.996   testcase/M_blink_hold[11]
+    SLICE_X17Y12.A       Tilo                  0.259   testcase/M_blink_hold[26]_GND_3_o_equal_43_o<26>1
+                                                       testcase/M_blink_hold[26]_GND_3_o_equal_43_o<26>2
+    SLICE_X17Y15.A2      net (fanout=1)        0.940   testcase/M_blink_hold[26]_GND_3_o_equal_43_o<26>1
+    SLICE_X17Y15.A       Tilo                  0.259   testcase/M_blink_hold[26]_GND_3_o_equal_43_o<26>4
+                                                       testcase/M_blink_hold[26]_GND_3_o_equal_43_o<26>6
+    SLICE_X7Y22.D2       net (fanout=6)        2.318   testcase/M_blink_hold[26]_GND_3_o_equal_43_o
+    SLICE_X7Y22.D        Tilo                  0.259   testcase/M_state_q_FSM_FFd4-In2
+                                                       testcase/M_state_q_FSM_FFd4-In2
+    SLICE_X8Y22.A3       net (fanout=1)        0.645   testcase/M_state_q_FSM_FFd4-In2
+    SLICE_X8Y22.A        Tilo                  0.254   testcase/M_state_q_FSM_FFd3-In2
+                                                       testcase/M_state_q_FSM_FFd4-In3
+    SLICE_X5Y23.D3       net (fanout=1)        0.926   testcase/M_state_q_FSM_FFd4-In3
+    SLICE_X5Y23.D        Tilo                  0.259   M_state_q_FSM_FFd4
+                                                       testcase/M_state_q_FSM_FFd4-In9
+    SLICE_X5Y23.C6       net (fanout=1)        0.143   testcase/M_state_q_FSM_FFd4-In9
+    SLICE_X5Y23.C        Tilo                  0.259   M_state_q_FSM_FFd4
+                                                       testcase/M_state_q_FSM_FFd4-In17
+    SLICE_X7Y21.CX       net (fanout=4)        1.049   testcase/M_state_q_FSM_FFd4-In
+    SLICE_X7Y21.CLK      Tdick                 0.114   testcase/M_state_q_FSM_FFd4_4
+                                                       testcase/M_state_q_FSM_FFd4_3
+    -------------------------------------------------  ---------------------------
+    Total                                      9.156ns (2.139ns logic, 7.017ns route)
+                                                       (23.4% logic, 76.6% route)
+
+--------------------------------------------------------------------------------
+Slack:                  10.768ns (requirement - (data path - clock path skew + uncertainty))
+  Source:               testcase/M_state_q_FSM_FFd3_1 (FF)
+  Destination:          testcase/M_state_q_FSM_FFd3_2 (FF)
+  Requirement:          20.000ns
+  Data Path Delay:      9.197ns (Levels of Logic = 7)
+  Clock Path Skew:      0.000ns
+  Source Clock:         clk_BUFGP rising at 0.000ns
+  Destination Clock:    clk_BUFGP rising at 20.000ns
+  Clock Uncertainty:    0.035ns
+
+  Clock Uncertainty:          0.035ns  ((TSJ^2 + TIJ^2)^1/2 + DJ) / 2 + PE
+    Total System Jitter (TSJ):  0.070ns
+    Total Input Jitter (TIJ):   0.000ns
+    Discrete Jitter (DJ):       0.000ns
+    Phase Error (PE):           0.000ns
+
+  Maximum Data Path at Slow Process Corner: testcase/M_state_q_FSM_FFd3_1 to testcase/M_state_q_FSM_FFd3_2
+    Location             Delay type         Delay(ns)  Physical Resource
+                                                       Logical Resource(s)
+    -------------------------------------------------  -------------------
+    SLICE_X11Y20.AQ      Tcko                  0.430   testcase/M_state_q_FSM_FFd3_3
+                                                       testcase/M_state_q_FSM_FFd3_1
+    SLICE_X9Y21.D2       net (fanout=1)        0.919   testcase/M_state_q_FSM_FFd3_1
+    SLICE_X9Y21.D        Tilo                  0.259   testcase/io_dip[16]
+                                                       testcase/M_state_q_io_dip<16>1
+    SLICE_X6Y25.AX       net (fanout=11)       1.229   testcase/io_dip[16]
+    SLICE_X6Y25.COUT     Taxcy                 0.259   testcase/alu/compare/add/Maddsub_result_cy[3]
+                                                       testcase/alu/compare/add/Maddsub_result_cy<3>
+    SLICE_X6Y26.CIN      net (fanout=1)        0.003   testcase/alu/compare/add/Maddsub_result_cy[3]
+    SLICE_X6Y26.DMUX     Tcind                 0.289   testcase/alu/compare/add/Maddsub_result_cy[7]
+                                                       testcase/alu/compare/add/Maddsub_result_cy<7>
+    SLICE_X4Y27.D2       net (fanout=3)        1.044   testcase/alu/M_add_n
+    SLICE_X4Y27.CMUX     Topdc                 0.456   testcase/M_state_q_FSM_FFd4-In5
+                                                       testcase/alu/Mmux_io_led<16>2263_SW1_F
+                                                       testcase/alu/Mmux_io_led<16>2263_SW1
+    SLICE_X4Y27.A2       net (fanout=1)        0.741   testcase/alu/N61
+    SLICE_X4Y27.A        Tilo                  0.254   testcase/M_state_q_FSM_FFd4-In5
+                                                       testcase/alu/Mmux_io_led<16>2265
+    SLICE_X10Y20.D5      net (fanout=7)        1.555   testcase/M_alu_io_led[16]
+    SLICE_X10Y20.D       Tilo                  0.235   M_state_q_FSM_FFd3
+                                                       testcase/M_state_q_FSM_FFd3-In6
+    SLICE_X10Y20.C4      net (fanout=1)        0.489   testcase/M_state_q_FSM_FFd3-In6
+    SLICE_X10Y20.C       Tilo                  0.235   M_state_q_FSM_FFd3
+                                                       testcase/M_state_q_FSM_FFd3-In10
+    SLICE_X11Y20.BX      net (fanout=3)        0.686   testcase/M_state_q_FSM_FFd3-In
+    SLICE_X11Y20.CLK     Tdick                 0.114   testcase/M_state_q_FSM_FFd3_3
+                                                       testcase/M_state_q_FSM_FFd3_2
+    -------------------------------------------------  ---------------------------
+    Total                                      9.197ns (2.531ns logic, 6.666ns route)
+                                                       (27.5% logic, 72.5% route)
+
+--------------------------------------------------------------------------------
+Slack:                  10.771ns (requirement - (data path - clock path skew + uncertainty))
+  Source:               testcase/M_state_q_FSM_FFd2_1 (FF)
+  Destination:          testcase/M_state_q_FSM_FFd4_1 (FF)
+  Requirement:          20.000ns
+  Data Path Delay:      9.182ns (Levels of Logic = 8)
+  Clock Path Skew:      -0.012ns (0.324 - 0.336)
+  Source Clock:         clk_BUFGP rising at 0.000ns
+  Destination Clock:    clk_BUFGP rising at 20.000ns
+  Clock Uncertainty:    0.035ns
+
+  Clock Uncertainty:          0.035ns  ((TSJ^2 + TIJ^2)^1/2 + DJ) / 2 + PE
+    Total System Jitter (TSJ):  0.070ns
+    Total Input Jitter (TIJ):   0.000ns
+    Discrete Jitter (DJ):       0.000ns
+    Phase Error (PE):           0.000ns
+
+  Maximum Data Path at Slow Process Corner: testcase/M_state_q_FSM_FFd2_1 to testcase/M_state_q_FSM_FFd4_1
+    Location             Delay type         Delay(ns)  Physical Resource
+                                                       Logical Resource(s)
+    -------------------------------------------------  -------------------
+    SLICE_X8Y20.AQ       Tcko                  0.525   testcase/M_state_q_FSM_FFd2_4
+                                                       testcase/M_state_q_FSM_FFd2_1
+    SLICE_X9Y21.D5       net (fanout=1)        0.626   testcase/M_state_q_FSM_FFd2_1
+    SLICE_X9Y21.D        Tilo                  0.259   testcase/io_dip[16]
+                                                       testcase/M_state_q_io_dip<16>1
+    SLICE_X6Y25.AX       net (fanout=11)       1.229   testcase/io_dip[16]
+    SLICE_X6Y25.COUT     Taxcy                 0.259   testcase/alu/compare/add/Maddsub_result_cy[3]
+                                                       testcase/alu/compare/add/Maddsub_result_cy<3>
+    SLICE_X6Y26.CIN      net (fanout=1)        0.003   testcase/alu/compare/add/Maddsub_result_cy[3]
+    SLICE_X6Y26.DMUX     Tcind                 0.289   testcase/alu/compare/add/Maddsub_result_cy[7]
+                                                       testcase/alu/compare/add/Maddsub_result_cy<7>
+    SLICE_X4Y27.D2       net (fanout=3)        1.044   testcase/alu/M_add_n
+    SLICE_X4Y27.CMUX     Topdc                 0.456   testcase/M_state_q_FSM_FFd4-In5
+                                                       testcase/alu/Mmux_io_led<16>2263_SW1_F
+                                                       testcase/alu/Mmux_io_led<16>2263_SW1
+    SLICE_X4Y27.A2       net (fanout=1)        0.741   testcase/alu/N61
+    SLICE_X4Y27.A        Tilo                  0.254   testcase/M_state_q_FSM_FFd4-In5
+                                                       testcase/alu/Mmux_io_led<16>2265
+    SLICE_X7Y26.C3       net (fanout=7)        0.608   testcase/M_alu_io_led[16]
+    SLICE_X7Y26.C        Tilo                  0.259   testcase/M_state_q_FSM_FFd4-In13
+                                                       testcase/M_state_q_FSM_FFd4-In14
+    SLICE_X4Y25.D6       net (fanout=1)        0.378   testcase/M_state_q_FSM_FFd4-In15
+    SLICE_X4Y25.D        Tilo                  0.254   testcase/M_state_q_FSM_FFd4-In17
+                                                       testcase/M_state_q_FSM_FFd4-In16
+    SLICE_X5Y23.C1       net (fanout=1)        0.785   testcase/M_state_q_FSM_FFd4-In17
+    SLICE_X5Y23.C        Tilo                  0.259   M_state_q_FSM_FFd4
+                                                       testcase/M_state_q_FSM_FFd4-In17
+    SLICE_X7Y21.AX       net (fanout=4)        0.840   testcase/M_state_q_FSM_FFd4-In
+    SLICE_X7Y21.CLK      Tdick                 0.114   testcase/M_state_q_FSM_FFd4_4
+                                                       testcase/M_state_q_FSM_FFd4_1
+    -------------------------------------------------  ---------------------------
+    Total                                      9.182ns (2.928ns logic, 6.254ns route)
+                                                       (31.9% logic, 68.1% route)
+
+--------------------------------------------------------------------------------
+Slack:                  10.786ns (requirement - (data path - clock path skew + uncertainty))
+  Source:               testcase/M_state_q_FSM_FFd3_1 (FF)
+  Destination:          testcase/M_state_q_FSM_FFd4_4 (FF)
+  Requirement:          20.000ns
+  Data Path Delay:      9.168ns (Levels of Logic = 8)
+  Clock Path Skew:      -0.011ns (0.324 - 0.335)
+  Source Clock:         clk_BUFGP rising at 0.000ns
+  Destination Clock:    clk_BUFGP rising at 20.000ns
+  Clock Uncertainty:    0.035ns
+
+  Clock Uncertainty:          0.035ns  ((TSJ^2 + TIJ^2)^1/2 + DJ) / 2 + PE
+    Total System Jitter (TSJ):  0.070ns
+    Total Input Jitter (TIJ):   0.000ns
+    Discrete Jitter (DJ):       0.000ns
+    Phase Error (PE):           0.000ns
+
+  Maximum Data Path at Slow Process Corner: testcase/M_state_q_FSM_FFd3_1 to testcase/M_state_q_FSM_FFd4_4
+    Location             Delay type         Delay(ns)  Physical Resource
+                                                       Logical Resource(s)
+    -------------------------------------------------  -------------------
+    SLICE_X11Y20.AQ      Tcko                  0.430   testcase/M_state_q_FSM_FFd3_3
+                                                       testcase/M_state_q_FSM_FFd3_1
+    SLICE_X9Y21.D2       net (fanout=1)        0.919   testcase/M_state_q_FSM_FFd3_1
+    SLICE_X9Y21.D        Tilo                  0.259   testcase/io_dip[16]
+                                                       testcase/M_state_q_io_dip<16>1
+    SLICE_X6Y25.AX       net (fanout=11)       1.229   testcase/io_dip[16]
+    SLICE_X6Y25.COUT     Taxcy                 0.259   testcase/alu/compare/add/Maddsub_result_cy[3]
+                                                       testcase/alu/compare/add/Maddsub_result_cy<3>
+    SLICE_X6Y26.CIN      net (fanout=1)        0.003   testcase/alu/compare/add/Maddsub_result_cy[3]
+    SLICE_X6Y26.CMUX     Tcinc                 0.289   testcase/alu/compare/add/Maddsub_result_cy[7]
+                                                       testcase/alu/compare/add/Maddsub_result_cy<7>
+    SLICE_X4Y27.D3       net (fanout=2)        0.779   testcase/alu/result[6]
+    SLICE_X4Y27.CMUX     Topdc                 0.456   testcase/M_state_q_FSM_FFd4-In5
+                                                       testcase/alu/Mmux_io_led<16>2263_SW1_F
+                                                       testcase/alu/Mmux_io_led<16>2263_SW1
+    SLICE_X4Y27.A2       net (fanout=1)        0.741   testcase/alu/N61
+    SLICE_X4Y27.A        Tilo                  0.254   testcase/M_state_q_FSM_FFd4-In5
+                                                       testcase/alu/Mmux_io_led<16>2265
+    SLICE_X7Y26.C3       net (fanout=7)        0.608   testcase/M_alu_io_led[16]
+    SLICE_X7Y26.C        Tilo                  0.259   testcase/M_state_q_FSM_FFd4-In13
+                                                       testcase/M_state_q_FSM_FFd4-In14
+    SLICE_X4Y25.D6       net (fanout=1)        0.378   testcase/M_state_q_FSM_FFd4-In15
+    SLICE_X4Y25.D        Tilo                  0.254   testcase/M_state_q_FSM_FFd4-In17
+                                                       testcase/M_state_q_FSM_FFd4-In16
+    SLICE_X5Y23.C1       net (fanout=1)        0.785   testcase/M_state_q_FSM_FFd4-In17
+    SLICE_X5Y23.C        Tilo                  0.259   M_state_q_FSM_FFd4
+                                                       testcase/M_state_q_FSM_FFd4-In17
+    SLICE_X7Y21.DX       net (fanout=4)        0.893   testcase/M_state_q_FSM_FFd4-In
+    SLICE_X7Y21.CLK      Tdick                 0.114   testcase/M_state_q_FSM_FFd4_4
+                                                       testcase/M_state_q_FSM_FFd4_4
+    -------------------------------------------------  ---------------------------
+    Total                                      9.168ns (2.833ns logic, 6.335ns route)
+                                                       (30.9% logic, 69.1% route)
+
+--------------------------------------------------------------------------------
+Slack:                  10.797ns (requirement - (data path - clock path skew + uncertainty))
+  Source:               testcase/M_state_q_FSM_FFd3_1 (FF)
+  Destination:          testcase/M_state_q_FSM_FFd4_3 (FF)
+  Requirement:          20.000ns
+  Data Path Delay:      9.157ns (Levels of Logic = 7)
+  Clock Path Skew:      -0.011ns (0.324 - 0.335)
+  Source Clock:         clk_BUFGP rising at 0.000ns
+  Destination Clock:    clk_BUFGP rising at 20.000ns
+  Clock Uncertainty:    0.035ns
+
+  Clock Uncertainty:          0.035ns  ((TSJ^2 + TIJ^2)^1/2 + DJ) / 2 + PE
+    Total System Jitter (TSJ):  0.070ns
+    Total Input Jitter (TIJ):   0.000ns
+    Discrete Jitter (DJ):       0.000ns
+    Phase Error (PE):           0.000ns
+
+  Maximum Data Path at Slow Process Corner: testcase/M_state_q_FSM_FFd3_1 to testcase/M_state_q_FSM_FFd4_3
+    Location             Delay type         Delay(ns)  Physical Resource
+                                                       Logical Resource(s)
+    -------------------------------------------------  -------------------
+    SLICE_X11Y20.AQ      Tcko                  0.430   testcase/M_state_q_FSM_FFd3_3
+                                                       testcase/M_state_q_FSM_FFd3_1
+    SLICE_X9Y21.D2       net (fanout=1)        0.919   testcase/M_state_q_FSM_FFd3_1
+    SLICE_X9Y21.D        Tilo                  0.259   testcase/io_dip[16]
+                                                       testcase/M_state_q_io_dip<16>1
+    SLICE_X6Y25.AX       net (fanout=11)       1.229   testcase/io_dip[16]
+    SLICE_X6Y25.BMUX     Taxb                  0.403   testcase/alu/compare/add/Maddsub_result_cy[3]
+                                                       testcase/alu/compare/add/Maddsub_result_cy<3>
+    SLICE_X4Y26.B2       net (fanout=1)        0.988   testcase/alu/result[1]
+    SLICE_X4Y26.B        Tilo                  0.254   testcase/N34
+                                                       testcase/alu/Mmux_io_led<16>2262
+    SLICE_X4Y26.A5       net (fanout=2)        0.247   testcase/alu/Mmux_io_led<16>2261
+    SLICE_X4Y26.A        Tilo                  0.254   testcase/N34
+                                                       testcase/alu/Mmux_io_led<16>2263
+    SLICE_X4Y26.D2       net (fanout=3)        0.966   testcase/Mmux_io_led<16>2262
+    SLICE_X4Y26.D        Tilo                  0.254   testcase/N34
+                                                       testcase/M_state_q_FSM_FFd4-In16_SW0
+    SLICE_X4Y25.D4       net (fanout=1)        0.493   testcase/N34
+    SLICE_X4Y25.D        Tilo                  0.254   testcase/M_state_q_FSM_FFd4-In17
+                                                       testcase/M_state_q_FSM_FFd4-In16
+    SLICE_X5Y23.C1       net (fanout=1)        0.785   testcase/M_state_q_FSM_FFd4-In17
+    SLICE_X5Y23.C        Tilo                  0.259   M_state_q_FSM_FFd4
+                                                       testcase/M_state_q_FSM_FFd4-In17
+    SLICE_X7Y21.CX       net (fanout=4)        1.049   testcase/M_state_q_FSM_FFd4-In
+    SLICE_X7Y21.CLK      Tdick                 0.114   testcase/M_state_q_FSM_FFd4_4
+                                                       testcase/M_state_q_FSM_FFd4_3
+    -------------------------------------------------  ---------------------------
+    Total                                      9.157ns (2.481ns logic, 6.676ns route)
+                                                       (27.1% logic, 72.9% route)
+
+--------------------------------------------------------------------------------
+Slack:                  10.799ns (requirement - (data path - clock path skew + uncertainty))
+  Source:               testcase/M_state_q_FSM_FFd1_1 (FF)
+  Destination:          testcase/M_state_q_FSM_FFd4_3 (FF)
+  Requirement:          20.000ns
+  Data Path Delay:      9.154ns (Levels of Logic = 8)
+  Clock Path Skew:      -0.012ns (0.324 - 0.336)
+  Source Clock:         clk_BUFGP rising at 0.000ns
+  Destination Clock:    clk_BUFGP rising at 20.000ns
+  Clock Uncertainty:    0.035ns
+
+  Clock Uncertainty:          0.035ns  ((TSJ^2 + TIJ^2)^1/2 + DJ) / 2 + PE
+    Total System Jitter (TSJ):  0.070ns
+    Total Input Jitter (TIJ):   0.000ns
+    Discrete Jitter (DJ):       0.000ns
+    Phase Error (PE):           0.000ns
+
+  Maximum Data Path at Slow Process Corner: testcase/M_state_q_FSM_FFd1_1 to testcase/M_state_q_FSM_FFd4_3
+    Location             Delay type         Delay(ns)  Physical Resource
+                                                       Logical Resource(s)
+    -------------------------------------------------  -------------------
+    SLICE_X9Y20.BQ       Tcko                  0.430   testcase/M_state_q_FSM_FFd1_3
+                                                       testcase/M_state_q_FSM_FFd1_1
+    SLICE_X9Y21.D4       net (fanout=2)        0.484   testcase/M_state_q_FSM_FFd1_1
+    SLICE_X9Y21.D        Tilo                  0.259   testcase/io_dip[16]
+                                                       testcase/M_state_q_io_dip<16>1
+    SLICE_X6Y25.AX       net (fanout=11)       1.229   testcase/io_dip[16]
+    SLICE_X6Y25.COUT     Taxcy                 0.259   testcase/alu/compare/add/Maddsub_result_cy[3]
+                                                       testcase/alu/compare/add/Maddsub_result_cy<3>
+    SLICE_X6Y26.CIN      net (fanout=1)        0.003   testcase/alu/compare/add/Maddsub_result_cy[3]
+    SLICE_X6Y26.DMUX     Tcind                 0.289   testcase/alu/compare/add/Maddsub_result_cy[7]
+                                                       testcase/alu/compare/add/Maddsub_result_cy<7>
+    SLICE_X4Y27.D2       net (fanout=3)        1.044   testcase/alu/M_add_n
+    SLICE_X4Y27.CMUX     Topdc                 0.456   testcase/M_state_q_FSM_FFd4-In5
+                                                       testcase/alu/Mmux_io_led<16>2263_SW1_F
+                                                       testcase/alu/Mmux_io_led<16>2263_SW1
+    SLICE_X4Y27.A2       net (fanout=1)        0.741   testcase/alu/N61
+    SLICE_X4Y27.A        Tilo                  0.254   testcase/M_state_q_FSM_FFd4-In5
+                                                       testcase/alu/Mmux_io_led<16>2265
+    SLICE_X7Y26.C3       net (fanout=7)        0.608   testcase/M_alu_io_led[16]
+    SLICE_X7Y26.C        Tilo                  0.259   testcase/M_state_q_FSM_FFd4-In13
+                                                       testcase/M_state_q_FSM_FFd4-In14
+    SLICE_X4Y25.D6       net (fanout=1)        0.378   testcase/M_state_q_FSM_FFd4-In15
+    SLICE_X4Y25.D        Tilo                  0.254   testcase/M_state_q_FSM_FFd4-In17
+                                                       testcase/M_state_q_FSM_FFd4-In16
+    SLICE_X5Y23.C1       net (fanout=1)        0.785   testcase/M_state_q_FSM_FFd4-In17
+    SLICE_X5Y23.C        Tilo                  0.259   M_state_q_FSM_FFd4
+                                                       testcase/M_state_q_FSM_FFd4-In17
+    SLICE_X7Y21.CX       net (fanout=4)        1.049   testcase/M_state_q_FSM_FFd4-In
+    SLICE_X7Y21.CLK      Tdick                 0.114   testcase/M_state_q_FSM_FFd4_4
+                                                       testcase/M_state_q_FSM_FFd4_3
+    -------------------------------------------------  ---------------------------
+    Total                                      9.154ns (2.833ns logic, 6.321ns route)
+                                                       (30.9% logic, 69.1% route)
+
+--------------------------------------------------------------------------------
+Slack:                  10.810ns (requirement - (data path - clock path skew + uncertainty))
+  Source:               testcase/M_state_q_FSM_FFd4_1 (FF)
+  Destination:          testcase/M_state_q_FSM_FFd4_2 (FF)
+  Requirement:          20.000ns
+  Data Path Delay:      9.155ns (Levels of Logic = 8)
+  Clock Path Skew:      0.000ns
+  Source Clock:         clk_BUFGP rising at 0.000ns
+  Destination Clock:    clk_BUFGP rising at 20.000ns
+  Clock Uncertainty:    0.035ns
+
+  Clock Uncertainty:          0.035ns  ((TSJ^2 + TIJ^2)^1/2 + DJ) / 2 + PE
+    Total System Jitter (TSJ):  0.070ns
+    Total Input Jitter (TIJ):   0.000ns
+    Discrete Jitter (DJ):       0.000ns
+    Phase Error (PE):           0.000ns
+
+  Maximum Data Path at Slow Process Corner: testcase/M_state_q_FSM_FFd4_1 to testcase/M_state_q_FSM_FFd4_2
+    Location             Delay type         Delay(ns)  Physical Resource
+                                                       Logical Resource(s)
+    -------------------------------------------------  -------------------
+    SLICE_X7Y21.AQ       Tcko                  0.430   testcase/M_state_q_FSM_FFd4_4
+                                                       testcase/M_state_q_FSM_FFd4_1
+    SLICE_X9Y21.D3       net (fanout=1)        0.846   testcase/M_state_q_FSM_FFd4_1
+    SLICE_X9Y21.D        Tilo                  0.259   testcase/io_dip[16]
+                                                       testcase/M_state_q_io_dip<16>1
+    SLICE_X6Y25.AX       net (fanout=11)       1.229   testcase/io_dip[16]
+    SLICE_X6Y25.COUT     Taxcy                 0.259   testcase/alu/compare/add/Maddsub_result_cy[3]
+                                                       testcase/alu/compare/add/Maddsub_result_cy<3>
+    SLICE_X6Y26.CIN      net (fanout=1)        0.003   testcase/alu/compare/add/Maddsub_result_cy[3]
+    SLICE_X6Y26.DMUX     Tcind                 0.289   testcase/alu/compare/add/Maddsub_result_cy[7]
+                                                       testcase/alu/compare/add/Maddsub_result_cy<7>
+    SLICE_X4Y27.D2       net (fanout=3)        1.044   testcase/alu/M_add_n
+    SLICE_X4Y27.CMUX     Topdc                 0.456   testcase/M_state_q_FSM_FFd4-In5
+                                                       testcase/alu/Mmux_io_led<16>2263_SW1_F
+                                                       testcase/alu/Mmux_io_led<16>2263_SW1
+    SLICE_X4Y27.A2       net (fanout=1)        0.741   testcase/alu/N61
+    SLICE_X4Y27.A        Tilo                  0.254   testcase/M_state_q_FSM_FFd4-In5
+                                                       testcase/alu/Mmux_io_led<16>2265
+    SLICE_X7Y26.C3       net (fanout=7)        0.608   testcase/M_alu_io_led[16]
+    SLICE_X7Y26.C        Tilo                  0.259   testcase/M_state_q_FSM_FFd4-In13
+                                                       testcase/M_state_q_FSM_FFd4-In14
+    SLICE_X4Y25.D6       net (fanout=1)        0.378   testcase/M_state_q_FSM_FFd4-In15
+    SLICE_X4Y25.D        Tilo                  0.254   testcase/M_state_q_FSM_FFd4-In17
+                                                       testcase/M_state_q_FSM_FFd4-In16
+    SLICE_X5Y23.C1       net (fanout=1)        0.785   testcase/M_state_q_FSM_FFd4-In17
+    SLICE_X5Y23.C        Tilo                  0.259   M_state_q_FSM_FFd4
+                                                       testcase/M_state_q_FSM_FFd4-In17
+    SLICE_X7Y21.BX       net (fanout=4)        0.688   testcase/M_state_q_FSM_FFd4-In
+    SLICE_X7Y21.CLK      Tdick                 0.114   testcase/M_state_q_FSM_FFd4_4
+                                                       testcase/M_state_q_FSM_FFd4_2
+    -------------------------------------------------  ---------------------------
+    Total                                      9.155ns (2.833ns logic, 6.322ns route)
+                                                       (30.9% logic, 69.1% route)
+
+--------------------------------------------------------------------------------
+Slack:                  10.810ns (requirement - (data path - clock path skew + uncertainty))
+  Source:               testcase/M_state_q_FSM_FFd3_1 (FF)
+  Destination:          testcase/M_state_q_FSM_FFd4_3 (FF)
+  Requirement:          20.000ns
+  Data Path Delay:      9.144ns (Levels of Logic = 7)
+  Clock Path Skew:      -0.011ns (0.324 - 0.335)
+  Source Clock:         clk_BUFGP rising at 0.000ns
+  Destination Clock:    clk_BUFGP rising at 20.000ns
+  Clock Uncertainty:    0.035ns
+
+  Clock Uncertainty:          0.035ns  ((TSJ^2 + TIJ^2)^1/2 + DJ) / 2 + PE
+    Total System Jitter (TSJ):  0.070ns
+    Total Input Jitter (TIJ):   0.000ns
+    Discrete Jitter (DJ):       0.000ns
+    Phase Error (PE):           0.000ns
+
+  Maximum Data Path at Slow Process Corner: testcase/M_state_q_FSM_FFd3_1 to testcase/M_state_q_FSM_FFd4_3
+    Location             Delay type         Delay(ns)  Physical Resource
+                                                       Logical Resource(s)
+    -------------------------------------------------  -------------------
+    SLICE_X11Y20.AQ      Tcko                  0.430   testcase/M_state_q_FSM_FFd3_3
+                                                       testcase/M_state_q_FSM_FFd3_1
+    SLICE_X9Y21.D2       net (fanout=1)        0.919   testcase/M_state_q_FSM_FFd3_1
+    SLICE_X9Y21.D        Tilo                  0.259   testcase/io_dip[16]
+                                                       testcase/M_state_q_io_dip<16>1
+    SLICE_X6Y25.AX       net (fanout=11)       1.229   testcase/io_dip[16]
+    SLICE_X6Y25.AMUX     Taxa                  0.294   testcase/alu/compare/add/Maddsub_result_cy[3]
+                                                       testcase/alu/compare/add/Maddsub_result_cy<3>
+    SLICE_X4Y27.C3       net (fanout=7)        0.882   testcase/alu/M_adder_io_led2[0]
+    SLICE_X4Y27.CMUX     Tilo                  0.430   testcase/M_state_q_FSM_FFd4-In5
+                                                       testcase/alu/Mmux_io_led<16>2263_SW1_G
+                                                       testcase/alu/Mmux_io_led<16>2263_SW1
+    SLICE_X4Y27.A2       net (fanout=1)        0.741   testcase/alu/N61
+    SLICE_X4Y27.A        Tilo                  0.254   testcase/M_state_q_FSM_FFd4-In5
+                                                       testcase/alu/Mmux_io_led<16>2265
+    SLICE_X7Y26.C3       net (fanout=7)        0.608   testcase/M_alu_io_led[16]
+    SLICE_X7Y26.C        Tilo                  0.259   testcase/M_state_q_FSM_FFd4-In13
+                                                       testcase/M_state_q_FSM_FFd4-In14
+    SLICE_X4Y25.D6       net (fanout=1)        0.378   testcase/M_state_q_FSM_FFd4-In15
+    SLICE_X4Y25.D        Tilo                  0.254   testcase/M_state_q_FSM_FFd4-In17
+                                                       testcase/M_state_q_FSM_FFd4-In16
+    SLICE_X5Y23.C1       net (fanout=1)        0.785   testcase/M_state_q_FSM_FFd4-In17
+    SLICE_X5Y23.C        Tilo                  0.259   M_state_q_FSM_FFd4
+                                                       testcase/M_state_q_FSM_FFd4-In17
+    SLICE_X7Y21.CX       net (fanout=4)        1.049   testcase/M_state_q_FSM_FFd4-In
+    SLICE_X7Y21.CLK      Tdick                 0.114   testcase/M_state_q_FSM_FFd4_4
+                                                       testcase/M_state_q_FSM_FFd4_3
+    -------------------------------------------------  ---------------------------
+    Total                                      9.144ns (2.553ns logic, 6.591ns route)
+                                                       (27.9% logic, 72.1% route)
+
+--------------------------------------------------------------------------------
+Slack:                  10.814ns (requirement - (data path - clock path skew + uncertainty))
+  Source:               testcase/M_state_q_FSM_FFd4_1 (FF)
+  Destination:          testcase/M_state_q_FSM_FFd4_3 (FF)
+  Requirement:          20.000ns
+  Data Path Delay:      9.151ns (Levels of Logic = 8)
+  Clock Path Skew:      0.000ns
+  Source Clock:         clk_BUFGP rising at 0.000ns
+  Destination Clock:    clk_BUFGP rising at 20.000ns
+  Clock Uncertainty:    0.035ns
+
+  Clock Uncertainty:          0.035ns  ((TSJ^2 + TIJ^2)^1/2 + DJ) / 2 + PE
+    Total System Jitter (TSJ):  0.070ns
+    Total Input Jitter (TIJ):   0.000ns
+    Discrete Jitter (DJ):       0.000ns
+    Phase Error (PE):           0.000ns
+
+  Maximum Data Path at Slow Process Corner: testcase/M_state_q_FSM_FFd4_1 to testcase/M_state_q_FSM_FFd4_3
+    Location             Delay type         Delay(ns)  Physical Resource
+                                                       Logical Resource(s)
+    -------------------------------------------------  -------------------
+    SLICE_X7Y21.AQ       Tcko                  0.430   testcase/M_state_q_FSM_FFd4_4
+                                                       testcase/M_state_q_FSM_FFd4_1
+    SLICE_X9Y21.D3       net (fanout=1)        0.846   testcase/M_state_q_FSM_FFd4_1
+    SLICE_X9Y21.D        Tilo                  0.259   testcase/io_dip[16]
+                                                       testcase/M_state_q_io_dip<16>1
+    SLICE_X6Y25.AX       net (fanout=11)       1.229   testcase/io_dip[16]
+    SLICE_X6Y25.COUT     Taxcy                 0.259   testcase/alu/compare/add/Maddsub_result_cy[3]
+                                                       testcase/alu/compare/add/Maddsub_result_cy<3>
+    SLICE_X6Y26.CIN      net (fanout=1)        0.003   testcase/alu/compare/add/Maddsub_result_cy[3]
+    SLICE_X6Y26.DMUX     Tcind                 0.289   testcase/alu/compare/add/Maddsub_result_cy[7]
+                                                       testcase/alu/compare/add/Maddsub_result_cy<7>
+    SLICE_X5Y26.B6       net (fanout=3)        0.386   testcase/alu/M_add_n
+    SLICE_X5Y26.B        Tilo                  0.259   testcase/io_dip[19]
+                                                       testcase/alu/Mmux_io_led<16>2261
+    SLICE_X6Y23.C4       net (fanout=4)        0.877   testcase/Mmux_io_led<16>226
+    SLICE_X6Y23.CMUX     Tilo                  0.403   testcase/M_state_q_FSM_FFd4-In6
+                                                       testcase/alu/Mmux_io_led<16>2265_SW5_G
+                                                       testcase/alu/Mmux_io_led<16>2265_SW5
+    SLICE_X4Y25.C2       net (fanout=1)        0.956   testcase/N54
+    SLICE_X4Y25.C        Tilo                  0.255   testcase/M_state_q_FSM_FFd4-In17
+                                                       testcase/M_state_q_FSM_FFd4-In16_SW2
+    SLICE_X4Y25.D5       net (fanout=1)        0.239   testcase/N36
+    SLICE_X4Y25.D        Tilo                  0.254   testcase/M_state_q_FSM_FFd4-In17
+                                                       testcase/M_state_q_FSM_FFd4-In16
+    SLICE_X5Y23.C1       net (fanout=1)        0.785   testcase/M_state_q_FSM_FFd4-In17
+    SLICE_X5Y23.C        Tilo                  0.259   M_state_q_FSM_FFd4
+                                                       testcase/M_state_q_FSM_FFd4-In17
+    SLICE_X7Y21.CX       net (fanout=4)        1.049   testcase/M_state_q_FSM_FFd4-In
+    SLICE_X7Y21.CLK      Tdick                 0.114   testcase/M_state_q_FSM_FFd4_4
+                                                       testcase/M_state_q_FSM_FFd4_3
+    -------------------------------------------------  ---------------------------
+    Total                                      9.151ns (2.781ns logic, 6.370ns route)
+                                                       (30.4% logic, 69.6% route)
+
+--------------------------------------------------------------------------------
+Slack:                  10.818ns (requirement - (data path - clock path skew + uncertainty))
+  Source:               testcase/M_state_q_FSM_FFd4_1 (FF)
+  Destination:          testcase/M_state_q_FSM_FFd3_2 (FF)
+  Requirement:          20.000ns
+  Data Path Delay:      9.124ns (Levels of Logic = 7)
+  Clock Path Skew:      -0.023ns (0.318 - 0.341)
+  Source Clock:         clk_BUFGP rising at 0.000ns
+  Destination Clock:    clk_BUFGP rising at 20.000ns
+  Clock Uncertainty:    0.035ns
+
+  Clock Uncertainty:          0.035ns  ((TSJ^2 + TIJ^2)^1/2 + DJ) / 2 + PE
+    Total System Jitter (TSJ):  0.070ns
+    Total Input Jitter (TIJ):   0.000ns
+    Discrete Jitter (DJ):       0.000ns
+    Phase Error (PE):           0.000ns
+
+  Maximum Data Path at Slow Process Corner: testcase/M_state_q_FSM_FFd4_1 to testcase/M_state_q_FSM_FFd3_2
+    Location             Delay type         Delay(ns)  Physical Resource
+                                                       Logical Resource(s)
+    -------------------------------------------------  -------------------
+    SLICE_X7Y21.AQ       Tcko                  0.430   testcase/M_state_q_FSM_FFd4_4
+                                                       testcase/M_state_q_FSM_FFd4_1
+    SLICE_X9Y21.D3       net (fanout=1)        0.846   testcase/M_state_q_FSM_FFd4_1
+    SLICE_X9Y21.D        Tilo                  0.259   testcase/io_dip[16]
+                                                       testcase/M_state_q_io_dip<16>1
+    SLICE_X6Y25.AX       net (fanout=11)       1.229   testcase/io_dip[16]
+    SLICE_X6Y25.COUT     Taxcy                 0.259   testcase/alu/compare/add/Maddsub_result_cy[3]
+                                                       testcase/alu/compare/add/Maddsub_result_cy<3>
+    SLICE_X6Y26.CIN      net (fanout=1)        0.003   testcase/alu/compare/add/Maddsub_result_cy[3]
+    SLICE_X6Y26.DMUX     Tcind                 0.289   testcase/alu/compare/add/Maddsub_result_cy[7]
+                                                       testcase/alu/compare/add/Maddsub_result_cy<7>
+    SLICE_X4Y27.D2       net (fanout=3)        1.044   testcase/alu/M_add_n
+    SLICE_X4Y27.CMUX     Topdc                 0.456   testcase/M_state_q_FSM_FFd4-In5
+                                                       testcase/alu/Mmux_io_led<16>2263_SW1_F
+                                                       testcase/alu/Mmux_io_led<16>2263_SW1
+    SLICE_X4Y27.A2       net (fanout=1)        0.741   testcase/alu/N61
+    SLICE_X4Y27.A        Tilo                  0.254   testcase/M_state_q_FSM_FFd4-In5
+                                                       testcase/alu/Mmux_io_led<16>2265
+    SLICE_X10Y20.D5      net (fanout=7)        1.555   testcase/M_alu_io_led[16]
+    SLICE_X10Y20.D       Tilo                  0.235   M_state_q_FSM_FFd3
+                                                       testcase/M_state_q_FSM_FFd3-In6
+    SLICE_X10Y20.C4      net (fanout=1)        0.489   testcase/M_state_q_FSM_FFd3-In6
+    SLICE_X10Y20.C       Tilo                  0.235   M_state_q_FSM_FFd3
+                                                       testcase/M_state_q_FSM_FFd3-In10
+    SLICE_X11Y20.BX      net (fanout=3)        0.686   testcase/M_state_q_FSM_FFd3-In
+    SLICE_X11Y20.CLK     Tdick                 0.114   testcase/M_state_q_FSM_FFd3_3
+                                                       testcase/M_state_q_FSM_FFd3_2
+    -------------------------------------------------  ---------------------------
+    Total                                      9.124ns (2.531ns logic, 6.593ns route)
+                                                       (27.7% logic, 72.3% route)
+
+--------------------------------------------------------------------------------
+Slack:                  10.824ns (requirement - (data path - clock path skew + uncertainty))
+  Source:               testcase/M_state_q_FSM_FFd3_1 (FF)
+  Destination:          testcase/M_state_q_FSM_FFd4_3 (FF)
+  Requirement:          20.000ns
+  Data Path Delay:      9.130ns (Levels of Logic = 7)
+  Clock Path Skew:      -0.011ns (0.324 - 0.335)
+  Source Clock:         clk_BUFGP rising at 0.000ns
+  Destination Clock:    clk_BUFGP rising at 20.000ns
+  Clock Uncertainty:    0.035ns
+
+  Clock Uncertainty:          0.035ns  ((TSJ^2 + TIJ^2)^1/2 + DJ) / 2 + PE
+    Total System Jitter (TSJ):  0.070ns
+    Total Input Jitter (TIJ):   0.000ns
+    Discrete Jitter (DJ):       0.000ns
+    Phase Error (PE):           0.000ns
+
+  Maximum Data Path at Slow Process Corner: testcase/M_state_q_FSM_FFd3_1 to testcase/M_state_q_FSM_FFd4_3
+    Location             Delay type         Delay(ns)  Physical Resource
+                                                       Logical Resource(s)
+    -------------------------------------------------  -------------------
+    SLICE_X11Y20.AQ      Tcko                  0.430   testcase/M_state_q_FSM_FFd3_3
+                                                       testcase/M_state_q_FSM_FFd3_1
+    SLICE_X9Y21.D2       net (fanout=1)        0.919   testcase/M_state_q_FSM_FFd3_1
+    SLICE_X9Y21.D        Tilo                  0.259   testcase/io_dip[16]
+                                                       testcase/M_state_q_io_dip<16>1
+    SLICE_X6Y21.AX       net (fanout=11)       0.752   testcase/io_dip[16]
+    SLICE_X6Y21.DMUX     Taxd                  0.492   testcase/alu/adder/Maddsub_result_cy[3]
+                                                       testcase/alu/adder/Maddsub_result_cy<3>
+    SLICE_X7Y21.A1       net (fanout=5)        0.576   testcase/M_adder_io_led2[3]
+    SLICE_X7Y21.A        Tilo                  0.259   testcase/M_state_q_FSM_FFd4_4
+                                                       testcase/M_state_q_FSM_FFd4-In4_SW0
+    SLICE_X8Y21.B3       net (fanout=1)        1.085   testcase/N78
+    SLICE_X8Y21.B        Tilo                  0.254   testcase/N86
+                                                       testcase/M_state_q_FSM_FFd4-In4
+    SLICE_X4Y27.B1       net (fanout=1)        1.282   testcase/M_state_q_FSM_FFd4-In4
+    SLICE_X4Y27.B        Tilo                  0.254   testcase/M_state_q_FSM_FFd4-In5
+                                                       testcase/M_state_q_FSM_FFd4-In5
+    SLICE_X5Y23.D4       net (fanout=1)        0.744   testcase/M_state_q_FSM_FFd4-In5
+    SLICE_X5Y23.D        Tilo                  0.259   M_state_q_FSM_FFd4
+                                                       testcase/M_state_q_FSM_FFd4-In9
+    SLICE_X5Y23.C6       net (fanout=1)        0.143   testcase/M_state_q_FSM_FFd4-In9
+    SLICE_X5Y23.C        Tilo                  0.259   M_state_q_FSM_FFd4
+                                                       testcase/M_state_q_FSM_FFd4-In17
+    SLICE_X7Y21.CX       net (fanout=4)        1.049   testcase/M_state_q_FSM_FFd4-In
+    SLICE_X7Y21.CLK      Tdick                 0.114   testcase/M_state_q_FSM_FFd4_4
+                                                       testcase/M_state_q_FSM_FFd4_3
+    -------------------------------------------------  ---------------------------
+    Total                                      9.130ns (2.580ns logic, 6.550ns route)
+                                                       (28.3% logic, 71.7% route)
+
+--------------------------------------------------------------------------------
+Slack:                  10.827ns (requirement - (data path - clock path skew + uncertainty))
+  Source:               testcase/M_state_q_FSM_FFd2_1 (FF)
+  Destination:          testcase/M_state_q_FSM_FFd4_3 (FF)
+  Requirement:          20.000ns
+  Data Path Delay:      9.126ns (Levels of Logic = 8)
+  Clock Path Skew:      -0.012ns (0.324 - 0.336)
+  Source Clock:         clk_BUFGP rising at 0.000ns
+  Destination Clock:    clk_BUFGP rising at 20.000ns
+  Clock Uncertainty:    0.035ns
+
+  Clock Uncertainty:          0.035ns  ((TSJ^2 + TIJ^2)^1/2 + DJ) / 2 + PE
+    Total System Jitter (TSJ):  0.070ns
+    Total Input Jitter (TIJ):   0.000ns
+    Discrete Jitter (DJ):       0.000ns
+    Phase Error (PE):           0.000ns
+
+  Maximum Data Path at Slow Process Corner: testcase/M_state_q_FSM_FFd2_1 to testcase/M_state_q_FSM_FFd4_3
+    Location             Delay type         Delay(ns)  Physical Resource
+                                                       Logical Resource(s)
+    -------------------------------------------------  -------------------
+    SLICE_X8Y20.AQ       Tcko                  0.525   testcase/M_state_q_FSM_FFd2_4
+                                                       testcase/M_state_q_FSM_FFd2_1
+    SLICE_X9Y21.D5       net (fanout=1)        0.626   testcase/M_state_q_FSM_FFd2_1
+    SLICE_X9Y21.D        Tilo                  0.259   testcase/io_dip[16]
+                                                       testcase/M_state_q_io_dip<16>1
+    SLICE_X6Y25.AX       net (fanout=11)       1.229   testcase/io_dip[16]
+    SLICE_X6Y25.COUT     Taxcy                 0.259   testcase/alu/compare/add/Maddsub_result_cy[3]
+                                                       testcase/alu/compare/add/Maddsub_result_cy<3>
+    SLICE_X6Y26.CIN      net (fanout=1)        0.003   testcase/alu/compare/add/Maddsub_result_cy[3]
+    SLICE_X6Y26.CMUX     Tcinc                 0.289   testcase/alu/compare/add/Maddsub_result_cy[7]
+                                                       testcase/alu/compare/add/Maddsub_result_cy<7>
+    SLICE_X4Y27.D3       net (fanout=2)        0.779   testcase/alu/result[6]
+    SLICE_X4Y27.CMUX     Topdc                 0.456   testcase/M_state_q_FSM_FFd4-In5
+                                                       testcase/alu/Mmux_io_led<16>2263_SW1_F
+                                                       testcase/alu/Mmux_io_led<16>2263_SW1
+    SLICE_X4Y27.A2       net (fanout=1)        0.741   testcase/alu/N61
+    SLICE_X4Y27.A        Tilo                  0.254   testcase/M_state_q_FSM_FFd4-In5
+                                                       testcase/alu/Mmux_io_led<16>2265
+    SLICE_X7Y26.C3       net (fanout=7)        0.608   testcase/M_alu_io_led[16]
+    SLICE_X7Y26.C        Tilo                  0.259   testcase/M_state_q_FSM_FFd4-In13
+                                                       testcase/M_state_q_FSM_FFd4-In14
+    SLICE_X4Y25.D6       net (fanout=1)        0.378   testcase/M_state_q_FSM_FFd4-In15
+    SLICE_X4Y25.D        Tilo                  0.254   testcase/M_state_q_FSM_FFd4-In17
+                                                       testcase/M_state_q_FSM_FFd4-In16
+    SLICE_X5Y23.C1       net (fanout=1)        0.785   testcase/M_state_q_FSM_FFd4-In17
+    SLICE_X5Y23.C        Tilo                  0.259   M_state_q_FSM_FFd4
+                                                       testcase/M_state_q_FSM_FFd4-In17
+    SLICE_X7Y21.CX       net (fanout=4)        1.049   testcase/M_state_q_FSM_FFd4-In
+    SLICE_X7Y21.CLK      Tdick                 0.114   testcase/M_state_q_FSM_FFd4_4
+                                                       testcase/M_state_q_FSM_FFd4_3
+    -------------------------------------------------  ---------------------------
+    Total                                      9.126ns (2.928ns logic, 6.198ns route)
+                                                       (32.1% logic, 67.9% route)
+
+--------------------------------------------------------------------------------
+Slack:                  10.830ns (requirement - (data path - clock path skew + uncertainty))
+  Source:               testcase/M_state_q_FSM_FFd2_4 (FF)
+  Destination:          testcase/M_state_q_FSM_FFd4_4 (FF)
+  Requirement:          20.000ns
+  Data Path Delay:      9.123ns (Levels of Logic = 6)
+  Clock Path Skew:      -0.012ns (0.324 - 0.336)
+  Source Clock:         clk_BUFGP rising at 0.000ns
+  Destination Clock:    clk_BUFGP rising at 20.000ns
+  Clock Uncertainty:    0.035ns
+
+  Clock Uncertainty:          0.035ns  ((TSJ^2 + TIJ^2)^1/2 + DJ) / 2 + PE
+    Total System Jitter (TSJ):  0.070ns
+    Total Input Jitter (TIJ):   0.000ns
+    Discrete Jitter (DJ):       0.000ns
+    Phase Error (PE):           0.000ns
+
+  Maximum Data Path at Slow Process Corner: testcase/M_state_q_FSM_FFd2_4 to testcase/M_state_q_FSM_FFd4_4
+    Location             Delay type         Delay(ns)  Physical Resource
+                                                       Logical Resource(s)
+    -------------------------------------------------  -------------------
+    SLICE_X8Y20.DQ       Tcko                  0.525   testcase/M_state_q_FSM_FFd2_4
+                                                       testcase/M_state_q_FSM_FFd2_4
+    SLICE_X7Y25.B2       net (fanout=11)       1.671   testcase/M_state_q_FSM_FFd2_4
+    SLICE_X7Y25.B        Tilo                  0.259   testcase/N35
+                                                       testcase/alu/Mmux_led111
+    SLICE_X7Y21.A4       net (fanout=12)       1.122   testcase/Mmux_io_led<16>219
+    SLICE_X7Y21.A        Tilo                  0.259   testcase/M_state_q_FSM_FFd4_4
+                                                       testcase/M_state_q_FSM_FFd4-In4_SW0
+    SLICE_X8Y21.B3       net (fanout=1)        1.085   testcase/N78
+    SLICE_X8Y21.B        Tilo                  0.254   testcase/N86
+                                                       testcase/M_state_q_FSM_FFd4-In4
+    SLICE_X4Y27.B1       net (fanout=1)        1.282   testcase/M_state_q_FSM_FFd4-In4
+    SLICE_X4Y27.B        Tilo                  0.254   testcase/M_state_q_FSM_FFd4-In5
+                                                       testcase/M_state_q_FSM_FFd4-In5
+    SLICE_X5Y23.D4       net (fanout=1)        0.744   testcase/M_state_q_FSM_FFd4-In5
+    SLICE_X5Y23.D        Tilo                  0.259   M_state_q_FSM_FFd4
+                                                       testcase/M_state_q_FSM_FFd4-In9
+    SLICE_X5Y23.C6       net (fanout=1)        0.143   testcase/M_state_q_FSM_FFd4-In9
+    SLICE_X5Y23.C        Tilo                  0.259   M_state_q_FSM_FFd4
+                                                       testcase/M_state_q_FSM_FFd4-In17
+    SLICE_X7Y21.DX       net (fanout=4)        0.893   testcase/M_state_q_FSM_FFd4-In
+    SLICE_X7Y21.CLK      Tdick                 0.114   testcase/M_state_q_FSM_FFd4_4
+                                                       testcase/M_state_q_FSM_FFd4_4
+    -------------------------------------------------  ---------------------------
+    Total                                      9.123ns (2.183ns logic, 6.940ns route)
+                                                       (23.9% logic, 76.1% route)
+
+--------------------------------------------------------------------------------
+Slack:                  10.836ns (requirement - (data path - clock path skew + uncertainty))
+  Source:               testcase/M_state_q_FSM_FFd3_1 (FF)
+  Destination:          testcase/M_state_q_FSM_FFd4_3 (FF)
+  Requirement:          20.000ns
+  Data Path Delay:      9.118ns (Levels of Logic = 8)
+  Clock Path Skew:      -0.011ns (0.324 - 0.335)
+  Source Clock:         clk_BUFGP rising at 0.000ns
+  Destination Clock:    clk_BUFGP rising at 20.000ns
+  Clock Uncertainty:    0.035ns
+
+  Clock Uncertainty:          0.035ns  ((TSJ^2 + TIJ^2)^1/2 + DJ) / 2 + PE
+    Total System Jitter (TSJ):  0.070ns
+    Total Input Jitter (TIJ):   0.000ns
+    Discrete Jitter (DJ):       0.000ns
+    Phase Error (PE):           0.000ns
+
+  Maximum Data Path at Slow Process Corner: testcase/M_state_q_FSM_FFd3_1 to testcase/M_state_q_FSM_FFd4_3
+    Location             Delay type         Delay(ns)  Physical Resource
+                                                       Logical Resource(s)
+    -------------------------------------------------  -------------------
+    SLICE_X11Y20.AQ      Tcko                  0.430   testcase/M_state_q_FSM_FFd3_3
+                                                       testcase/M_state_q_FSM_FFd3_1
+    SLICE_X9Y21.D2       net (fanout=1)        0.919   testcase/M_state_q_FSM_FFd3_1
+    SLICE_X9Y21.D        Tilo                  0.259   testcase/io_dip[16]
+                                                       testcase/M_state_q_io_dip<16>1
+    SLICE_X6Y25.AX       net (fanout=11)       1.229   testcase/io_dip[16]
+    SLICE_X6Y25.COUT     Taxcy                 0.259   testcase/alu/compare/add/Maddsub_result_cy[3]
+                                                       testcase/alu/compare/add/Maddsub_result_cy<3>
+    SLICE_X6Y26.CIN      net (fanout=1)        0.003   testcase/alu/compare/add/Maddsub_result_cy[3]
+    SLICE_X6Y26.DMUX     Tcind                 0.289   testcase/alu/compare/add/Maddsub_result_cy[7]
+                                                       testcase/alu/compare/add/Maddsub_result_cy<7>
+    SLICE_X4Y27.D2       net (fanout=3)        1.044   testcase/alu/M_add_n
+    SLICE_X4Y27.CMUX     Topdc                 0.456   testcase/M_state_q_FSM_FFd4-In5
+                                                       testcase/alu/Mmux_io_led<16>2263_SW1_F
+                                                       testcase/alu/Mmux_io_led<16>2263_SW1
+    SLICE_X4Y27.A2       net (fanout=1)        0.741   testcase/alu/N61
+    SLICE_X4Y27.A        Tilo                  0.254   testcase/M_state_q_FSM_FFd4-In5
+                                                       testcase/alu/Mmux_io_led<16>2265
+    SLICE_X7Y23.B5       net (fanout=7)        0.714   testcase/M_alu_io_led[16]
+    SLICE_X7Y23.B        Tilo                  0.259   testcase/N65
+                                                       testcase/M_state_q_FSM_FFd4-In8
+    SLICE_X5Y23.D5       net (fanout=1)        0.438   testcase/M_state_q_FSM_FFd4-In8
+    SLICE_X5Y23.D        Tilo                  0.259   M_state_q_FSM_FFd4
+                                                       testcase/M_state_q_FSM_FFd4-In9
+    SLICE_X5Y23.C6       net (fanout=1)        0.143   testcase/M_state_q_FSM_FFd4-In9
+    SLICE_X5Y23.C        Tilo                  0.259   M_state_q_FSM_FFd4
+                                                       testcase/M_state_q_FSM_FFd4-In17
+    SLICE_X7Y21.CX       net (fanout=4)        1.049   testcase/M_state_q_FSM_FFd4-In
+    SLICE_X7Y21.CLK      Tdick                 0.114   testcase/M_state_q_FSM_FFd4_4
+                                                       testcase/M_state_q_FSM_FFd4_3
+    -------------------------------------------------  ---------------------------
+    Total                                      9.118ns (2.838ns logic, 6.280ns route)
+                                                       (31.1% logic, 68.9% route)
+
+--------------------------------------------------------------------------------
+Slack:                  10.838ns (requirement - (data path - clock path skew + uncertainty))
+  Source:               testcase/M_state_q_FSM_FFd3_1 (FF)
+  Destination:          testcase/M_state_q_FSM_FFd4_3 (FF)
+  Requirement:          20.000ns
+  Data Path Delay:      9.116ns (Levels of Logic = 7)
+  Clock Path Skew:      -0.011ns (0.324 - 0.335)
+  Source Clock:         clk_BUFGP rising at 0.000ns
+  Destination Clock:    clk_BUFGP rising at 20.000ns
+  Clock Uncertainty:    0.035ns
+
+  Clock Uncertainty:          0.035ns  ((TSJ^2 + TIJ^2)^1/2 + DJ) / 2 + PE
+    Total System Jitter (TSJ):  0.070ns
+    Total Input Jitter (TIJ):   0.000ns
+    Discrete Jitter (DJ):       0.000ns
+    Phase Error (PE):           0.000ns
+
+  Maximum Data Path at Slow Process Corner: testcase/M_state_q_FSM_FFd3_1 to testcase/M_state_q_FSM_FFd4_3
+    Location             Delay type         Delay(ns)  Physical Resource
+                                                       Logical Resource(s)
+    -------------------------------------------------  -------------------
+    SLICE_X11Y20.AQ      Tcko                  0.430   testcase/M_state_q_FSM_FFd3_3
+                                                       testcase/M_state_q_FSM_FFd3_1
+    SLICE_X9Y21.D2       net (fanout=1)        0.919   testcase/M_state_q_FSM_FFd3_1
+    SLICE_X9Y21.D        Tilo                  0.259   testcase/io_dip[16]
+                                                       testcase/M_state_q_io_dip<16>1
+    SLICE_X6Y25.AX       net (fanout=11)       1.229   testcase/io_dip[16]
+    SLICE_X6Y25.BMUX     Taxb                  0.403   testcase/alu/compare/add/Maddsub_result_cy[3]
+                                                       testcase/alu/compare/add/Maddsub_result_cy<3>
+    SLICE_X4Y26.B2       net (fanout=1)        0.988   testcase/alu/result[1]
+    SLICE_X4Y26.B        Tilo                  0.254   testcase/N34
+                                                       testcase/alu/Mmux_io_led<16>2262
+    SLICE_X4Y27.A3       net (fanout=2)        0.674   testcase/alu/Mmux_io_led<16>2261
+    SLICE_X4Y27.A        Tilo                  0.254   testcase/M_state_q_FSM_FFd4-In5
+                                                       testcase/alu/Mmux_io_led<16>2265
+    SLICE_X7Y26.C3       net (fanout=7)        0.608   testcase/M_alu_io_led[16]
+    SLICE_X7Y26.C        Tilo                  0.259   testcase/M_state_q_FSM_FFd4-In13
+                                                       testcase/M_state_q_FSM_FFd4-In14
+    SLICE_X4Y25.D6       net (fanout=1)        0.378   testcase/M_state_q_FSM_FFd4-In15
+    SLICE_X4Y25.D        Tilo                  0.254   testcase/M_state_q_FSM_FFd4-In17
+                                                       testcase/M_state_q_FSM_FFd4-In16
+    SLICE_X5Y23.C1       net (fanout=1)        0.785   testcase/M_state_q_FSM_FFd4-In17
+    SLICE_X5Y23.C        Tilo                  0.259   M_state_q_FSM_FFd4
+                                                       testcase/M_state_q_FSM_FFd4-In17
+    SLICE_X7Y21.CX       net (fanout=4)        1.049   testcase/M_state_q_FSM_FFd4-In
+    SLICE_X7Y21.CLK      Tdick                 0.114   testcase/M_state_q_FSM_FFd4_4
+                                                       testcase/M_state_q_FSM_FFd4_3
+    -------------------------------------------------  ---------------------------
+    Total                                      9.116ns (2.486ns logic, 6.630ns route)
+                                                       (27.3% logic, 72.7% route)
+
+--------------------------------------------------------------------------------
+Slack:                  10.839ns (requirement - (data path - clock path skew + uncertainty))
+  Source:               testcase/M_state_q_FSM_FFd3_1 (FF)
+  Destination:          testcase/M_state_q_FSM_FFd4_1 (FF)
+  Requirement:          20.000ns
+  Data Path Delay:      9.115ns (Levels of Logic = 8)
+  Clock Path Skew:      -0.011ns (0.324 - 0.335)
+  Source Clock:         clk_BUFGP rising at 0.000ns
+  Destination Clock:    clk_BUFGP rising at 20.000ns
+  Clock Uncertainty:    0.035ns
+
+  Clock Uncertainty:          0.035ns  ((TSJ^2 + TIJ^2)^1/2 + DJ) / 2 + PE
+    Total System Jitter (TSJ):  0.070ns
+    Total Input Jitter (TIJ):   0.000ns
+    Discrete Jitter (DJ):       0.000ns
+    Phase Error (PE):           0.000ns
+
+  Maximum Data Path at Slow Process Corner: testcase/M_state_q_FSM_FFd3_1 to testcase/M_state_q_FSM_FFd4_1
+    Location             Delay type         Delay(ns)  Physical Resource
+                                                       Logical Resource(s)
+    -------------------------------------------------  -------------------
+    SLICE_X11Y20.AQ      Tcko                  0.430   testcase/M_state_q_FSM_FFd3_3
+                                                       testcase/M_state_q_FSM_FFd3_1
+    SLICE_X9Y21.D2       net (fanout=1)        0.919   testcase/M_state_q_FSM_FFd3_1
+    SLICE_X9Y21.D        Tilo                  0.259   testcase/io_dip[16]
+                                                       testcase/M_state_q_io_dip<16>1
+    SLICE_X6Y25.AX       net (fanout=11)       1.229   testcase/io_dip[16]
+    SLICE_X6Y25.COUT     Taxcy                 0.259   testcase/alu/compare/add/Maddsub_result_cy[3]
+                                                       testcase/alu/compare/add/Maddsub_result_cy<3>
+    SLICE_X6Y26.CIN      net (fanout=1)        0.003   testcase/alu/compare/add/Maddsub_result_cy[3]
+    SLICE_X6Y26.CMUX     Tcinc                 0.289   testcase/alu/compare/add/Maddsub_result_cy[7]
+                                                       testcase/alu/compare/add/Maddsub_result_cy<7>
+    SLICE_X4Y27.D3       net (fanout=2)        0.779   testcase/alu/result[6]
+    SLICE_X4Y27.CMUX     Topdc                 0.456   testcase/M_state_q_FSM_FFd4-In5
+                                                       testcase/alu/Mmux_io_led<16>2263_SW1_F
+                                                       testcase/alu/Mmux_io_led<16>2263_SW1
+    SLICE_X4Y27.A2       net (fanout=1)        0.741   testcase/alu/N61
+    SLICE_X4Y27.A        Tilo                  0.254   testcase/M_state_q_FSM_FFd4-In5
+                                                       testcase/alu/Mmux_io_led<16>2265
+    SLICE_X7Y26.C3       net (fanout=7)        0.608   testcase/M_alu_io_led[16]
+    SLICE_X7Y26.C        Tilo                  0.259   testcase/M_state_q_FSM_FFd4-In13
+                                                       testcase/M_state_q_FSM_FFd4-In14
+    SLICE_X4Y25.D6       net (fanout=1)        0.378   testcase/M_state_q_FSM_FFd4-In15
+    SLICE_X4Y25.D        Tilo                  0.254   testcase/M_state_q_FSM_FFd4-In17
+                                                       testcase/M_state_q_FSM_FFd4-In16
+    SLICE_X5Y23.C1       net (fanout=1)        0.785   testcase/M_state_q_FSM_FFd4-In17
+    SLICE_X5Y23.C        Tilo                  0.259   M_state_q_FSM_FFd4
+                                                       testcase/M_state_q_FSM_FFd4-In17
+    SLICE_X7Y21.AX       net (fanout=4)        0.840   testcase/M_state_q_FSM_FFd4-In
+    SLICE_X7Y21.CLK      Tdick                 0.114   testcase/M_state_q_FSM_FFd4_4
+                                                       testcase/M_state_q_FSM_FFd4_1
+    -------------------------------------------------  ---------------------------
+    Total                                      9.115ns (2.833ns logic, 6.282ns route)
+                                                       (31.1% logic, 68.9% route)
+
+--------------------------------------------------------------------------------
+Slack:                  10.853ns (requirement - (data path - clock path skew + uncertainty))
+  Source:               testcase/M_state_q_FSM_FFd3_1 (FF)
+  Destination:          testcase/M_state_q_FSM_FFd4_3 (FF)
+  Requirement:          20.000ns
+  Data Path Delay:      9.101ns (Levels of Logic = 7)
+  Clock Path Skew:      -0.011ns (0.324 - 0.335)
+  Source Clock:         clk_BUFGP rising at 0.000ns
+  Destination Clock:    clk_BUFGP rising at 20.000ns
+  Clock Uncertainty:    0.035ns
+
+  Clock Uncertainty:          0.035ns  ((TSJ^2 + TIJ^2)^1/2 + DJ) / 2 + PE
+    Total System Jitter (TSJ):  0.070ns
+    Total Input Jitter (TIJ):   0.000ns
+    Discrete Jitter (DJ):       0.000ns
+    Phase Error (PE):           0.000ns
+
+  Maximum Data Path at Slow Process Corner: testcase/M_state_q_FSM_FFd3_1 to testcase/M_state_q_FSM_FFd4_3
+    Location             Delay type         Delay(ns)  Physical Resource
+                                                       Logical Resource(s)
+    -------------------------------------------------  -------------------
+    SLICE_X11Y20.AQ      Tcko                  0.430   testcase/M_state_q_FSM_FFd3_3
+                                                       testcase/M_state_q_FSM_FFd3_1
+    SLICE_X9Y21.D2       net (fanout=1)        0.919   testcase/M_state_q_FSM_FFd3_1
+    SLICE_X9Y21.D        Tilo                  0.259   testcase/io_dip[16]
+                                                       testcase/M_state_q_io_dip<16>1
+    SLICE_X6Y25.AX       net (fanout=11)       1.229   testcase/io_dip[16]
+    SLICE_X6Y25.AMUX     Taxa                  0.294   testcase/alu/compare/add/Maddsub_result_cy[3]
+                                                       testcase/alu/compare/add/Maddsub_result_cy<3>
+    SLICE_X4Y27.D4       net (fanout=7)        0.813   testcase/alu/M_adder_io_led2[0]
+    SLICE_X4Y27.CMUX     Topdc                 0.456   testcase/M_state_q_FSM_FFd4-In5
+                                                       testcase/alu/Mmux_io_led<16>2263_SW1_F
+                                                       testcase/alu/Mmux_io_led<16>2263_SW1
+    SLICE_X4Y27.A2       net (fanout=1)        0.741   testcase/alu/N61
+    SLICE_X4Y27.A        Tilo                  0.254   testcase/M_state_q_FSM_FFd4-In5
+                                                       testcase/alu/Mmux_io_led<16>2265
+    SLICE_X7Y26.C3       net (fanout=7)        0.608   testcase/M_alu_io_led[16]
+    SLICE_X7Y26.C        Tilo                  0.259   testcase/M_state_q_FSM_FFd4-In13
+                                                       testcase/M_state_q_FSM_FFd4-In14
+    SLICE_X4Y25.D6       net (fanout=1)        0.378   testcase/M_state_q_FSM_FFd4-In15
+    SLICE_X4Y25.D        Tilo                  0.254   testcase/M_state_q_FSM_FFd4-In17
+                                                       testcase/M_state_q_FSM_FFd4-In16
+    SLICE_X5Y23.C1       net (fanout=1)        0.785   testcase/M_state_q_FSM_FFd4-In17
+    SLICE_X5Y23.C        Tilo                  0.259   M_state_q_FSM_FFd4
+                                                       testcase/M_state_q_FSM_FFd4-In17
+    SLICE_X7Y21.CX       net (fanout=4)        1.049   testcase/M_state_q_FSM_FFd4-In
+    SLICE_X7Y21.CLK      Tdick                 0.114   testcase/M_state_q_FSM_FFd4_4
+                                                       testcase/M_state_q_FSM_FFd4_3
+    -------------------------------------------------  ---------------------------
+    Total                                      9.101ns (2.579ns logic, 6.522ns route)
+                                                       (28.3% logic, 71.7% route)
+
+--------------------------------------------------------------------------------
+
+Component Switching Limit Checks: TS_clk = PERIOD TIMEGRP "clk" 50 MHz HIGH 50%;
+--------------------------------------------------------------------------------
+Slack: 17.334ns (period - min period limit)
+  Period: 20.000ns
+  Min period limit: 2.666ns (375.094MHz) (Tbcper_I)
+  Physical resource: clk_BUFGP/BUFG/I0
+  Logical resource: clk_BUFGP/BUFG/I0
+  Location pin: BUFGMUX_X2Y11.I0
+  Clock network: clk_BUFGP/IBUFG
+--------------------------------------------------------------------------------
+Slack: 19.520ns (period - min period limit)
+  Period: 20.000ns
+  Min period limit: 0.480ns (2083.333MHz) (Tcp)
+  Physical resource: testcase/M_blink_hold[26]/CLK
+  Logical resource: testcase/blink/M_holder_q_25/CK
+  Location pin: SLICE_X16Y15.CLK
+  Clock network: clk_BUFGP
+--------------------------------------------------------------------------------
+Slack: 19.520ns (period - min period limit)
+  Period: 20.000ns
+  Min period limit: 0.480ns (2083.333MHz) (Tcp)
+  Physical resource: testcase/M_blink_hold[26]/CLK
+  Logical resource: testcase/blink/M_holder_q_26/CK
+  Location pin: SLICE_X16Y15.CLK
+  Clock network: clk_BUFGP
+--------------------------------------------------------------------------------
+Slack: 19.520ns (period - min period limit)
+  Period: 20.000ns
+  Min period limit: 0.480ns (2083.333MHz) (Tcp)
+  Physical resource: testcase/M_state_q_FSM_FFd2_4/CLK
+  Logical resource: testcase/M_state_q_FSM_FFd2_1/CK
+  Location pin: SLICE_X8Y20.CLK
+  Clock network: clk_BUFGP
+--------------------------------------------------------------------------------
+Slack: 19.520ns (period - min period limit)
+  Period: 20.000ns
+  Min period limit: 0.480ns (2083.333MHz) (Tcp)
+  Physical resource: testcase/M_state_q_FSM_FFd2_4/CLK
+  Logical resource: testcase/M_state_q_FSM_FFd2_2/CK
+  Location pin: SLICE_X8Y20.CLK
+  Clock network: clk_BUFGP
+--------------------------------------------------------------------------------
+Slack: 19.520ns (period - min period limit)
+  Period: 20.000ns
+  Min period limit: 0.480ns (2083.333MHz) (Tcp)
+  Physical resource: testcase/M_state_q_FSM_FFd2_4/CLK
+  Logical resource: testcase/M_state_q_FSM_FFd2_3/CK
+  Location pin: SLICE_X8Y20.CLK
+  Clock network: clk_BUFGP
+--------------------------------------------------------------------------------
+Slack: 19.520ns (period - min period limit)
+  Period: 20.000ns
+  Min period limit: 0.480ns (2083.333MHz) (Tcp)
+  Physical resource: testcase/M_state_q_FSM_FFd2_4/CLK
+  Logical resource: testcase/M_state_q_FSM_FFd2_4/CK
+  Location pin: SLICE_X8Y20.CLK
+  Clock network: clk_BUFGP
+--------------------------------------------------------------------------------
+Slack: 19.525ns (period - min period limit)
+  Period: 20.000ns
+  Min period limit: 0.475ns (2105.263MHz) (Tcp)
+  Physical resource: testcase/M_blink_hold[3]/CLK
+  Logical resource: testcase/blink/M_counter_q_0/CK
+  Location pin: SLICE_X18Y11.CLK
+  Clock network: clk_BUFGP
+--------------------------------------------------------------------------------
+Slack: 19.525ns (period - min period limit)
+  Period: 20.000ns
+  Min period limit: 0.475ns (2105.263MHz) (Tcp)
+  Physical resource: testcase/M_blink_hold[3]/CLK
+  Logical resource: testcase/blink/M_counter_q_1/CK
+  Location pin: SLICE_X18Y11.CLK
+  Clock network: clk_BUFGP
+--------------------------------------------------------------------------------
+Slack: 19.525ns (period - min period limit)
+  Period: 20.000ns
+  Min period limit: 0.475ns (2105.263MHz) (Tcp)
+  Physical resource: testcase/M_blink_hold[3]/CLK
+  Logical resource: testcase/blink/M_counter_q_2/CK
+  Location pin: SLICE_X18Y11.CLK
+  Clock network: clk_BUFGP
+--------------------------------------------------------------------------------
+Slack: 19.525ns (period - min period limit)
+  Period: 20.000ns
+  Min period limit: 0.475ns (2105.263MHz) (Tcp)
+  Physical resource: testcase/M_blink_hold[3]/CLK
+  Logical resource: testcase/blink/M_counter_q_3/CK
+  Location pin: SLICE_X18Y11.CLK
+  Clock network: clk_BUFGP
+--------------------------------------------------------------------------------
+Slack: 19.525ns (period - min period limit)
+  Period: 20.000ns
+  Min period limit: 0.475ns (2105.263MHz) (Tcp)
+  Physical resource: testcase/M_blink_hold[7]/CLK
+  Logical resource: testcase/blink/M_counter_q_4/CK
+  Location pin: SLICE_X18Y12.CLK
+  Clock network: clk_BUFGP
+--------------------------------------------------------------------------------
+Slack: 19.525ns (period - min period limit)
+  Period: 20.000ns
+  Min period limit: 0.475ns (2105.263MHz) (Tcp)
+  Physical resource: testcase/M_blink_hold[7]/CLK
+  Logical resource: testcase/blink/M_counter_q_5/CK
+  Location pin: SLICE_X18Y12.CLK
+  Clock network: clk_BUFGP
+--------------------------------------------------------------------------------
+Slack: 19.525ns (period - min period limit)
+  Period: 20.000ns
+  Min period limit: 0.475ns (2105.263MHz) (Tcp)
+  Physical resource: testcase/M_blink_hold[7]/CLK
+  Logical resource: testcase/blink/M_counter_q_6/CK
+  Location pin: SLICE_X18Y12.CLK
+  Clock network: clk_BUFGP
+--------------------------------------------------------------------------------
+Slack: 19.525ns (period - min period limit)
+  Period: 20.000ns
+  Min period limit: 0.475ns (2105.263MHz) (Tcp)
+  Physical resource: testcase/M_blink_hold[7]/CLK
+  Logical resource: testcase/blink/M_counter_q_7/CK
+  Location pin: SLICE_X18Y12.CLK
+  Clock network: clk_BUFGP
+--------------------------------------------------------------------------------
+Slack: 19.525ns (period - min period limit)
+  Period: 20.000ns
+  Min period limit: 0.475ns (2105.263MHz) (Tcp)
+  Physical resource: testcase/M_blink_hold[11]/CLK
+  Logical resource: testcase/blink/M_counter_q_8/CK
+  Location pin: SLICE_X18Y13.CLK
+  Clock network: clk_BUFGP
+--------------------------------------------------------------------------------
+Slack: 19.525ns (period - min period limit)
+  Period: 20.000ns
+  Min period limit: 0.475ns (2105.263MHz) (Tcp)
+  Physical resource: testcase/M_blink_hold[11]/CLK
+  Logical resource: testcase/blink/M_counter_q_9/CK
+  Location pin: SLICE_X18Y13.CLK
+  Clock network: clk_BUFGP
+--------------------------------------------------------------------------------
+Slack: 19.525ns (period - min period limit)
+  Period: 20.000ns
+  Min period limit: 0.475ns (2105.263MHz) (Tcp)
+  Physical resource: testcase/M_blink_hold[11]/CLK
+  Logical resource: testcase/blink/M_counter_q_10/CK
+  Location pin: SLICE_X18Y13.CLK
+  Clock network: clk_BUFGP
+--------------------------------------------------------------------------------
+Slack: 19.525ns (period - min period limit)
+  Period: 20.000ns
+  Min period limit: 0.475ns (2105.263MHz) (Tcp)
+  Physical resource: testcase/M_blink_hold[11]/CLK
+  Logical resource: testcase/blink/M_counter_q_11/CK
+  Location pin: SLICE_X18Y13.CLK
+  Clock network: clk_BUFGP
+--------------------------------------------------------------------------------
+Slack: 19.525ns (period - min period limit)
+  Period: 20.000ns
+  Min period limit: 0.475ns (2105.263MHz) (Tcp)
+  Physical resource: testcase/M_blink_hold[15]/CLK
+  Logical resource: testcase/blink/M_counter_q_12/CK
+  Location pin: SLICE_X18Y14.CLK
+  Clock network: clk_BUFGP
+--------------------------------------------------------------------------------
+Slack: 19.525ns (period - min period limit)
+  Period: 20.000ns
+  Min period limit: 0.475ns (2105.263MHz) (Tcp)
+  Physical resource: testcase/M_blink_hold[15]/CLK
+  Logical resource: testcase/blink/M_counter_q_13/CK
+  Location pin: SLICE_X18Y14.CLK
+  Clock network: clk_BUFGP
+--------------------------------------------------------------------------------
+Slack: 19.525ns (period - min period limit)
+  Period: 20.000ns
+  Min period limit: 0.475ns (2105.263MHz) (Tcp)
+  Physical resource: testcase/M_blink_hold[15]/CLK
+  Logical resource: testcase/blink/M_counter_q_14/CK
+  Location pin: SLICE_X18Y14.CLK
+  Clock network: clk_BUFGP
+--------------------------------------------------------------------------------
+Slack: 19.525ns (period - min period limit)
+  Period: 20.000ns
+  Min period limit: 0.475ns (2105.263MHz) (Tcp)
+  Physical resource: testcase/M_blink_hold[15]/CLK
+  Logical resource: testcase/blink/M_counter_q_15/CK
+  Location pin: SLICE_X18Y14.CLK
+  Clock network: clk_BUFGP
+--------------------------------------------------------------------------------
+Slack: 19.525ns (period - min period limit)
+  Period: 20.000ns
+  Min period limit: 0.475ns (2105.263MHz) (Tcp)
+  Physical resource: testcase/M_blink_hold[19]/CLK
+  Logical resource: testcase/blink/M_counter_q_16/CK
+  Location pin: SLICE_X18Y15.CLK
+  Clock network: clk_BUFGP
+--------------------------------------------------------------------------------
+Slack: 19.525ns (period - min period limit)
+  Period: 20.000ns
+  Min period limit: 0.475ns (2105.263MHz) (Tcp)
+  Physical resource: testcase/M_blink_hold[19]/CLK
+  Logical resource: testcase/blink/M_counter_q_17/CK
+  Location pin: SLICE_X18Y15.CLK
+  Clock network: clk_BUFGP
+--------------------------------------------------------------------------------
+Slack: 19.525ns (period - min period limit)
+  Period: 20.000ns
+  Min period limit: 0.475ns (2105.263MHz) (Tcp)
+  Physical resource: testcase/M_blink_hold[19]/CLK
+  Logical resource: testcase/blink/M_counter_q_18/CK
+  Location pin: SLICE_X18Y15.CLK
+  Clock network: clk_BUFGP
+--------------------------------------------------------------------------------
+Slack: 19.525ns (period - min period limit)
+  Period: 20.000ns
+  Min period limit: 0.475ns (2105.263MHz) (Tcp)
+  Physical resource: testcase/M_blink_hold[19]/CLK
+  Logical resource: testcase/blink/M_counter_q_19/CK
+  Location pin: SLICE_X18Y15.CLK
+  Clock network: clk_BUFGP
+--------------------------------------------------------------------------------
+Slack: 19.525ns (period - min period limit)
+  Period: 20.000ns
+  Min period limit: 0.475ns (2105.263MHz) (Tcp)
+  Physical resource: testcase/M_blink_hold[23]/CLK
+  Logical resource: testcase/blink/M_counter_q_20/CK
+  Location pin: SLICE_X18Y16.CLK
+  Clock network: clk_BUFGP
+--------------------------------------------------------------------------------
+Slack: 19.525ns (period - min period limit)
+  Period: 20.000ns
+  Min period limit: 0.475ns (2105.263MHz) (Tcp)
+  Physical resource: testcase/M_blink_hold[23]/CLK
+  Logical resource: testcase/blink/M_counter_q_21/CK
+  Location pin: SLICE_X18Y16.CLK
+  Clock network: clk_BUFGP
+--------------------------------------------------------------------------------
+Slack: 19.525ns (period - min period limit)
+  Period: 20.000ns
+  Min period limit: 0.475ns (2105.263MHz) (Tcp)
+  Physical resource: testcase/M_blink_hold[23]/CLK
+  Logical resource: testcase/blink/M_counter_q_22/CK
+  Location pin: SLICE_X18Y16.CLK
+  Clock network: clk_BUFGP
+--------------------------------------------------------------------------------
+
+
+All constraints were met.
 
 
 Data Sheet report:
 -----------------
 All values displayed in nanoseconds (ns)
 
-Pad to Pad
----------------+---------------+---------+
-Source Pad     |Destination Pad|  Delay  |
----------------+---------------+---------+
-io_dip[0]      |io_led[0]      |    9.300|
-io_dip[0]      |io_led[16]     |   20.358|
-io_dip[0]      |io_led[17]     |   19.027|
-io_dip[0]      |io_led[18]     |   19.385|
-io_dip[0]      |io_led[19]     |   19.007|
-io_dip[0]      |io_led[20]     |   19.531|
-io_dip[0]      |io_led[21]     |   19.479|
-io_dip[0]      |io_led[22]     |   19.193|
-io_dip[0]      |io_led[23]     |   20.804|
-io_dip[0]      |led[0]         |   15.014|
-io_dip[0]      |led[1]         |   14.921|
-io_dip[0]      |led[2]         |   15.029|
-io_dip[1]      |io_led[1]      |    9.411|
-io_dip[1]      |io_led[16]     |   20.233|
-io_dip[1]      |io_led[17]     |   18.347|
-io_dip[1]      |io_led[18]     |   18.705|
-io_dip[1]      |io_led[19]     |   18.327|
-io_dip[1]      |io_led[20]     |   18.851|
-io_dip[1]      |io_led[21]     |   18.799|
-io_dip[1]      |io_led[22]     |   18.513|
-io_dip[1]      |io_led[23]     |   20.124|
-io_dip[1]      |led[0]         |   14.257|
-io_dip[1]      |led[1]         |   14.169|
-io_dip[1]      |led[2]         |   14.277|
-io_dip[2]      |io_led[2]      |   10.364|
-io_dip[2]      |io_led[16]     |   23.943|
-io_dip[2]      |io_led[17]     |   19.512|
-io_dip[2]      |io_led[18]     |   19.135|
-io_dip[2]      |io_led[19]     |   18.757|
-io_dip[2]      |io_led[20]     |   19.281|
-io_dip[2]      |io_led[21]     |   19.229|
-io_dip[2]      |io_led[22]     |   18.943|
-io_dip[2]      |io_led[23]     |   20.554|
-io_dip[2]      |led[0]         |   14.577|
-io_dip[2]      |led[1]         |   14.489|
-io_dip[2]      |led[2]         |   14.597|
-io_dip[3]      |io_led[3]      |   11.912|
-io_dip[3]      |io_led[16]     |   26.915|
-io_dip[3]      |io_led[17]     |   22.484|
-io_dip[3]      |io_led[18]     |   19.903|
-io_dip[3]      |io_led[19]     |   19.525|
-io_dip[3]      |io_led[20]     |   20.049|
-io_dip[3]      |io_led[21]     |   19.997|
-io_dip[3]      |io_led[22]     |   19.711|
-io_dip[3]      |io_led[23]     |   21.322|
-io_dip[3]      |led[0]         |   14.790|
-io_dip[3]      |led[1]         |   14.702|
-io_dip[3]      |led[2]         |   14.810|
-io_dip[4]      |io_led[4]      |   10.957|
-io_dip[4]      |io_led[16]     |   30.877|
-io_dip[4]      |io_led[17]     |   26.446|
-io_dip[4]      |io_led[18]     |   21.194|
-io_dip[4]      |io_led[19]     |   18.775|
-io_dip[4]      |io_led[20]     |   19.299|
-io_dip[4]      |io_led[21]     |   19.247|
-io_dip[4]      |io_led[22]     |   18.961|
-io_dip[4]      |io_led[23]     |   20.572|
-io_dip[4]      |led[0]         |   14.642|
-io_dip[4]      |led[1]         |   14.665|
-io_dip[4]      |led[2]         |   14.773|
-io_dip[5]      |io_led[5]      |   13.519|
-io_dip[5]      |io_led[16]     |   32.184|
-io_dip[5]      |io_led[17]     |   27.753|
-io_dip[5]      |io_led[18]     |   22.501|
-io_dip[5]      |io_led[19]     |   19.992|
-io_dip[5]      |io_led[20]     |   20.516|
-io_dip[5]      |io_led[21]     |   20.464|
-io_dip[5]      |io_led[22]     |   20.178|
-io_dip[5]      |io_led[23]     |   21.789|
-io_dip[5]      |led[0]         |   13.796|
-io_dip[5]      |led[1]         |   13.918|
-io_dip[5]      |led[2]         |   14.026|
-io_dip[6]      |io_led[6]      |   11.364|
-io_dip[6]      |io_led[16]     |   33.215|
-io_dip[6]      |io_led[17]     |   28.784|
-io_dip[6]      |io_led[18]     |   23.532|
-io_dip[6]      |io_led[19]     |   20.506|
-io_dip[6]      |io_led[20]     |   19.569|
-io_dip[6]      |io_led[21]     |   19.517|
-io_dip[6]      |io_led[22]     |   19.231|
-io_dip[6]      |io_led[23]     |   20.842|
-io_dip[6]      |led[0]         |   14.329|
-io_dip[6]      |led[1]         |   14.447|
-io_dip[6]      |led[2]         |   14.555|
-io_dip[7]      |io_led[7]      |   12.324|
-io_dip[7]      |io_led[16]     |   33.020|
-io_dip[7]      |io_led[17]     |   28.589|
-io_dip[7]      |io_led[18]     |   23.337|
-io_dip[7]      |io_led[19]     |   20.311|
-io_dip[7]      |io_led[20]     |   20.710|
-io_dip[7]      |io_led[21]     |   20.658|
-io_dip[7]      |io_led[22]     |   20.372|
-io_dip[7]      |io_led[23]     |   21.983|
-io_dip[7]      |led[0]         |   14.889|
-io_dip[7]      |led[1]         |   14.950|
-io_dip[7]      |led[2]         |   15.058|
-io_dip[8]      |io_led[8]      |   11.449|
-io_dip[8]      |io_led[16]     |   33.864|
-io_dip[8]      |io_led[17]     |   29.433|
-io_dip[8]      |io_led[18]     |   24.181|
-io_dip[8]      |io_led[19]     |   21.155|
-io_dip[8]      |io_led[20]     |   18.587|
-io_dip[8]      |io_led[21]     |   18.535|
-io_dip[8]      |io_led[22]     |   18.249|
-io_dip[8]      |io_led[23]     |   19.860|
-io_dip[8]      |led[0]         |   14.899|
-io_dip[8]      |led[1]         |   14.811|
-io_dip[8]      |led[2]         |   14.919|
-io_dip[9]      |io_led[9]      |   14.651|
-io_dip[9]      |io_led[16]     |   33.921|
-io_dip[9]      |io_led[17]     |   29.490|
-io_dip[9]      |io_led[18]     |   24.238|
-io_dip[9]      |io_led[19]     |   21.212|
-io_dip[9]      |io_led[20]     |   20.316|
-io_dip[9]      |io_led[21]     |   20.264|
-io_dip[9]      |io_led[22]     |   19.978|
-io_dip[9]      |io_led[23]     |   21.589|
-io_dip[9]      |led[0]         |   16.338|
-io_dip[9]      |led[1]         |   16.250|
-io_dip[9]      |led[2]         |   16.358|
-io_dip[10]     |io_led[10]     |   13.250|
-io_dip[10]     |io_led[16]     |   34.245|
-io_dip[10]     |io_led[17]     |   29.814|
-io_dip[10]     |io_led[18]     |   24.562|
-io_dip[10]     |io_led[19]     |   21.536|
-io_dip[10]     |io_led[20]     |   20.009|
-io_dip[10]     |io_led[21]     |   19.957|
-io_dip[10]     |io_led[22]     |   19.671|
-io_dip[10]     |io_led[23]     |   21.282|
-io_dip[10]     |led[0]         |   15.423|
-io_dip[10]     |led[1]         |   15.335|
-io_dip[10]     |led[2]         |   15.443|
-io_dip[11]     |io_led[11]     |   11.716|
-io_dip[11]     |io_led[16]     |   34.787|
-io_dip[11]     |io_led[17]     |   30.356|
-io_dip[11]     |io_led[18]     |   25.104|
-io_dip[11]     |io_led[19]     |   22.078|
-io_dip[11]     |io_led[20]     |   19.117|
-io_dip[11]     |io_led[21]     |   19.065|
-io_dip[11]     |io_led[22]     |   18.779|
-io_dip[11]     |io_led[23]     |   20.390|
-io_dip[11]     |led[0]         |   15.284|
-io_dip[11]     |led[1]         |   15.196|
-io_dip[11]     |led[2]         |   15.304|
-io_dip[12]     |io_led[12]     |   10.822|
-io_dip[12]     |io_led[16]     |   33.921|
-io_dip[12]     |io_led[17]     |   29.490|
-io_dip[12]     |io_led[18]     |   24.238|
-io_dip[12]     |io_led[19]     |   21.212|
-io_dip[12]     |io_led[20]     |   17.904|
-io_dip[12]     |io_led[21]     |   17.852|
-io_dip[12]     |io_led[22]     |   17.566|
-io_dip[12]     |io_led[23]     |   19.177|
-io_dip[12]     |led[0]         |   13.729|
-io_dip[12]     |led[1]         |   13.752|
-io_dip[12]     |led[2]         |   13.860|
-io_dip[13]     |io_led[13]     |   10.746|
-io_dip[13]     |io_led[16]     |   33.955|
-io_dip[13]     |io_led[17]     |   29.524|
-io_dip[13]     |io_led[18]     |   24.272|
-io_dip[13]     |io_led[19]     |   21.246|
-io_dip[13]     |io_led[20]     |   17.479|
-io_dip[13]     |io_led[21]     |   17.421|
-io_dip[13]     |io_led[22]     |   17.135|
-io_dip[13]     |io_led[23]     |   18.746|
-io_dip[13]     |led[0]         |   13.539|
-io_dip[13]     |led[1]         |   13.661|
-io_dip[13]     |led[2]         |   13.769|
-io_dip[14]     |io_led[14]     |   11.733|
-io_dip[14]     |io_led[16]     |   34.094|
-io_dip[14]     |io_led[17]     |   29.663|
-io_dip[14]     |io_led[18]     |   24.411|
-io_dip[14]     |io_led[19]     |   21.385|
-io_dip[14]     |io_led[20]     |   18.009|
-io_dip[14]     |io_led[21]     |   17.957|
-io_dip[14]     |io_led[22]     |   17.671|
-io_dip[14]     |io_led[23]     |   19.282|
-io_dip[14]     |led[0]         |   13.276|
-io_dip[14]     |led[1]         |   13.394|
-io_dip[14]     |led[2]         |   13.502|
-io_dip[15]     |io_led[15]     |   12.395|
-io_dip[15]     |io_led[16]     |   33.879|
-io_dip[15]     |io_led[17]     |   29.448|
-io_dip[15]     |io_led[18]     |   24.196|
-io_dip[15]     |io_led[19]     |   21.170|
-io_dip[15]     |io_led[20]     |   18.028|
-io_dip[15]     |io_led[21]     |   17.976|
-io_dip[15]     |io_led[22]     |   17.690|
-io_dip[15]     |io_led[23]     |   19.301|
-io_dip[15]     |led[0]         |   13.794|
-io_dip[15]     |led[1]         |   13.855|
-io_dip[15]     |led[2]         |   13.963|
-io_dip[16]     |io_led[16]     |   17.999|
-io_dip[16]     |io_led[17]     |   16.156|
-io_dip[16]     |io_led[18]     |   17.711|
-io_dip[16]     |io_led[19]     |   16.848|
-io_dip[16]     |io_led[20]     |   17.408|
-io_dip[16]     |io_led[21]     |   17.214|
-io_dip[16]     |io_led[22]     |   17.197|
-io_dip[16]     |io_led[23]     |   17.820|
-io_dip[16]     |led[0]         |   16.272|
-io_dip[16]     |led[1]         |   16.184|
-io_dip[16]     |led[2]         |   16.292|
-io_dip[17]     |io_led[16]     |   15.997|
-io_dip[17]     |io_led[17]     |   14.984|
-io_dip[17]     |io_led[18]     |   18.356|
-io_dip[17]     |io_led[19]     |   15.941|
-io_dip[17]     |io_led[20]     |   16.228|
-io_dip[17]     |io_led[21]     |   16.739|
-io_dip[17]     |io_led[22]     |   18.555|
-io_dip[17]     |io_led[23]     |   13.804|
-io_dip[17]     |led[0]         |   14.471|
-io_dip[17]     |led[1]         |   14.736|
-io_dip[17]     |led[2]         |   14.797|
-io_dip[18]     |io_led[16]     |   15.259|
-io_dip[18]     |io_led[17]     |   15.228|
-io_dip[18]     |io_led[18]     |   15.217|
-io_dip[18]     |io_led[19]     |   16.104|
-io_dip[18]     |io_led[20]     |   16.414|
-io_dip[18]     |io_led[21]     |   15.438|
-io_dip[18]     |io_led[22]     |   16.067|
-io_dip[18]     |io_led[23]     |   15.022|
-io_dip[19]     |io_led[16]     |   14.375|
-io_dip[19]     |io_led[17]     |   14.981|
-io_dip[19]     |io_led[18]     |   15.134|
-io_dip[19]     |io_led[19]     |   15.340|
-io_dip[19]     |io_led[20]     |   15.429|
-io_dip[19]     |io_led[21]     |   15.159|
-io_dip[19]     |io_led[22]     |   15.340|
-io_dip[19]     |io_led[23]     |   14.266|
-io_dip[20]     |io_led[16]     |   15.565|
-io_dip[20]     |io_led[17]     |   15.437|
-io_dip[20]     |io_led[18]     |   16.157|
-io_dip[20]     |io_led[19]     |   15.873|
-io_dip[20]     |io_led[20]     |   16.309|
-io_dip[20]     |io_led[21]     |   16.033|
-io_dip[20]     |io_led[22]     |   15.757|
-io_dip[20]     |io_led[23]     |   14.998|
-io_dip[20]     |led[0]         |   15.251|
-io_dip[20]     |led[1]         |   13.668|
-io_dip[20]     |led[2]         |   14.036|
-io_dip[21]     |io_led[16]     |   14.735|
-io_dip[21]     |io_led[17]     |   15.890|
-io_dip[21]     |io_led[18]     |   16.610|
-io_dip[21]     |io_led[19]     |   16.326|
-io_dip[21]     |io_led[20]     |   16.762|
-io_dip[21]     |io_led[21]     |   16.486|
-io_dip[21]     |io_led[22]     |   16.210|
-io_dip[21]     |io_led[23]     |   14.787|
-io_dip[21]     |led[0]         |   15.729|
-io_dip[21]     |led[1]         |   13.973|
-io_dip[21]     |led[2]         |   14.021|
----------------+---------------+---------+
+Clock to Setup on destination clock clk
+---------------+---------+---------+---------+---------+
+               | Src:Rise| Src:Fall| Src:Rise| Src:Fall|
+Source Clock   |Dest:Rise|Dest:Rise|Dest:Fall|Dest:Fall|
+---------------+---------+---------+---------+---------+
+clk            |    9.635|         |         |         |
+---------------+---------+---------+---------+---------+
 
 
-Analysis completed Fri Oct 21 01:52:01 2016 
+Timing summary:
+---------------
+
+Timing errors: 0  Score: 0  (Setup/Max: 0, Hold: 0)
+
+Constraints cover 36442 paths, 0 nets, and 663 connections
+
+Design statistics:
+   Minimum period:   9.635ns{1}   (Maximum frequency: 103.788MHz)
+
+
+------------------------------------Footnotes-----------------------------------
+1)  The minimum period statistic assumes all single cycle delays.
+
+Analysis completed Fri Oct 21 12:25:55 2016 
 --------------------------------------------------------------------------------
 
 Trace Settings:

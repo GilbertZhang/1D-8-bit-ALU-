@@ -18,7 +18,7 @@ module add (
 
     if(result == 0) z = 1;
     else z = 0;
-    v = (io_dip[0][7] && io_dip[1][7] && (~result[7])) || ((~io_dip[0][7]) && (~io_dip[1][7]) && result[7]);
+    v = (io_dip[1][7] & (io_dip[0][7]^io_dip[2][0]) & (~result[7])) | ((~(io_dip[0][7]^io_dip[2][0])) & (~io_dip[1][7]) & result[7]);
     n = result[7];
 
   }

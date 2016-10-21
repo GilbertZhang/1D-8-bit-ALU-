@@ -4,9 +4,7 @@
    This is a temporary file and any changes made to it will be destroyed.
 */
 
-module alu_2 (
-    input clk,
-    input rst,
+module alu_3 (
     input [23:0] io_dip,
     output reg [23:0] io_led,
     output reg [7:0] led
@@ -18,7 +16,7 @@ module alu_2 (
   wire [1-1:0] M_adder_z;
   wire [1-1:0] M_adder_v;
   wire [1-1:0] M_adder_n;
-  add_3 adder (
+  add_6 adder (
     .io_dip(io_dip),
     .io_led2(M_adder_io_led2),
     .z(M_adder_z),
@@ -27,25 +25,25 @@ module alu_2 (
   );
   
   wire [8-1:0] M_compare_io_led2;
-  compare_4 compare (
+  compare_7 compare (
     .io_dip(io_dip),
     .io_led2(M_compare_io_led2)
   );
   
   wire [8-1:0] M_boolean_io_led2;
-  boolean_5 boolean (
+  boolean_8 boolean (
     .io_dip(io_dip),
     .io_led2(M_boolean_io_led2)
   );
   
   wire [8-1:0] M_shift_io_led2;
-  shift_6 shift (
+  shift_9 shift (
     .io_dip(io_dip),
     .io_led2(M_shift_io_led2)
   );
   
   wire [8-1:0] M_muldiv_io_led2;
-  muldiv_7 muldiv (
+  muldiv_10 muldiv (
     .io_dip(io_dip),
     .io_led2(M_muldiv_io_led2)
   );
@@ -54,6 +52,7 @@ module alu_2 (
     led = 8'h00;
     io_led[0+7-:8] = io_dip[0+7-:8];
     io_led[8+7-:8] = io_dip[8+7-:8];
+    io_led[16+7-:8] = 8'h00;
     
     case (io_dip[16+4+1-:2])
       1'h0: begin

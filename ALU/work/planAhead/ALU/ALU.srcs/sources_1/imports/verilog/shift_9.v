@@ -4,7 +4,7 @@
    This is a temporary file and any changes made to it will be destroyed.
 */
 
-module shift_6 (
+module shift_9 (
     output reg [7:0] io_led2,
     input [23:0] io_dip
   );

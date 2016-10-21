@@ -35,11 +35,20 @@ module mojo_top_0 (
     .in(M_reset_cond_in),
     .out(M_reset_cond_out)
   );
-  wire [24-1:0] M_alu_io_led;
-  wire [8-1:0] M_alu_led;
-  alu_2 alu (
+  wire [8-1:0] M_testcase_out;
+  wire [8-1:0] M_testcase_a;
+  wire [8-1:0] M_testcase_b;
+  testcase_2 testcase (
     .clk(clk),
     .rst(rst),
+    .out(M_testcase_out),
+    .a(M_testcase_a),
+    .b(M_testcase_b)
+  );
+  
+  wire [24-1:0] M_alu_io_led;
+  wire [8-1:0] M_alu_led;
+  alu_3 alu (
     .io_dip(io_dip),
     .io_led(M_alu_io_led),
     .led(M_alu_led)
@@ -55,7 +64,13 @@ module mojo_top_0 (
     io_led = 24'h000000;
     io_seg = 8'hff;
     io_sel = 4'hf;
-    io_led = M_alu_io_led;
-    led = M_alu_led;
+    if (io_dip[16+7+0-:1] == 1'h0) begin
+      io_led = M_alu_io_led;
+      led = M_alu_led;
+    end else begin
+      io_led[8+7-:8] = M_testcase_a;
+      io_led[0+7-:8] = M_testcase_b;
+      io_led[16+7-:8] = M_testcase_out;
+    end
   end
 endmodule

@@ -4,7 +4,7 @@
    This is a temporary file and any changes made to it will be destroyed.
 */
 
-module add_3 (
+module add_6 (
     output reg [7:0] io_led2,
     input [23:0] io_dip,
     output reg z,
@@ -28,7 +28,7 @@ module add_3 (
     end else begin
       z = 1'h0;
     end
-    v = (io_dip[0+7+0-:1] && io_dip[8+7+0-:1] && (!result[7+0-:1])) || ((!io_dip[0+7+0-:1]) && (!io_dip[8+7+0-:1]) && result[7+0-:1]);
+    v = (io_dip[8+7+0-:1] & (io_dip[0+7+0-:1] ^ io_dip[16+0+0-:1]) & (~result[7+0-:1])) | ((~(io_dip[0+7+0-:1] ^ io_dip[16+0+0-:1])) & (~io_dip[8+7+0-:1]) & result[7+0-:1]);
     n = result[7+0-:1];
   end
 endmodule

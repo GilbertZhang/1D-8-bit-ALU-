@@ -5,6 +5,7 @@
     <src>alu.luc</src>
     <src>boolean.luc</src>
     <src>testcase.luc</src>
+    <src>reverse.luc</src>
     <src>muldiv.luc</src>
     <src>add.luc</src>
     <src>xnor.luc</src>

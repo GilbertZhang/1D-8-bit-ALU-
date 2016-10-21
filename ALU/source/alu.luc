@@ -9,13 +9,14 @@ module alu (
       boolean boolean(.io_dip(io_dip));
       shift shift(.io_dip(io_dip));
       muldiv muldiv(.io_dip(io_dip));
-      xnor xnor(.io_dip(io_dip));
+      //xnor xnor(.io_dip(io_dip));
   
   always {
   
     led = 8b00;
     io_led[0] = io_dip[0];
     io_led[1] = io_dip[1];
+    io_led[2] = 8b00;
     
     //add   000000, sub   000001, mul   000010, div 000011
     //and   011000, or    011110, XOR   010110, A   011010
@@ -34,13 +35,8 @@ module alu (
           io_led[2] = muldiv.io_led2;// multiply || divide
         }
         
-      1:
-        if( io_dip[2][3:0] == 6 || io_dip[2][3:0] == 8 || io_dip[2][3:0] == 10 || io_dip[2][3:0] == 14 ){
-           io_led[2] = boolean.io_led2; //boolean
-         }else{ 
-            io_led[2] = xnor.io_led2; // xnor nand nor 
-         } 
-        
+      1:io_led[2] = boolean.io_led2; //boolean
+
       2: io_led[2] = shift.io_led2; //shift
       
       3: io_led[2] = compare.io_led2; // compare

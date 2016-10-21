@@ -4,7 +4,7 @@
    This is a temporary file and any changes made to it will be destroyed.
 */
 
-module compare_4 (
+module compare_7 (
     output reg [7:0] io_led2,
     input [23:0] io_dip
   );
@@ -23,7 +23,7 @@ module compare_4 (
   wire [1-1:0] M_add_z;
   wire [1-1:0] M_add_v;
   wire [1-1:0] M_add_n;
-  add_3 add (
+  add_6 add (
     .io_dip(io_dip),
     .io_led2(M_add_io_led2),
     .z(M_add_z),
@@ -45,7 +45,7 @@ module compare_4 (
         result = {7'h00, v ^ n};
       end
       2'h3: begin
-        result = {7'h00, z + v ^ n};
+        result = {7'h00, z | (v ^ n)};
       end
       1'h0: begin
         result = 8'h00;

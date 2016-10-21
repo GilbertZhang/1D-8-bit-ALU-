@@ -1,10 +1,185 @@
 module testcase (
     input clk,  // clock
     input rst,  // reset
-    output out
+    output out[8],
+    output a[8],
+    output b[8] 
+
   ) {
 
+    sig io_dip[3][8];
+    //var i;
+    
+    fsm state(.rst(rst), .clk(clk)) = {BEGIN, ADD, SUB, MUL, DIV, AND, OR, XOR, A, SHL, SHR, SRA, CMPEQ, CMPLE, CMPLT, PASS};
+    blink blink(.rst(rst), .clk(clk));
+    alu alu(.io_dip(io_dip));
+  
+    const OADD   = 6b000000;
+    const OSUB   = 6b000001;
+    const OMUL   = 6b000010; 
+    const ODIV   = 6b000011;
+    const OAND   = 6b011000; 
+    const OOR    = 6b011110;
+    const OXOR   = 6b010110; 
+    const OA     = 6b011010;
+    const OSHL   = 6b100000; 
+    const OSHR   = 6b100001; 
+    const OSRA   = 6b100011;
+    const OCMPEQ = 6b110011; 
+    const OCMPLT = 6b110101; 
+    const OCMPLE = 6b110111;
+  
+    const RADD   = 8b01111010;
+    const RSUB   = 8b00110000;
+    const RMUL   = 8b01001001; 
+    const RDIV   = 8b00000010;
+    const RAND   = 8b00000101; 
+    const ROR    = 8b01110101;
+    const RXOR   = 8b01110000; 
+    const RA     = 8b00100101;
+    const RSHL   = 8b10100000; 
+    const RSHR   = 8b00000001; 
+    const RSRA   = 8b00000001;
+    const RCMPEQ = 8b00000000; 
+    const RCMPLT = 8b00000000; 
+    const RCMPLE = 8b00000000;
+  
+    const A = 8b01010101;
+    const B = 8b00100101;
+  
   always {
+    a = A;
+    b = B;
+    io_dip[1] = A;
+    io_dip[0] = B;
+    io_dip[2] = 0;
+    
     out = 0;
+    //for(i = 0; i < 6; i++){
+      //if(io_dip[2][i] == 1){
+        //  out[i] = blink.blink;
+      //}
+    //}
+    
+    
+    case(state.q){
+    
+      state.BEGIN:
+      out[0] = blink.blink;
+        if(blink.hold == 1)
+          state.d = state.ADD;
+          
+      state.ADD:
+        io_dip[2][5:0] = OADD;
+        out[1] = blink.blink;
+        if(alu.io_led[2] == RADD && blink.hold == 1){
+          state.d = state.SUB;
+        }
+                  
+      state.SUB:
+        io_dip[2][5:0] = OSUB;
+        out[2] = blink.blink;
+        if(alu.io_led[2] == RSUB && blink.hold == 1){
+          state.d = state.MUL;
+        }
+                  
+      state.MUL:
+        io_dip[2][5:0] = OMUL;
+        out[3] = blink.blink;
+        if(alu.io_led[2] == RMUL && blink.hold == 1){
+          state.d = state.DIV;
+        }
+                  
+      state.DIV:
+        io_dip[2][5:0] = ODIV;
+        out[4] = blink.blink;
+        if(alu.io_led[2] == RDIV && blink.hold == 1){
+          state.d = state.AND;
+        }
+                  
+      state.AND:
+        io_dip[2][5:0] = OAND;
+        out[5] = blink.blink;
+        if(alu.io_led[2] == RAND && blink.hold == 1){
+          state.d = state.OR;
+        }
+                                
+      state.OR:
+        io_dip[2][5:0] = OOR;
+        out[6] = blink.blink;
+        if(alu.io_led[2] == ROR && blink.hold == 1){
+          state.d = state.XOR;
+        }
+                  
+
+                  
+      state.XOR:
+        io_dip[2][5:0] = OXOR;
+        out[7] = blink.blink;
+        if(alu.io_led[2] == RXOR && blink.hold == 1){
+          state.d = state.A;
+        }
+                  
+          
+      state.A:
+        io_dip[2][5:0] = OA;
+        out[0] = blink.blink;
+        out[1] = blink.blink;
+        if(alu.io_led[2] == RA && blink.hold == 1){
+          state.d = state.SHL;
+        }
+                  
+      state.SHL:
+        io_dip[2][5:0] = OSHL;
+        out[0] = blink.blink;
+        out[2] = blink.blink;
+        if(alu.io_led[2] == RSHL && blink.hold == 1){
+          state.d = state.SHR;
+        }
+                  
+      state.SHR:
+        io_dip[2][5:0] = OSHR;
+        out[0] = blink.blink;
+        out[3] = blink.blink;
+        if(alu.io_led[2] == RSHR && blink.hold == 1){
+          state.d = state.SRA;
+        }
+                  
+      state.SRA:
+        io_dip[2][5:0] = OSRA;
+        out[0] = blink.blink;
+        out[4] = blink.blink;
+        if(alu.io_led[2] == RSRA && blink.hold == 1){
+          state.d = state.CMPEQ;
+        }
+                  
+      state.CMPEQ:
+        io_dip[2][5:0] = OCMPEQ;
+        out[0] = blink.blink;
+        out[5] = blink.blink;
+        if(alu.io_led[2] == RCMPEQ && blink.hold == 1){
+          state.d = state.CMPLE;
+        }
+                  
+      state.CMPLE:
+        io_dip[2][5:0] = OCMPLE;
+        out[0] = blink.blink;
+        out[6] = blink.blink;
+        if(alu.io_led[2] == RCMPLE && blink.hold == 1){
+          state.d = state.CMPLT;
+        }
+                  
+      state.CMPLT:
+        io_dip[2][5:0] = OCMPLT;
+        out[0] = blink.blink;
+        out[7] = blink.blink;
+        if(alu.io_led[2] == RCMPLT && blink.hold == 1){
+          state.d = state.PASS;
+        }
+                  
+      state.PASS:
+        out = 8x{blink.blink};
+    
+    }
   }
 }

@@ -17,9 +17,9 @@ module compare (
     
     result = 8h00;
     case(io_dip[2][2-:2]){
-      1:result = c{7h00,z};
-      2:result = c{7h00,v^n};
-      3:result = c{7h00,z+v^n};
+      1:result = c{7b00,z};
+      2:result = c{7b00,v^n};
+      3:result = c{7b00,z|(v^n)};
       0:result = 8h00;
     }
     

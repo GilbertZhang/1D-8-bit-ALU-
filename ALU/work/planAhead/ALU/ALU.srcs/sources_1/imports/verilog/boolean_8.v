@@ -4,7 +4,7 @@
    This is a temporary file and any changes made to it will be destroyed.
 */
 
-module boolean_5 (
+module boolean_8 (
     output reg [7:0] io_led2,
     input [23:0] io_dip
   );
@@ -12,6 +12,12 @@ module boolean_5 (
   
   
   reg [7:0] result3;
+  
+  wire [8-1:0] M_reverse_io_led2;
+  reverse_16 reverse (
+    .io_dip(io_dip),
+    .io_led2(M_reverse_io_led2)
+  );
   
   always @* begin
     result3 = 8'h00;
@@ -28,6 +34,9 @@ module boolean_5 (
       end
       4'ha: begin
         result3 = io_dip[0+7-:8];
+      end
+      3'h5: begin
+        result3 = M_reverse_io_led2;
       end
     endcase
     io_led2 = result3[0+7-:8];

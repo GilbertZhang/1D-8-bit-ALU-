@@ -5,12 +5,10 @@ module xnor (
 
   always {
     io_led2 = 0;
-    case(io_dip[2][3:0]){
-      9:io_led2 = ~(io_dip[0] & io_dip[1]); // nand
-      15:io_led2 = ~(io_dip[0] & io_dip[1]); //nor
-      7: io_led2 = ~(io_dip[0] ^ io_dip[1]); // xnor
-      
-      
+    case(io_dip[2][3-:4]){
+      9:io_led2 = io_dip[0]&io_dip[1]; // nand
+      15:io_led2 = io_dip[0]|io_dip[1]; //nor
+      7: io_led2 = io_dip[0]^io_dip[1]; // xnor  
      }
   }
 }

@@ -7,20 +7,26 @@ Reading design: mojo_top_0.prj
 =========================================================================
 *                          HDL Parsing                                  *
 =========================================================================
-Analyzing Verilog file "D:/Dropbox/Dropbox/Term4/50.002computation structure/1D-8-bit-ALU-/ALU/work/planAhead/ALU/ALU.srcs/sources_1/imports/verilog/add_3.v" into library work
-Parsing module <add_3>.
-Analyzing Verilog file "D:/Dropbox/Dropbox/Term4/50.002computation structure/1D-8-bit-ALU-/ALU/work/planAhead/ALU/ALU.srcs/sources_1/imports/verilog/shift_6.v" into library work
-Parsing module <shift_6>.
-Analyzing Verilog file "D:/Dropbox/Dropbox/Term4/50.002computation structure/1D-8-bit-ALU-/ALU/work/planAhead/ALU/ALU.srcs/sources_1/imports/verilog/muldiv_7.v" into library work
-Parsing module <muldiv_7>.
-Analyzing Verilog file "D:/Dropbox/Dropbox/Term4/50.002computation structure/1D-8-bit-ALU-/ALU/work/planAhead/ALU/ALU.srcs/sources_1/imports/verilog/compare_4.v" into library work
-Parsing module <compare_4>.
-Analyzing Verilog file "D:/Dropbox/Dropbox/Term4/50.002computation structure/1D-8-bit-ALU-/ALU/work/planAhead/ALU/ALU.srcs/sources_1/imports/verilog/boolean_5.v" into library work
-Parsing module <boolean_5>.
+Analyzing Verilog file "D:/Dropbox/Dropbox/Term4/50.002computation structure/1D-8-bit-ALU-/ALU/work/planAhead/ALU/ALU.srcs/sources_1/imports/verilog/reverse_16.v" into library work
+Parsing module <reverse_16>.
+Analyzing Verilog file "D:/Dropbox/Dropbox/Term4/50.002computation structure/1D-8-bit-ALU-/ALU/work/planAhead/ALU/ALU.srcs/sources_1/imports/verilog/add_6.v" into library work
+Parsing module <add_6>.
+Analyzing Verilog file "D:/Dropbox/Dropbox/Term4/50.002computation structure/1D-8-bit-ALU-/ALU/work/planAhead/ALU/ALU.srcs/sources_1/imports/verilog/shift_9.v" into library work
+Parsing module <shift_9>.
+Analyzing Verilog file "D:/Dropbox/Dropbox/Term4/50.002computation structure/1D-8-bit-ALU-/ALU/work/planAhead/ALU/ALU.srcs/sources_1/imports/verilog/muldiv_10.v" into library work
+Parsing module <muldiv_10>.
+Analyzing Verilog file "D:/Dropbox/Dropbox/Term4/50.002computation structure/1D-8-bit-ALU-/ALU/work/planAhead/ALU/ALU.srcs/sources_1/imports/verilog/compare_7.v" into library work
+Parsing module <compare_7>.
+Analyzing Verilog file "D:/Dropbox/Dropbox/Term4/50.002computation structure/1D-8-bit-ALU-/ALU/work/planAhead/ALU/ALU.srcs/sources_1/imports/verilog/boolean_8.v" into library work
+Parsing module <boolean_8>.
+Analyzing Verilog file "D:/Dropbox/Dropbox/Term4/50.002computation structure/1D-8-bit-ALU-/ALU/work/planAhead/ALU/ALU.srcs/sources_1/imports/verilog/blink_4.v" into library work
+Parsing module <blink_4>.
+Analyzing Verilog file "D:/Dropbox/Dropbox/Term4/50.002computation structure/1D-8-bit-ALU-/ALU/work/planAhead/ALU/ALU.srcs/sources_1/imports/verilog/alu_3.v" into library work
+Parsing module <alu_3>.
+Analyzing Verilog file "D:/Dropbox/Dropbox/Term4/50.002computation structure/1D-8-bit-ALU-/ALU/work/planAhead/ALU/ALU.srcs/sources_1/imports/verilog/testcase_2.v" into library work
+Parsing module <testcase_2>.
 Analyzing Verilog file "D:/Dropbox/Dropbox/Term4/50.002computation structure/1D-8-bit-ALU-/ALU/work/planAhead/ALU/ALU.srcs/sources_1/imports/verilog/reset_conditioner_1.v" into library work
 Parsing module <reset_conditioner_1>.
-Analyzing Verilog file "D:/Dropbox/Dropbox/Term4/50.002computation structure/1D-8-bit-ALU-/ALU/work/planAhead/ALU/ALU.srcs/sources_1/imports/verilog/alu_2.v" into library work
-Parsing module <alu_2>.
 Analyzing Verilog file "D:/Dropbox/Dropbox/Term4/50.002computation structure/1D-8-bit-ALU-/ALU/work/planAhead/ALU/ALU.srcs/sources_1/imports/verilog/mojo_top_0.v" into library work
 Parsing module <mojo_top_0>.
 
@@ -32,18 +38,25 @@ Elaborating module <mojo_top_0>.
 
 Elaborating module <reset_conditioner_1>.
 
-Elaborating module <alu_2>.
+Elaborating module <testcase_2>.
 
-Elaborating module <add_3>.
+Elaborating module <blink_4>.
 
-Elaborating module <compare_4>.
-WARNING:HDLCompiler:1127 - "D:/Dropbox/Dropbox/Term4/50.002computation structure/1D-8-bit-ALU-/ALU/work/planAhead/ALU/ALU.srcs/sources_1/imports/verilog/compare_4.v" Line 28: Assignment to M_add_io_led2 ignored, since the identifier is never used
+Elaborating module <alu_3>.
 
-Elaborating module <boolean_5>.
+Elaborating module <add_6>.
 
-Elaborating module <shift_6>.
+Elaborating module <compare_7>.
+WARNING:HDLCompiler:1127 - "D:/Dropbox/Dropbox/Term4/50.002computation structure/1D-8-bit-ALU-/ALU/work/planAhead/ALU/ALU.srcs/sources_1/imports/verilog/compare_7.v" Line 28: Assignment to M_add_io_led2 ignored, since the identifier is never used
 
-Elaborating module <muldiv_7>.
+Elaborating module <boolean_8>.
+
+Elaborating module <reverse_16>.
+
+Elaborating module <shift_9>.
+
+Elaborating module <muldiv_10>.
+WARNING:HDLCompiler:1127 - "D:/Dropbox/Dropbox/Term4/50.002computation structure/1D-8-bit-ALU-/ALU/work/planAhead/ALU/ALU.srcs/sources_1/imports/verilog/testcase_2.v" Line 53: Assignment to M_alu_led ignored, since the identifier is never used
 
 =========================================================================
 *                           HDL Synthesis                               *
@@ -58,13 +71,14 @@ WARNING:Xst:647 - Input <spi_mosi> is never used. This port will be preserved an
 WARNING:Xst:647 - Input <spi_sck> is never used. This port will be preserved and left unconnected if it belongs to a top-level block or it belongs to a sub-block and the hierarchy of this sub-block is preserved.
 WARNING:Xst:647 - Input <avr_tx> is never used. This port will be preserved and left unconnected if it belongs to a top-level block or it belongs to a sub-block and the hierarchy of this sub-block is preserved.
 WARNING:Xst:647 - Input <avr_rx_busy> is never used. This port will be preserved and left unconnected if it belongs to a top-level block or it belongs to a sub-block and the hierarchy of this sub-block is preserved.
-    Found 1-bit tristate buffer for signal <spi_miso> created at line 48
-    Found 1-bit tristate buffer for signal <spi_channel<3>> created at line 48
-    Found 1-bit tristate buffer for signal <spi_channel<2>> created at line 48
-    Found 1-bit tristate buffer for signal <spi_channel<1>> created at line 48
-    Found 1-bit tristate buffer for signal <spi_channel<0>> created at line 48
-    Found 1-bit tristate buffer for signal <avr_rx> created at line 48
+    Found 1-bit tristate buffer for signal <spi_miso> created at line 57
+    Found 1-bit tristate buffer for signal <spi_channel<3>> created at line 57
+    Found 1-bit tristate buffer for signal <spi_channel<2>> created at line 57
+    Found 1-bit tristate buffer for signal <spi_channel<1>> created at line 57
+    Found 1-bit tristate buffer for signal <spi_channel<0>> created at line 57
+    Found 1-bit tristate buffer for signal <avr_rx> created at line 57
     Summary:
+	inferred   2 Multiplexer(s).
 	inferred   6 Tristate(s).
 Unit <mojo_top_0> synthesized.
 
@@ -75,49 +89,86 @@ Synthesizing Unit <reset_conditioner_1>.
 	inferred   4 D-type flip-flop(s).
 Unit <reset_conditioner_1> synthesized.
 
-Synthesizing Unit <alu_2>.
-    Related source file is "D:/Dropbox/Dropbox/Term4/50.002computation structure/1D-8-bit-ALU-/ALU/work/planAhead/ALU/ALU.srcs/sources_1/imports/verilog/alu_2.v".
-WARNING:Xst:647 - Input <clk> is never used. This port will be preserved and left unconnected if it belongs to a top-level block or it belongs to a sub-block and the hierarchy of this sub-block is preserved.
-WARNING:Xst:647 - Input <rst> is never used. This port will be preserved and left unconnected if it belongs to a top-level block or it belongs to a sub-block and the hierarchy of this sub-block is preserved.
-    Found 1-bit 4-to-1 multiplexer for signal <io_led<23>> created at line 58.
-    Found 1-bit 4-to-1 multiplexer for signal <io_led<22>> created at line 58.
-    Found 1-bit 4-to-1 multiplexer for signal <io_led<21>> created at line 58.
-    Found 1-bit 4-to-1 multiplexer for signal <io_led<20>> created at line 58.
-    Found 1-bit 4-to-1 multiplexer for signal <io_led<19>> created at line 58.
-    Found 1-bit 4-to-1 multiplexer for signal <io_led<18>> created at line 58.
-    Found 1-bit 4-to-1 multiplexer for signal <io_led<17>> created at line 58.
-    Found 1-bit 4-to-1 multiplexer for signal <io_led<16>> created at line 58.
+Synthesizing Unit <testcase_2>.
+    Related source file is "D:/Dropbox/Dropbox/Term4/50.002computation structure/1D-8-bit-ALU-/ALU/work/planAhead/ALU/ALU.srcs/sources_1/imports/verilog/testcase_2.v".
+INFO:Xst:3210 - "D:/Dropbox/Dropbox/Term4/50.002computation structure/1D-8-bit-ALU-/ALU/work/planAhead/ALU/ALU.srcs/sources_1/imports/verilog/testcase_2.v" line 50: Output port <led> of the instance <alu> is unconnected or connected to loadless signal.
+    Found 4-bit register for signal <M_state_q>.
+    Found finite state machine <FSM_0> for signal <M_state_q>.
+    -----------------------------------------------------------------------
+    | States             | 16                                             |
+    | Transitions        | 45                                             |
+    | Inputs             | 12                                             |
+    | Outputs            | 17                                             |
+    | Clock              | clk (rising_edge)                              |
+    | Reset              | rst (positive)                                 |
+    | Reset type         | synchronous                                    |
+    | Reset State        | 0000                                           |
+    | Power Up State     | 0000                                           |
+    | Encoding           | auto                                           |
+    | Implementation     | LUT                                            |
+    -----------------------------------------------------------------------
+    Found 8-bit 16-to-1 multiplexer for signal <out> created at line 126.
+    Summary:
+	inferred   1 Multiplexer(s).
+	inferred   1 Finite State Machine(s).
+Unit <testcase_2> synthesized.
+
+Synthesizing Unit <blink_4>.
+    Related source file is "D:/Dropbox/Dropbox/Term4/50.002computation structure/1D-8-bit-ALU-/ALU/work/planAhead/ALU/ALU.srcs/sources_1/imports/verilog/blink_4.v".
+    Found 26-bit register for signal <M_counter_q>.
+    Found 27-bit register for signal <M_holder_q>.
+    Found 26-bit adder for signal <M_counter_d> created at line 25.
+    Found 27-bit adder for signal <M_holder_d> created at line 27.
+    Summary:
+	inferred   2 Adder/Subtractor(s).
+	inferred  53 D-type flip-flop(s).
+Unit <blink_4> synthesized.
+
+Synthesizing Unit <alu_3>.
+    Related source file is "D:/Dropbox/Dropbox/Term4/50.002computation structure/1D-8-bit-ALU-/ALU/work/planAhead/ALU/ALU.srcs/sources_1/imports/verilog/alu_3.v".
+    Found 1-bit 4-to-1 multiplexer for signal <io_led<23>> created at line 57.
+    Found 1-bit 4-to-1 multiplexer for signal <io_led<22>> created at line 57.
+    Found 1-bit 4-to-1 multiplexer for signal <io_led<21>> created at line 57.
+    Found 1-bit 4-to-1 multiplexer for signal <io_led<20>> created at line 57.
+    Found 1-bit 4-to-1 multiplexer for signal <io_led<19>> created at line 57.
+    Found 1-bit 4-to-1 multiplexer for signal <io_led<18>> created at line 57.
+    Found 1-bit 4-to-1 multiplexer for signal <io_led<17>> created at line 57.
+    Found 1-bit 4-to-1 multiplexer for signal <io_led<16>> created at line 57.
     Summary:
 	inferred  18 Multiplexer(s).
-Unit <alu_2> synthesized.
+Unit <alu_3> synthesized.
 
-Synthesizing Unit <add_3>.
-    Related source file is "D:/Dropbox/Dropbox/Term4/50.002computation structure/1D-8-bit-ALU-/ALU/work/planAhead/ALU/ALU.srcs/sources_1/imports/verilog/add_3.v".
+Synthesizing Unit <add_6>.
+    Related source file is "D:/Dropbox/Dropbox/Term4/50.002computation structure/1D-8-bit-ALU-/ALU/work/planAhead/ALU/ALU.srcs/sources_1/imports/verilog/add_6.v".
 WARNING:Xst:647 - Input <io_dip<23:17>> is never used. This port will be preserved and left unconnected if it belongs to a top-level block or it belongs to a sub-block and the hierarchy of this sub-block is preserved.
-    Found 9-bit subtractor for signal <GND_4_o_GND_4_o_sub_3_OUT> created at line 23.
-    Found 9-bit adder for signal <n0022> created at line 21.
+    Found 9-bit subtractor for signal <GND_6_o_GND_6_o_sub_3_OUT> created at line 23.
+    Found 9-bit adder for signal <n0023> created at line 21.
     Summary:
 	inferred   1 Adder/Subtractor(s).
-Unit <add_3> synthesized.
+Unit <add_6> synthesized.
 
-Synthesizing Unit <compare_4>.
-    Related source file is "D:/Dropbox/Dropbox/Term4/50.002computation structure/1D-8-bit-ALU-/ALU/work/planAhead/ALU/ALU.srcs/sources_1/imports/verilog/compare_4.v".
-INFO:Xst:3210 - "D:/Dropbox/Dropbox/Term4/50.002computation structure/1D-8-bit-ALU-/ALU/work/planAhead/ALU/ALU.srcs/sources_1/imports/verilog/compare_4.v" line 26: Output port <io_led2> of the instance <add> is unconnected or connected to loadless signal.
-    Found 1-bit adder for signal <M_add_z[0]_M_add_v[0]_add_0_OUT<0>> created at line 48.
+Synthesizing Unit <compare_7>.
+    Related source file is "D:/Dropbox/Dropbox/Term4/50.002computation structure/1D-8-bit-ALU-/ALU/work/planAhead/ALU/ALU.srcs/sources_1/imports/verilog/compare_7.v".
+INFO:Xst:3210 - "D:/Dropbox/Dropbox/Term4/50.002computation structure/1D-8-bit-ALU-/ALU/work/planAhead/ALU/ALU.srcs/sources_1/imports/verilog/compare_7.v" line 26: Output port <io_led2> of the instance <add> is unconnected or connected to loadless signal.
     Found 8-bit 4-to-1 multiplexer for signal <result> created at line 40.
     Summary:
-	inferred   1 Adder/Subtractor(s).
 	inferred   1 Multiplexer(s).
-Unit <compare_4> synthesized.
+Unit <compare_7> synthesized.
 
-Synthesizing Unit <boolean_5>.
-    Related source file is "D:/Dropbox/Dropbox/Term4/50.002computation structure/1D-8-bit-ALU-/ALU/work/planAhead/ALU/ALU.srcs/sources_1/imports/verilog/boolean_5.v".
-WARNING:Xst:647 - Input <io_dip<23:20>> is never used. This port will be preserved and left unconnected if it belongs to a top-level block or it belongs to a sub-block and the hierarchy of this sub-block is preserved.
+Synthesizing Unit <boolean_8>.
+    Related source file is "D:/Dropbox/Dropbox/Term4/50.002computation structure/1D-8-bit-ALU-/ALU/work/planAhead/ALU/ALU.srcs/sources_1/imports/verilog/boolean_8.v".
     Summary:
-Unit <boolean_5> synthesized.
+Unit <boolean_8> synthesized.
 
-Synthesizing Unit <shift_6>.
-    Related source file is "D:/Dropbox/Dropbox/Term4/50.002computation structure/1D-8-bit-ALU-/ALU/work/planAhead/ALU/ALU.srcs/sources_1/imports/verilog/shift_6.v".
+Synthesizing Unit <reverse_16>.
+    Related source file is "D:/Dropbox/Dropbox/Term4/50.002computation structure/1D-8-bit-ALU-/ALU/work/planAhead/ALU/ALU.srcs/sources_1/imports/verilog/reverse_16.v".
+WARNING:Xst:647 - Input <io_dip<23:8>> is never used. This port will be preserved and left unconnected if it belongs to a top-level block or it belongs to a sub-block and the hierarchy of this sub-block is preserved.
+    Summary:
+	no macro.
+Unit <reverse_16> synthesized.
+
+Synthesizing Unit <shift_9>.
+    Related source file is "D:/Dropbox/Dropbox/Term4/50.002computation structure/1D-8-bit-ALU-/ALU/work/planAhead/ALU/ALU.srcs/sources_1/imports/verilog/shift_9.v".
 WARNING:Xst:647 - Input <io_dip<15:11>> is never used. This port will be preserved and left unconnected if it belongs to a top-level block or it belongs to a sub-block and the hierarchy of this sub-block is preserved.
 WARNING:Xst:647 - Input <io_dip<23:18>> is never used. This port will be preserved and left unconnected if it belongs to a top-level block or it belongs to a sub-block and the hierarchy of this sub-block is preserved.
     Found 8-bit shifter logical right for signal <io_dip[7]_io_dip[10]_shift_right_0_OUT> created at line 21
@@ -127,34 +178,34 @@ WARNING:Xst:647 - Input <io_dip<23:18>> is never used. This port will be preserv
     Summary:
 	inferred   1 Multiplexer(s).
 	inferred   3 Combinational logic shifter(s).
-Unit <shift_6> synthesized.
+Unit <shift_9> synthesized.
 
-Synthesizing Unit <muldiv_7>.
-    Related source file is "D:/Dropbox/Dropbox/Term4/50.002computation structure/1D-8-bit-ALU-/ALU/work/planAhead/ALU/ALU.srcs/sources_1/imports/verilog/muldiv_7.v".
+Synthesizing Unit <muldiv_10>.
+    Related source file is "D:/Dropbox/Dropbox/Term4/50.002computation structure/1D-8-bit-ALU-/ALU/work/planAhead/ALU/ALU.srcs/sources_1/imports/verilog/muldiv_10.v".
 WARNING:Xst:647 - Input <io_dip<23:18>> is never used. This port will be preserved and left unconnected if it belongs to a top-level block or it belongs to a sub-block and the hierarchy of this sub-block is preserved.
     Found 8x8-bit multiplier for signal <n0008> created at line 19.
     Summary:
 	inferred   1 Multiplier(s).
-Unit <muldiv_7> synthesized.
+Unit <muldiv_10> synthesized.
 
 Synthesizing Unit <div_8u_8u>.
     Related source file is "".
     Found 16-bit adder for signal <n0292> created at line 0.
-    Found 16-bit adder for signal <GND_10_o_b[7]_add_1_OUT> created at line 0.
+    Found 16-bit adder for signal <GND_13_o_b[7]_add_1_OUT> created at line 0.
     Found 15-bit adder for signal <n0296> created at line 0.
-    Found 15-bit adder for signal <GND_10_o_b[7]_add_3_OUT> created at line 0.
+    Found 15-bit adder for signal <GND_13_o_b[7]_add_3_OUT> created at line 0.
     Found 14-bit adder for signal <n0300> created at line 0.
-    Found 14-bit adder for signal <GND_10_o_b[7]_add_5_OUT> created at line 0.
+    Found 14-bit adder for signal <GND_13_o_b[7]_add_5_OUT> created at line 0.
     Found 13-bit adder for signal <n0304> created at line 0.
-    Found 13-bit adder for signal <GND_10_o_b[7]_add_7_OUT> created at line 0.
+    Found 13-bit adder for signal <GND_13_o_b[7]_add_7_OUT> created at line 0.
     Found 12-bit adder for signal <n0308> created at line 0.
-    Found 12-bit adder for signal <GND_10_o_b[7]_add_9_OUT> created at line 0.
+    Found 12-bit adder for signal <GND_13_o_b[7]_add_9_OUT> created at line 0.
     Found 11-bit adder for signal <n0312> created at line 0.
-    Found 11-bit adder for signal <GND_10_o_b[7]_add_11_OUT> created at line 0.
+    Found 11-bit adder for signal <GND_13_o_b[7]_add_11_OUT> created at line 0.
     Found 10-bit adder for signal <n0316> created at line 0.
-    Found 10-bit adder for signal <GND_10_o_b[7]_add_13_OUT> created at line 0.
+    Found 10-bit adder for signal <GND_13_o_b[7]_add_13_OUT> created at line 0.
     Found 9-bit adder for signal <n0320> created at line 0.
-    Found 9-bit adder for signal <GND_10_o_b[7]_add_15_OUT> created at line 0.
+    Found 9-bit adder for signal <GND_13_o_b[7]_add_15_OUT> created at line 0.
     Found 16-bit comparator lessequal for signal <BUS_0001> created at line 0
     Found 15-bit comparator lessequal for signal <BUS_0002> created at line 0
     Found 14-bit comparator lessequal for signal <BUS_0003> created at line 0
@@ -174,45 +225,51 @@ Unit <div_8u_8u> synthesized.
 HDL Synthesis Report
 
 Macro Statistics
-# Multipliers                                          : 1
- 8x8-bit multiplier                                    : 1
-# Adders/Subtractors                                   : 19
- 1-bit adder                                           : 1
- 10-bit adder                                          : 2
- 11-bit adder                                          : 2
- 12-bit adder                                          : 2
- 13-bit adder                                          : 2
- 14-bit adder                                          : 2
- 15-bit adder                                          : 2
- 16-bit adder                                          : 2
- 9-bit adder                                           : 2
- 9-bit addsub                                          : 2
-# Registers                                            : 1
+# Multipliers                                          : 2
+ 8x8-bit multiplier                                    : 2
+# Adders/Subtractors                                   : 38
+ 10-bit adder                                          : 4
+ 11-bit adder                                          : 4
+ 12-bit adder                                          : 4
+ 13-bit adder                                          : 4
+ 14-bit adder                                          : 4
+ 15-bit adder                                          : 4
+ 16-bit adder                                          : 4
+ 26-bit adder                                          : 1
+ 27-bit adder                                          : 1
+ 9-bit adder                                           : 4
+ 9-bit addsub                                          : 4
+# Registers                                            : 3
+ 26-bit register                                       : 1
+ 27-bit register                                       : 1
  4-bit register                                        : 1
-# Comparators                                          : 9
- 10-bit comparator lessequal                           : 1
- 11-bit comparator lessequal                           : 1
- 12-bit comparator lessequal                           : 1
- 13-bit comparator lessequal                           : 1
- 14-bit comparator lessequal                           : 1
- 15-bit comparator lessequal                           : 1
- 16-bit comparator lessequal                           : 1
- 8-bit comparator lessequal                            : 1
- 9-bit comparator lessequal                            : 1
-# Multiplexers                                         : 77
- 1-bit 2-to-1 multiplexer                              : 64
- 1-bit 4-to-1 multiplexer                              : 8
- 8-bit 2-to-1 multiplexer                              : 3
- 8-bit 4-to-1 multiplexer                              : 2
-# Logic shifters                                       : 3
- 8-bit shifter arithmetic right                        : 1
- 8-bit shifter logical left                            : 1
- 8-bit shifter logical right                           : 1
+# Comparators                                          : 18
+ 10-bit comparator lessequal                           : 2
+ 11-bit comparator lessequal                           : 2
+ 12-bit comparator lessequal                           : 2
+ 13-bit comparator lessequal                           : 2
+ 14-bit comparator lessequal                           : 2
+ 15-bit comparator lessequal                           : 2
+ 16-bit comparator lessequal                           : 2
+ 8-bit comparator lessequal                            : 2
+ 9-bit comparator lessequal                            : 2
+# Multiplexers                                         : 157
+ 1-bit 2-to-1 multiplexer                              : 128
+ 1-bit 4-to-1 multiplexer                              : 16
+ 24-bit 2-to-1 multiplexer                             : 1
+ 8-bit 16-to-1 multiplexer                             : 1
+ 8-bit 2-to-1 multiplexer                              : 7
+ 8-bit 4-to-1 multiplexer                              : 4
+# Logic shifters                                       : 6
+ 8-bit shifter arithmetic right                        : 2
+ 8-bit shifter logical left                            : 2
+ 8-bit shifter logical right                           : 2
 # Tristates                                            : 6
  1-bit tristate buffer                                 : 6
-# Xors                                                 : 3
- 1-bit xor2                                            : 2
- 8-bit xor2                                            : 1
+# FSMs                                                 : 1
+# Xors                                                 : 8
+ 1-bit xor2                                            : 6
+ 8-bit xor2                                            : 2
 
 =========================================================================
 
@@ -221,69 +278,135 @@ Macro Statistics
 =========================================================================
 
 
+Synthesizing (advanced) Unit <blink_4>.
+The following registers are absorbed into counter <M_counter_q>: 1 register on signal <M_counter_q>.
+The following registers are absorbed into counter <M_holder_q>: 1 register on signal <M_holder_q>.
+Unit <blink_4> synthesized (advanced).
+
 =========================================================================
 Advanced HDL Synthesis Report
 
 Macro Statistics
-# Multipliers                                          : 1
- 8x8-bit multiplier                                    : 1
-# Adders/Subtractors                                   : 11
- 1-bit adder                                           : 1
- 8-bit adder carry in                                  : 8
- 9-bit addsub                                          : 2
+# Multipliers                                          : 2
+ 8x8-bit multiplier                                    : 2
+# Adders/Subtractors                                   : 20
+ 8-bit adder carry in                                  : 16
+ 9-bit addsub                                          : 4
+# Counters                                             : 2
+ 26-bit up counter                                     : 1
+ 27-bit up counter                                     : 1
 # Registers                                            : 4
  Flip-Flops                                            : 4
-# Comparators                                          : 9
- 10-bit comparator lessequal                           : 1
- 11-bit comparator lessequal                           : 1
- 12-bit comparator lessequal                           : 1
- 13-bit comparator lessequal                           : 1
- 14-bit comparator lessequal                           : 1
- 15-bit comparator lessequal                           : 1
- 16-bit comparator lessequal                           : 1
- 8-bit comparator lessequal                            : 1
- 9-bit comparator lessequal                            : 1
-# Multiplexers                                         : 77
- 1-bit 2-to-1 multiplexer                              : 64
- 1-bit 4-to-1 multiplexer                              : 8
- 8-bit 2-to-1 multiplexer                              : 3
- 8-bit 4-to-1 multiplexer                              : 2
-# Logic shifters                                       : 3
- 8-bit shifter arithmetic right                        : 1
- 8-bit shifter logical left                            : 1
- 8-bit shifter logical right                           : 1
-# Xors                                                 : 3
- 1-bit xor2                                            : 2
- 8-bit xor2                                            : 1
+# Comparators                                          : 18
+ 10-bit comparator lessequal                           : 2
+ 11-bit comparator lessequal                           : 2
+ 12-bit comparator lessequal                           : 2
+ 13-bit comparator lessequal                           : 2
+ 14-bit comparator lessequal                           : 2
+ 15-bit comparator lessequal                           : 2
+ 16-bit comparator lessequal                           : 2
+ 8-bit comparator lessequal                            : 2
+ 9-bit comparator lessequal                            : 2
+# Multiplexers                                         : 156
+ 1-bit 2-to-1 multiplexer                              : 128
+ 1-bit 4-to-1 multiplexer                              : 16
+ 24-bit 2-to-1 multiplexer                             : 1
+ 8-bit 2-to-1 multiplexer                              : 7
+ 8-bit 4-to-1 multiplexer                              : 4
+# Logic shifters                                       : 6
+ 8-bit shifter arithmetic right                        : 2
+ 8-bit shifter logical left                            : 2
+ 8-bit shifter logical right                           : 2
+# FSMs                                                 : 1
+# Xors                                                 : 8
+ 1-bit xor2                                            : 6
+ 8-bit xor2                                            : 2
 
 =========================================================================
 
 =========================================================================
 *                         Low Level Synthesis                           *
 =========================================================================
+Analyzing FSM <MFsm> for best encoding.
+Optimizing FSM <testcase/FSM_0> on signal <M_state_q[1:4]> with user encoding.
+-------------------
+ State | Encoding
+-------------------
+ 0000  | 0000
+ 0001  | 0001
+ 0010  | 0010
+ 0011  | 0011
+ 0100  | 0100
+ 0101  | 0101
+ 0110  | 0110
+ 0111  | 0111
+ 1000  | 1000
+ 1001  | 1001
+ 1010  | 1010
+ 1011  | 1011
+ 1100  | 1100
+ 1101  | 1101
+ 1110  | 1110
+ 1111  | 1111
+-------------------
+WARNING:Xst:2677 - Node <blink/M_counter_q_25> of sequential type is unconnected in block <testcase_2>.
 
 Optimizing unit <mojo_top_0> ...
 
-Optimizing unit <alu_2> ...
+Optimizing unit <alu_3> ...
 
-Optimizing unit <muldiv_7> ...
+Optimizing unit <muldiv_10> ...
 
 Optimizing unit <div_8u_8u> ...
-WARNING:Xst:2677 - Node <reset_cond/M_stage_q_3> of sequential type is unconnected in block <mojo_top_0>.
-WARNING:Xst:2677 - Node <reset_cond/M_stage_q_2> of sequential type is unconnected in block <mojo_top_0>.
-WARNING:Xst:2677 - Node <reset_cond/M_stage_q_1> of sequential type is unconnected in block <mojo_top_0>.
-WARNING:Xst:2677 - Node <reset_cond/M_stage_q_0> of sequential type is unconnected in block <mojo_top_0>.
+
+Optimizing unit <testcase_2> ...
+INFO:Xst:2261 - The FF/Latch <testcase/blink/M_counter_q_0> in Unit <mojo_top_0> is equivalent to the following FF/Latch, which will be removed : <testcase/blink/M_holder_q_0> 
+INFO:Xst:2261 - The FF/Latch <testcase/blink/M_counter_q_1> in Unit <mojo_top_0> is equivalent to the following FF/Latch, which will be removed : <testcase/blink/M_holder_q_1> 
+INFO:Xst:2261 - The FF/Latch <testcase/blink/M_counter_q_2> in Unit <mojo_top_0> is equivalent to the following FF/Latch, which will be removed : <testcase/blink/M_holder_q_2> 
+INFO:Xst:2261 - The FF/Latch <testcase/blink/M_counter_q_3> in Unit <mojo_top_0> is equivalent to the following FF/Latch, which will be removed : <testcase/blink/M_holder_q_3> 
+INFO:Xst:2261 - The FF/Latch <testcase/blink/M_counter_q_4> in Unit <mojo_top_0> is equivalent to the following FF/Latch, which will be removed : <testcase/blink/M_holder_q_4> 
+INFO:Xst:2261 - The FF/Latch <testcase/blink/M_counter_q_5> in Unit <mojo_top_0> is equivalent to the following FF/Latch, which will be removed : <testcase/blink/M_holder_q_5> 
+INFO:Xst:2261 - The FF/Latch <testcase/blink/M_counter_q_6> in Unit <mojo_top_0> is equivalent to the following FF/Latch, which will be removed : <testcase/blink/M_holder_q_6> 
+INFO:Xst:2261 - The FF/Latch <testcase/blink/M_counter_q_7> in Unit <mojo_top_0> is equivalent to the following FF/Latch, which will be removed : <testcase/blink/M_holder_q_7> 
+INFO:Xst:2261 - The FF/Latch <testcase/blink/M_counter_q_8> in Unit <mojo_top_0> is equivalent to the following FF/Latch, which will be removed : <testcase/blink/M_holder_q_8> 
+INFO:Xst:2261 - The FF/Latch <testcase/blink/M_counter_q_9> in Unit <mojo_top_0> is equivalent to the following FF/Latch, which will be removed : <testcase/blink/M_holder_q_9> 
+INFO:Xst:2261 - The FF/Latch <testcase/blink/M_counter_q_10> in Unit <mojo_top_0> is equivalent to the following FF/Latch, which will be removed : <testcase/blink/M_holder_q_10> 
+INFO:Xst:2261 - The FF/Latch <testcase/blink/M_counter_q_11> in Unit <mojo_top_0> is equivalent to the following FF/Latch, which will be removed : <testcase/blink/M_holder_q_11> 
+INFO:Xst:2261 - The FF/Latch <testcase/blink/M_counter_q_12> in Unit <mojo_top_0> is equivalent to the following FF/Latch, which will be removed : <testcase/blink/M_holder_q_12> 
+INFO:Xst:2261 - The FF/Latch <testcase/blink/M_counter_q_13> in Unit <mojo_top_0> is equivalent to the following FF/Latch, which will be removed : <testcase/blink/M_holder_q_13> 
+INFO:Xst:2261 - The FF/Latch <testcase/blink/M_counter_q_14> in Unit <mojo_top_0> is equivalent to the following FF/Latch, which will be removed : <testcase/blink/M_holder_q_14> 
+INFO:Xst:2261 - The FF/Latch <testcase/blink/M_counter_q_20> in Unit <mojo_top_0> is equivalent to the following FF/Latch, which will be removed : <testcase/blink/M_holder_q_20> 
+INFO:Xst:2261 - The FF/Latch <testcase/blink/M_counter_q_15> in Unit <mojo_top_0> is equivalent to the following FF/Latch, which will be removed : <testcase/blink/M_holder_q_15> 
+INFO:Xst:2261 - The FF/Latch <testcase/blink/M_counter_q_21> in Unit <mojo_top_0> is equivalent to the following FF/Latch, which will be removed : <testcase/blink/M_holder_q_21> 
+INFO:Xst:2261 - The FF/Latch <testcase/blink/M_counter_q_16> in Unit <mojo_top_0> is equivalent to the following FF/Latch, which will be removed : <testcase/blink/M_holder_q_16> 
+INFO:Xst:2261 - The FF/Latch <testcase/blink/M_counter_q_22> in Unit <mojo_top_0> is equivalent to the following FF/Latch, which will be removed : <testcase/blink/M_holder_q_22> 
+INFO:Xst:2261 - The FF/Latch <testcase/blink/M_counter_q_17> in Unit <mojo_top_0> is equivalent to the following FF/Latch, which will be removed : <testcase/blink/M_holder_q_17> 
+INFO:Xst:2261 - The FF/Latch <testcase/blink/M_counter_q_23> in Unit <mojo_top_0> is equivalent to the following FF/Latch, which will be removed : <testcase/blink/M_holder_q_23> 
+INFO:Xst:2261 - The FF/Latch <testcase/blink/M_counter_q_18> in Unit <mojo_top_0> is equivalent to the following FF/Latch, which will be removed : <testcase/blink/M_holder_q_18> 
+INFO:Xst:2261 - The FF/Latch <testcase/blink/M_counter_q_24> in Unit <mojo_top_0> is equivalent to the following FF/Latch, which will be removed : <testcase/blink/M_holder_q_24> 
+INFO:Xst:2261 - The FF/Latch <testcase/blink/M_counter_q_19> in Unit <mojo_top_0> is equivalent to the following FF/Latch, which will be removed : <testcase/blink/M_holder_q_19> 
 
 Mapping all equations...
 Building and optimizing final netlist ...
-Found area constraint ratio of 100 (+ 0) on block mojo_top_0, actual ratio is 4.
+Found area constraint ratio of 100 (+ 0) on block mojo_top_0, actual ratio is 8.
+FlipFlop testcase/M_state_q_FSM_FFd1 has been replicated 3 time(s)
+FlipFlop testcase/M_state_q_FSM_FFd2 has been replicated 4 time(s)
+FlipFlop testcase/M_state_q_FSM_FFd3 has been replicated 3 time(s)
+FlipFlop testcase/M_state_q_FSM_FFd4 has been replicated 4 time(s)
 
 Final Macro Processing ...
+
+Processing Unit <mojo_top_0> :
+INFO:Xst:741 - HDL ADVISOR - A 4-bit shift register was found for signal <reset_cond/M_stage_q_3> and currently occupies 4 logic cells (2 slices). Removing the set/reset logic would take advantage of SRL32 (and derived) primitives and reduce this to 1 logic cells (1 slices). Evaluate if the set/reset can be removed for this simple shift register. The majority of simple pipeline structures do not need to be set/reset operationally.
+Unit <mojo_top_0> processed.
 
 =========================================================================
 Final Register Report
 
-Found no macro
+Macro Statistics
+# Registers                                            : 49
+ Flip-Flops                                            : 49
+
 =========================================================================
 
 =========================================================================
@@ -303,7 +426,11 @@ Partition Implementation Status
 
 Clock Information:
 ------------------
-No clock signals found in this design
+-----------------------------------+------------------------+-------+
+Clock Signal                       | Clock buffer(FF name)  | Load  |
+-----------------------------------+------------------------+-------+
+clk                                | BUFGP                  | 49    |
+-----------------------------------+------------------------+-------+
 
 Asynchronous Control Signals Information:
 ----------------------------------------
@@ -313,9 +440,9 @@ Timing Summary:
 ---------------
 Speed Grade: -2
 
-   Minimum period: No path found
-   Minimum input arrival time before clock: No path found
-   Maximum output required time after clock: No path found
-   Maximum combinational path delay: 35.761ns
+   Minimum period: 8.852ns (Maximum Frequency: 112.969MHz)
+   Minimum input arrival time before clock: 3.526ns
+   Maximum output required time after clock: 7.441ns
+   Maximum combinational path delay: 35.841ns
 
 =========================================================================

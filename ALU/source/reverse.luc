@@ -1,0 +1,16 @@
+module reverse (
+    input io_dip[3][8],
+    output io_led2[8]
+  ) {
+
+  always {
+    io_led2[0] = io_dip[0][7];
+    io_led2[1] = io_dip[0][6];
+    io_led2[2] = io_dip[0][5];
+    io_led2[3] = io_dip[0][4];
+    io_led2[4] = io_dip[0][3];
+    io_led2[5] = io_dip[0][2];
+    io_led2[6] = io_dip[0][1];
+    io_led2[7] = io_dip[0][0];
+  }
+}

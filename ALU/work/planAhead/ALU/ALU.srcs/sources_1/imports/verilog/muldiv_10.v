@@ -4,7 +4,7 @@
    This is a temporary file and any changes made to it will be destroyed.
 */
 
-module muldiv_7 (
+module muldiv_10 (
     input [23:0] io_dip,
     output reg [7:0] io_led2
   );
@@ -19,7 +19,7 @@ module muldiv_7 (
         io_led2 = io_dip[0+7-:8] * io_dip[8+7-:8];
       end
       2'h3: begin
-        io_led2 = io_dip[0+7-:8] / io_dip[8+7-:8];
+        io_led2 = io_dip[8+7-:8] / io_dip[0+7-:8];
       end
     endcase
   end
